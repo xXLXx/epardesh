@@ -2,9 +2,11 @@
     'use strict';
     var app = angular.module('app');
 
-    app.config(['$stateProvider','$urlRouterProvider', '$locationProvider', '$authProvider', configureState]);
+    app
+        .config(['$stateProvider','$urlRouterProvider', '$locationProvider', '$authProvider', 'metaProvider', configureState])
+        .run(['meta', run]);
 
-    function configureState($stateProvider, $urlRouterProvider, $locationProvider,$authProvider) {
+    function configureState($stateProvider, $urlRouterProvider, $locationProvider,$authProvider, metaProvider) {
         
         $stateProvider
 
@@ -71,6 +73,9 @@
                 "content@": {
                     templateUrl: 'app/templates/event_details.html',
                 },
+            },
+            data: {
+                meta: config.metaData.events
             }
         })
         
@@ -203,6 +208,9 @@
                 "content@": {
                     templateUrl: 'app/templates/event_search.html',
                 },
+            },
+            data: {
+                meta: config.metaData.events
             }
         })
         
@@ -217,6 +225,9 @@
                 "content@": {
                     templateUrl: 'app/templates/events_page.html',
                 },
+            },
+            data: {
+                meta: config.metaData.events
             }
         })     
            .state("all_search", {
@@ -241,6 +252,9 @@
                 "content@": {
                     templateUrl: 'app/templates/training_page.html',
                 },
+            },
+            data: {
+                meta: config.metaData.training
             }
         })
         
@@ -253,6 +267,9 @@
                 "content@": {
                     templateUrl: 'app/templates/training_detail.html',
                 },
+            },
+            data: {
+                meta: config.metaData.training
             }
         })
          .state("training_search", {
@@ -264,6 +281,9 @@
                 "content@": {
                     templateUrl: 'app/templates/training_search.html',
                 },
+            },
+            data: {
+                meta: config.metaData.training
             }
         })
        
@@ -278,6 +298,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/mhome.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
         
@@ -290,6 +313,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/mlogin.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
                 .state("msign", {
@@ -301,6 +327,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/msign.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
                   .state("mforgot", {
@@ -312,6 +341,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/mforgot.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
                  .state("mupdate-password", {
@@ -323,6 +355,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/mupdate-password.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
             .state("matrimony_profile", {
@@ -334,6 +369,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/matrimony_profile.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
          .state("profiles", {
@@ -345,6 +383,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/profiles.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
          .state("verify", {
@@ -356,6 +397,9 @@
                 "content@": {
                     templateUrl: 'app/templates/matrimony/verify.html',
                 },
+            },
+            data: {
+                meta: config.metaData.matrimony
             }
         })
         $urlRouterProvider.otherwise('/');
@@ -375,6 +419,9 @@
         })
 
         $locationProvider.html5Mode(true).hashPrefix('*');
-       
+    }
+    function run(meta) {
+        meta.enable();
+        meta.defaults = config.metaData.default;
     }
 })();

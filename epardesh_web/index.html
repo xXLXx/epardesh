@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Free Classified Websites | Advertise Your Business | Local Ad Posting Sites – ePardesh</title>
-        <meta name="description" content="All in one publish free classified ads for matrimony, finding roommates, or share Indian community events on our online advertising site.">
+        <title ng-bind="meta.title"></title>
+        <meta name="description" content="{{meta.description}}">
         <link rel="shortcut icon" href="app/content/img/logo_epardesh_favicon.png" type="image/png">
        <!--<link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />-->
         <!-- Angular Material style sheet -->
@@ -153,6 +153,9 @@
         <!-----Bootstrapping(main module)------>
         <script src="app/app.js"></script>
         <script src="app/config.js"></script>
+
+        <!-----Provider file------>
+        <script src="app/js/providers/meta-provider.js"></script>
 
         <!-----Services file------>
         <script src="app/js/services/login-reg-services.js"></script>
