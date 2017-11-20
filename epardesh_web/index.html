@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title ng-bind="meta.title"></title>
-        <meta name="description" content="{{meta.description}}">
+        <title ng-bind="meta.title"><?= $title ?></title>
+        <meta name="description" ng-meta="meta.description" content="<?= $description ?>">
         <link rel="shortcut icon" href="app/content/img/logo_epardesh_favicon.png" type="image/png">
        <!--<link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />-->
         <!-- Angular Material style sheet -->
@@ -154,6 +154,9 @@
         <script src="app/app.js"></script>
         <script src="app/config.js"></script>
 
+        <!-----Meta data config via PHP------>
+        <script>config.metaData =<?php echo json_encode($metaData);?>;</script>
+
         <!-----Provider file------>
         <script src="app/js/providers/meta-provider.js"></script>
 
@@ -176,6 +179,7 @@
         <script src="app/js/directives/confirm-password.js"></script>
         <script src="app/js/directives/ckeditor-directive.js"></script>
         <script src="app/js/directives/slider-directive.js"></script>
+        <script src="app/js/directives/meta-directive.js"></script>
          
         <!-----Routes file------>
         <script src="app/routes.js"></script>
