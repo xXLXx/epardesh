@@ -5,21 +5,21 @@
  */
 $metaData = [
     'events' => [
-        'title'         => 'Indian Events in USA — ePardesh',
+        'title'         => 'Indian Events in USA &ndash; ePardesh',
         'description'   => 'Find all the upcoming Indian events in USA here. Buy online tickets for Indian shows, artist tours, and community celebrations.',
         'match'         => 'events?.*'
     ],
     'default' => [
-        'title'         => 'Free Classified Websites | Advertise Your Business | Local Ad Posting Sites — ePardesh',
-        'description'   => 'All in one— publish free classified ads for matrimony, finding roommates, or share Indian community events on our online advertising site.'
+        'title'         => 'Free Classified Websites | Advertise Your Business | Local Ad Posting Sites &ndash; ePardesh',
+        'description'   => 'All in one&ndash; publish free classified ads for matrimony, finding roommates, or share Indian community events on our online advertising site.'
     ],
     'matrimony' => [
-        'title'         => 'Indian Matrimony Sites in USA – ePardesh',
+        'title'         => 'Indian Matrimony Sites in USA &ndash; ePardesh',
         'description'   => 'Find your Indian bride or groom on one of the most trusted Indian matrimonial sites in USA. Start your search for soulmate today!',
         'match'         => '(matrimony)|(mlogin)|(msign)|(mforgot)|(mupdate-password).*'
     ],
     'training' => [
-        'title'         => 'It Training Institutes – ePardesh',
+        'title'         => 'It Training Institutes &ndash; ePardesh',
         'description'   => 'Our IT training institute offers hands-on training and certifications. Check out our online and on-demand trainings currently open for registrations.',
         'match'         => 'training.*'
     ]
