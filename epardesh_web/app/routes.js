@@ -421,7 +421,7 @@
         $locationProvider.html5Mode(true).hashPrefix('*');
     }
     function run(meta) {
+        meta.setDefaults(config.metaData.default);
         meta.enable();
-        meta.defaults = config.metaData.default;
     }
 })();

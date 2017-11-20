@@ -23,6 +23,7 @@
             model.enable = enable;
             model.setTitle = setTitle;
             model.setDescription = setDescription;
+            model.setDefaults = setDefaults;
             
             return model;
             function enable()
@@ -40,7 +41,6 @@
             function update(event, current)
             {
                 var data = angular.copy((current.data && current.data.meta) || provider.defaults);
-                console.log(data);
                 setTitle(data.title);
                 setDescription(data.description);
             }
@@ -51,6 +51,10 @@
             function setDescription(description)
             {
                 $rootScope.meta.description = description;
+            }
+            function setDefaults(defaults)
+            {
+                provider.defaults = defaults;
             }
         }
     }
