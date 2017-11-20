@@ -1,0 +1,254 @@
+<!--<script>
+    /*-------------------validation for image------------------------------------*/
+    $(document).ready(function() {
+        var imageindex;
+    
+    $("#prom_ads").change(function()
+        {
+            imageindex = $(this).val();
+            var dataString = 'id=' + imageindex;
+            alert(dataString);
+            return false;
+        });
+        $("#ad_imag").change(function() {
+
+            var fileUpload = $("#ad_imag")[0];
+            //Check whether HTML5 is supported.
+            if (typeof (fileUpload.files) != "undefined") {
+                //Initiate the FileReader object.
+                var reader = new FileReader();
+                //Read the contents of Image File.
+                reader.readAsDataURL(fileUpload.files[0]);
+                reader.onload = function(e) {
+                    //Initiate the JavaScript Image object.
+                    var image = new Image();
+                    //Set the Base64 string return from FileReader as source.
+                    image.src = e.target.result;
+                    image.onload = function() {
+                        //Determine the Height and Width.
+                        var height = this.height;
+                        var width = this.width;
+                        console.log(height + ' ' + width);
+                        if (imageindex == "Banner") {
+                            if (height == 600 || width == 1280) {
+//                    alert('please choose image of size less than 1mb')
+
+                            }
+                            else {
+                                alert('please choose image dimenstion is 1280*600')
+                            }
+                        }
+                        else if (imageindex == "Rolling") {
+
+                            if (height == 150 || width == 265) {
+//                    alert('please choose image of size less than 250kb')
+                            }
+                            else {
+                                alert('please choose image dimenstion is 265*150');
+                            }
+                        }
+                        else {
+                            alert('please choose valid image')
+                        }
+                    };
+                }
+            }
+        });
+        });
+
+</script>-->
+
+<style>
+    .add_more_select
+    {
+        display : none;
+    }
+</style>
+
+<div id="preloader">
+    <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+    <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="addpromotional as vm">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Promotional Ads
+                <small></small>
+            </h1><br>
+            <a ui-sref="add-promotional-ads">
+                <button type="button" id="promotional_ads" class="btn btn-primary btn-sm">Add Promotional Ads </button></a>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Promotional Ads</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin data-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa fa-sort"></i>Type </th>
+                                    <th><i class="fa fa-sort"></i>Image</th>
+                                     <th><i class="fa fa-sort"></i>Region</th>
+                                    
+                                    <th>Action</th>                                
+                                </tr>
+                            </thead>
+                            <tbody id="view_ads">
+                            </tbody>
+
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <!--                <a href="javascript::;" class="btn btn-sm btn-primary btn-flat pull-left">Add New User</a>
+                                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Users</a>-->
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->        
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+
+    <!---------------- Edit modal-------------------->
+    <div class="modal fade" id="modal-prom_ads">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">                  
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <h4 class="modal-title">Edit Promotional Ads</h4>
+                </div>
+                <div class="modal-body">
+                    <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span>
+                    <form id="main-contact-form" class="contact-form col-md-12" name="promotional_form" method="post">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label for="title">Type<span  style="font-size: 1em">*</span></label>
+                                <select id="prom_ads" class="form-control chngType" name="image_type">
+                                    <!--<option value="" selected>Choose Type</option>-->
+                                    <option value="Banner">Banner</option>
+                                    <!--<option value="Rolling">Rolling</option>-->
+                                </select>         
+                                <input type="hidden" name="promotional_id" id="editpromotional_id">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12">
+                            <div class="form-group">
+
+                                <label for="title">Image<span  style="font-size: 1em">*</span></label>
+                                <input type="File" name="profile"  id="ad_img" class="form-control date" onchange="angular.element(this).scope().uploadimageEdit()">    
+                                <div ng-hide='vm.showLoading'>
+                                    <img src="app/content/img/ajax-loader.gif">
+                                </div>
+                                <div ng-show='vm.showLoading' class="img-pre"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 region_mar ">
+                            <div class="form-group col-md-6">
+                                <label>Select Regions<span  style="font-size: 1em">*</span></label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <button type="button" class="btn btn-xs" ng-click="vm.AddMore()">Add More Select Regions</button>
+                            </div>
+                        </div>
+<!--                        <div class="col-sm-12 col-md-12 region_mar add_more_select">
+                            <div class="form-group col-md-4">
+                                <label for="title">Country</label>
+                                <select  class="form-control chose_country" id="chose_country0" name="country_name" required>
+                                    <option value="0">Choose Country</option>
+                                    <option value="USA">USA</option>
+                                    <option value="India">India</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="state">State</label>
+                                <select class="form-control select_control state" ng-model="vm.state" id="state0" name="state_name" required>
+                                    <option value="0">choose a state</option>
+                                    <option ng-selected= "{{st.location_name == vm.state}}" ng-repeat="st in vm.allstates">{{st.location_name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="region">Region</label>
+                                <select class="form-control select_control region" ng-model="vm.city" multiple id="region0" name="region_name" required>
+                                    <option>Choose a region</option>
+                                    <option ng-selected= "{{st.city_name == vm.city}}" ng-repeat="st in vm.allcities" value="{{st.city_name}}">{{st.city_name}}</option>
+                                </select>
+                            </div>
+                        </div>-->
+                        
+                        
+
+
+                         <div class="col-sm-12 col-md-12 region_mar " ng-repeat="dt in vm.r track by $index">
+                            <div class="form-group col-md-4">
+                                <label for="title">Country</label>
+                                <select  class="form-control chose_country" id="chose_country{{$index}}"  name="country_name" required ng-model="dt.country" ng-change="edit_Country($index, dt)">
+                                    <option value="0">Choose Country</option>
+                                    <option ng-selected= "{{dt.country == 'USA'}}" value="USA">USA</option>
+                                    <option ng-selected= "{{dt.country == 'India'}}" value="India">INDIA</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="state">State</label>
+                                <select class="form-control select_control state" id="state{{$index}}" name="state_name" required ng-model="dt.state" ng-change="edit_State($index, dt)" >
+                                    <option value="0">choose a state</option>
+                                    <option ng-selected= "{{st.location_name == dt.state}}" ng-repeat="st in vm.states[$index]">{{st.location_name}}</option>
+                                
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="region">Region</label>
+                                <select class="form-control select_control region"   id="region{{$index}}" name="region_name" ng-model="dt.city" required ng-change="edit_Region($index, dt)">
+                                    <option value="0">Choose a region</option>
+                                    <option ng-selected= "{{st.city_name == dt.city}}" ng-repeat="st in vm.cities[$index]" >{{st.city_name}}</option>
+                                </select>
+                               
+                            </div>
+                             <div class="form-group col-md-1">
+                                 <a class="a" ng-click="vm.removePer($index);"><i class="fa fa-trash"></i></a>
+                                 
+                             </div>
+                             
+                        </div>
+                          <div class="col-sm-12 col-md-12 select_date">
+                            <div class="form-group col-md-6">
+                                <label>Start Date<span  style="font-size: 1em">*</span></label>
+                                <input type="date" class="form-group" ng-model="vm.edit_start_date" name="startdate" id="editstartdate">
+                          
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>End Date<span  style="font-size: 1em">*</span></label>
+                                <input type="date" class="form-group" ng-model="vm.edit_end_date" name="enddate" id="editenddate">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12">
+                        <input type="checkbox" class="check" name="" value="worldWide">&nbsp;&nbsp;&nbsp;Display Nation wide<br>
+                        </div>
+                       
+                       
+                    </form>
+                </div>
+                 <div class="col-sm-12 col-md-12">
+                             <span class="alert alert-green"></span>
+                        <span class="alert alert-red"></span>
+                        </div>
+                <div class="modal-footer" style="clear: both;">
+                    <a href="" class="btn btn-primary btn-sm" id="edit_ads" ng-click="vm.editads();">Save</a>
+                    <a href="" class="btn btn-sm btn-default" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- modal -->
+
+<script>
+                                    active("promotional-ads");
+
+</script>
+
+

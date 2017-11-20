@@ -1,0 +1,27 @@
+{
+    "name": "poppy quiz",
+    "version": "0.0.1",
+    "description": "An AngularJS implementation of the poppy quiz",
+    "homepage": "https://github.com/Ehesp/Responsive-Dashboard",
+    "authors": [
+        "75way.com team"
+    ],
+    "contributors": [
+        "75way.com teams"
+    ],
+    "main": "index.html",
+    "license": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.5.0",
+        "angular-bootstrap": "~1.0.3",
+        "angular-ui-router": "^0.2.15",
+        "bootstrap": "~3.3.6",
+    }
+}

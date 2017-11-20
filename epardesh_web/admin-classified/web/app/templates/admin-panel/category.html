@@ -1,0 +1,147 @@
+<div id="preloader">
+    <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+    <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="categories as vm">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Category 
+                <small></small>
+            </h1>
+            <br>
+
+            <button type="button" id="add-category" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-addCategory">Add Category </button>
+            <br>
+
+        </section>
+<!--        <div>     
+            <div class="alert alert-green"></div>
+        <div class="alert alert-red"></div>
+        </div>-->
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Category</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin data-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa fa-sort"></i> Category Name</th>
+                                    <!--<th><i class="fa fa-sort"></i> Position</th>-->
+                                    <th>Action</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody class="view_category">
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">               
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->        
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+    <!----------------------modal--------------------------->
+    <div id="modal-addCategory" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Category</h4>
+                </div>
+                <div class="modal-body"> 
+                    <div class="row" ng-hide="vm.alert">
+                       <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span> 
+                    </div>
+                    
+                    
+                    <label for="add_category_name">Category Name</label>
+                    <input type="text" name="category_name" id="add_category_name" class="form-control" placeholder="Category Name">
+                    
+<!--                    <label for="add_cat_position">choose position</label>
+                    <select id="add_cat_position" name="cat_position" class="form-control">
+                        <option value="choose position" selected>choose position</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>-->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="save-category">Add</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!--        <div class='loader pull-right'>
+                                <div class="loader-image">
+                                    <img src='images/loader.gif'>
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal-->
+    <!-- edit modal -->
+    <div id="modal-editCategory" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Category</h4>
+                </div>
+                <div class="modal-body">
+                   <div class="row" ng-hide="vm.alert">
+                       <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span> 
+                    </div>
+                    
+                    <label for="add_category_name">Category Name</label>
+                    <input type="text" name="category_name" id="edit_category_name" class="form-control" placeholder="Category Name">
+                    
+<!--                    <select id="edit_cat_position" class="form-control">
+                        <option value="choose position">choose position</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select><br>-->
+                    <input type="hidden" name="category_id" id="edit_category_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="update-category" ng-click="vm.updateCategory();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!--        <div class='loader pull-right'>
+                                <div class="loader-image">
+                                    <img src='images/loader.gif'>
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+    </div><!-- modal-->
+
+</div>
+<script>
+            active("category");
+            //$('.data-table').DataTable();
+</script>

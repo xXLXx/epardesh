@@ -1,0 +1,120 @@
+<div id="preloader">
+    <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+    <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="viewParticularCtrl as vm">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <div class="col-md-6">
+                        <section class="content-header">
+                            <h1>
+                                View Ad
+                                <small></small>
+                            </h1>
+
+                        </section>
+                    </div>
+                    <div class="col-md-6">
+                        <a style="margin-right:5px;" class="btn btn-sm btn-primary btn-flat pull-right" ui-sref="ads"><em class="fa fa-arrow-left fa-fw mr-sm"></em>Go Back</a>&nbsp;
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <form>
+
+                        <div class="col-md-12 main ng-scope managePadding">
+                            <div class="panel panel-default ng-scope">
+                                <!--                            <div class="panel-heading ng-binding">View Info</div>-->
+
+                                <div class="col-md-12 panel-body">
+                                    <div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Ad Title</label>
+                                                <input class="form-control email-heading" ng-model='vm.adData.info[0].ad_tittle' disabled="" type="text" placeholder="title"/>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Business Name</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.info[0].business_name' disabled="" placeholder="Business Name"/>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Category</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.category' disabled="" placeholder="Business Name"/>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Sub Category</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.sub_category' disabled="" placeholder="Business Name"/>
+                                            </div>
+                                        </div> 
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Price</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.info[0].ad_price' disabled="" placeholder="Price"/>
+                                            </div>
+                                        </div> 
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Views</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.info[0].views' disabled="" placeholder="Views"/>
+                                            </div>
+                                        </div> 
+                                         <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">State</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.info[0].state' disabled="" placeholder="State"/>
+                                            </div>
+                                        </div> 
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="ng-binding">City</label>
+                                                <input class="form-control email-contact" type="text" ng-model='vm.adData.info[0].city' disabled="" placeholder="City"/>
+                                            </div>
+                                        </div> 
+                                          <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="ng-binding">Ad Description</label>
+                                                <textarea class="form-control email-contact" type="text" ng-model='vm.adData.info[0].ad_description' disabled="" placeholder="Description"/></textarea>
+                                            </div>
+                                        </div> 
+                                           <div class="col-md-12" ng-repeat='img in vm.adData.images' ng-if='img[$index].image_type =="featured"'>         
+                                            <div class="form-group">
+                                                <label class="ng-binding">Featured Image</label><br>
+                                                <div class="col-md-4">
+                                                    <img style="max-width: 100%; max-height: 200px" src='{{img[0].image_path}}'>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                         <div class="col-md-12" >         
+                                            <div class="form-group">
+                                                <!---->
+                                                <label class="ng-binding">Relevant Image</label><br>
+                                                <div class="col-md-2" ng-repeat='img in vm.adData.images' ng-if='img[$index].image_type !="featured"'><img style="max-width: 100%; max-height: 200px"  src='{{img[0].image_path}}'></div>
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+            </div><!-- /.box-body -->
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+</div>
+<script>
+    active("manage-ads");
+</script>
+

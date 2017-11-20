@@ -1,0 +1,104 @@
+<style>
+
+    .looking
+    {
+        text-align: center;
+    }
+    .query
+    {
+        margin: 6px;
+        background: silver;
+        line-height: 27px;
+    }
+    .bold-text
+    {
+        font-weight:bold;
+    }
+    .middle-text
+    {
+        color: slategrey;
+    }
+    .view_send
+    {
+        border: 1px solid;
+        padding: 25px;
+    }
+    .view_send h4{
+            padding: 7px;
+    text-align: center;
+    }
+</style>
+
+<div class="contact" data-ng-controller='Mcontact as vm'>
+    <div class="container">
+        <div class="contact-head">
+            <h2>Contact US</h2>
+        </div>
+        <div class="looking" >
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 query">
+                    <p class="bold-text">Did Not Find What You are Looking For?</p>
+                    <p class="middle-text">Contact with epardesh team directly by selecting from the option below.</p>
+
+                    <span>Query For:</span>
+                    <select ng-model="vm.selected" >
+                        <option value="Registration" selected="selected">Registration</option>
+                        <option value="Ads">Ads</option>
+                        <option value="Events">Events</option>
+                        <option value="IT Training">IT Training</option>
+                        <option value="Technical Issue">Technical Issue</option>
+                        <option value="Payment">Payment</option>
+                        <option value="Others">Others</option>
+
+                    </select>
+                    <button class="btn" ng-click="vm.go();">Go</button>
+                </div>
+                <div class="col-md-2"></div>
+
+
+
+            </div>
+            
+        </div>
+
+
+
+
+
+
+        <div class="high">
+        <div class="send" ng-show="vm.send">
+            <div class="col-md-12" style="padding: 15px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 view_send">
+                    <h4>Your Query For  {{vm.selected}} </h4>
+                    <form>
+                        <div class="alert alert-danger fade in "></div>
+                        <div class="alert alert-success" role="alert"></div>
+
+                        <input id="name" ng-model="vm.name" type="text" placeholder="Name"/>
+                        <input id="email" ng-model="vm.email" type="text" placeholder="E-mail"/>
+                        <input id="phone" ng-model="vm.phone" phone-input ng-model="phoneVal" type="text" placeholder="Phone"/>
+                        <input id="subject" ng-model="vm.subject" type="text" placeholder="Subject"/>
+                        <div class="contact-right">
+                            <textarea id="msg" ng-model="vm.msg" placeholder="Message"></textarea>
+                            <input type="button" ng-click="vm.sendContactFun();" class="btn snd-btn" value="SEND"/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+
+
+            </div>
+
+        </div></div>
+
+
+    </div>
+</div>
+<div ng-include="'app/templates/footer.html'">
+</div>

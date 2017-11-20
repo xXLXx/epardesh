@@ -1,0 +1,65 @@
+<div id="preloader">
+   <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+   <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="manageuser as vm">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Manage Users 
+                <small></small>
+            </h1>           
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                     <label><input type="checkbox" name ="check" value="0" id="selectall"/> Check all</label>
+                &nbsp;&nbsp;<button class="btn btn-danger sub">Delete</button>
+                
+                     <a style="margin-right:5px;" class="btn btn-sm btn-primary pull-right" csv-header="vm.getHeader"  ng-csv="vm.exportArr" filename="users.csv">Export Users</a>&nbsp;
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin data-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th><i class="fa fa-sort"></i> Username</th>
+                                    <th><i class="fa fa-sort"></i> Email</th>
+                                    <th><i class="fa fa-sort"></i> Phone No.</th>
+                                    <th><i class="fa fa-sort"></i> Total Ads.</th>
+                                     <th><i class=""></i> </th>
+                                    <!--<th><i class="fa fa-sort"></i> Type</th>-->
+                                </tr>
+                            </thead>
+                            <tbody id="view_manageuser">
+                                <!--                                <tr>
+                                                                    <td>Baljeet Kaur</td>
+                                                                    <td>baljeet04@gmail.com</td>
+                                                                    <td>9802493394</td>
+                                                                    <td>Business</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Baljeet Singh</td>
+                                                                    <td>mehak1993@gmail.com</td>
+                                                                    <td>9813796324</td>
+                                                                    <td>user</td>
+                                                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->        
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+</div>
+<script>
+    active("users");
+    
+</script>
+

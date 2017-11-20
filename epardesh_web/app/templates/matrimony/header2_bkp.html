@@ -1,0 +1,95 @@
+<style>
+    
+    .top_bg{
+        background: #000 !important;
+    }
+    .search_bx {
+    margin-bottom: 10px;
+}
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" data-ng-controller='mheader as vm'>
+
+    <div class="header_pos">
+        <div class="top_bg">
+            <div class="container">
+                <div class="header_top-sec">
+                  
+                    <div class="top_right">
+                        <div class="logo">
+<!--                    <a ui-sref="mhome"> <img src="app/content/img/logoEpardesh.png"  style="height: 50px;"alt=""/></a>-->
+                    <a ng-click="vm.redirect();"> <img src="app/content/img/logoEpardesh.png"  style="height: 50px;"alt=""/></a>
+
+                </div>
+<!--                        <ul>
+                            <li><a ui-sref="main">Home</a></li>|
+                            <li><a ui-sref="contact">Contact us</a></li>|
+                            <li><a ui-sref="about">About us</a></li>
+                        </ul>-->
+                    </div>
+                  
+                    <div class="top_left" ng-show='vm.isLogIn'>
+                        <ul>
+                            <li class="top_link"><a ui-sref="msign">Sign Up</a></li>|
+                            <li class="top_link"><a ui-sref="mlogin">Log In</a></li>|
+                            <li class="top_link"><a ui-sref="mlogin">Post Profile</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-left btn-group flag_select" ng-hide='vm.isLogIn'>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span data-bind="label"> {{vm.user_name}} &nbsp;<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu settingLi" role="menu">
+                            <li><a ui-sref="matrimony_profile">My Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a ng-click="vm.logout();">Logout</a></li>
+                        </ul>
+<!--                        <li class="top_link"><a ui-sref="#">Post Ad</a></li>-->
+                    </div>
+                       <div class="btn-group flag_select">
+                        <button type="button" class="btn btn-default dropdown-toggle country_toggle" data-toggle="dropdown">
+                            <img src="app/content/img/India_flag.png" alt=""/>  India <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu country_menu" role="menu">
+                            <li><a ng-click="vm.changeCountry('India')" id="ct1"> <img src="app/content/img/India_flag.png" alt=""/> India</a></li>
+                            <li><a ng-click="vm.changeCountry('USA')" id="ct2"><img src="app/content/img/USA_flag.png" alt=""/>USA</a></li>
+                        </ul>
+                    </div>
+<!--                    <div class="btn-group flag_select">
+                        <button type="button" class="btn btn-default dropdown-toggle country_toggle" data-toggle="dropdown">
+                            <img src="app/content/img/India_flag.png" alt=""/>  india <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu country_menu" role="menu">
+                            <li><a href="#"> <img src="app/content/img/India_flag.png" alt=""/> India</a></li>
+                            <li><a href="#"><img src="app/content/img/USA_flag.png" alt=""/>USA</a></li>
+                        </ul>
+                    </div>-->
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_top">
+            <div class="container">
+                <div class="col-md-2 col-sm-2 col-xs-12  logo">
+<!--                    <a ui-sref="mhome"> <img src="app/content/img/logoEpardesh.png"  style="height: 50px;"alt=""/></a>
+                    <a ng-click="vm.redirect();"> <img src="app/content/img/logoEpardesh.png"  style="height: 50px;"alt=""/></a>-->
+
+                </div>
+                <div class="col-md-8 col-sm-7 col-xs-12 search_bx" ng-show="!vm.isLogIn">
+                    <form>
+                        <input type="text" value="" ng-model="vm.searchObj.keyword" placeholder="Search by Profile Id or Name…">
+                        <a ng-click="vm.searchFun();"><button>Find</button></a>
+                    </form>
+                </div>
+
+            </div>
+              <div class="clearfix"></div>
+        </div>
+        <!-------------------------end header category----------------------->
+    </div>
+</div>
+<!--------------------dropdown select js----------->
+<script type="text/javascript">
+    $('.country_menu a').on('click', function() {
+        $('.country_toggle').html($(this).html() + '<span class="caret"></span>');
+    })
+</script>

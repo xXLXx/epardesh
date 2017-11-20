@@ -1,0 +1,196 @@
+<div ng-controller="user_profile">
+     <style>
+         .fullWidth {
+        width: 100%;
+        background:#45b39d;
+        color: black !important;
+    }
+       .fullWidth:hover {
+        width: 100%;
+        background:#45b39d;
+        color: black !important;
+    }
+        .md-button:not([disabled]):hover {
+            background-color: rgb(69, 179, 157);
+        }
+    </style>
+    <section >
+        <!-- left side start-->
+        <div ng-include="'app/templates/sidebar.html'"></div>
+        <!-- /w3layouts-agile 
+        
+        <!-- main content start-->
+        <div class="main-content">
+            <!-- header-starts -->
+            <div ng-include="'app/templates/header.html'"></div>
+            <!-- //header-ends -->
+
+            <div id="page-wrapper" class="color1">
+                <div class="inner-content">
+
+                    <div class="tittle-head">
+                        <h3 class="tittle">User profile </h3>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                 <!--// user profile ms -->
+                <md-content class="col-md-4 col-md-offset-4" ng-cloak  layout-padding>
+                    <form name="user_profile" >
+
+                        <div layout="row">
+                            <md-input-container flex="100">
+                                <label>Name</label>
+                                <input required name="name"   class="md-raised md-primary" type="name" ng-model="user_profileData.name">
+                                <div ng-messages="user_profile.name.$error">
+                                    <span class="error" ng-message="required" ng-if="user_profile.name.$touched" >This is required.</span>
+                                    <!--<span class="error" ng-message="pattern" ng-if="change_password.old_password.$touched" >At least one lowercase letter one uppercase letter and one digit.</span>-->
+                                </div>
+                            </md-input-container>
+
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex="100">
+                                <label>E-mail</label>
+                                <input required name="email"   class="md-raised md-primary" type="email" ng-model="user_profileData.email">
+                                <div ng-messages="user_profile.email.$error">
+                                    <span class="error" ng-message="required" ng-if="user_profile.email.$touched" >This is required.</span>
+                                    <!--<span class="error" ng-message="pattern" ng-if="change_password.new_password.$touched" >At least one lowercase letter one uppercase letter and one digit.</span>-->
+                                </div>
+                            </md-input-container>
+
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex="100">
+                                <label>Phone number</label>
+                                <input required name="phone"   class="md-raised md-primary" type="text"  ng-model="user_profileData.phone">
+                                <div ng-messages="user_profile.phone.$error">
+                                    <span class="error" ng-message="required" ng-if="user_profile.phone.$touched" >This is required.</span>
+                                    <!--<span class="error" ng-message="change" ng-if="change_password.confirm_password.$touched" >At least one lowercase letter one uppercase letter and one digit.</span>-->
+                                    <!--<span class="error" ng-message="new_password !== confirm_password" ng-if="change_password.confirm_password.$touched || change_password.confirm_password.new_password !== change_password.confirm_password.confirm_password ">No matched</span>-->
+                                </div>
+                            </md-input-container>
+
+                        </div>
+                        <div>
+                            <md-button type="submit" class="fullWidth" ng-click="">Submit</md-button>
+                        </div>
+                    </form>
+                </md-content>
+                <!--// ./user profile ms-->
+            </div>
+        </div>
+    </section>
+<!--    
+    <nav>
+    <a href="#search_box" class="btn btn-info" id="search">&#9740;</a>
+     <form class="search_box" id="search_box" action="/search/">
+       <input name="search_criteria" placeholder="Search" value="" type="text">
+        <input class="search_icon" value="Search" type="submit">
+     </form>
+    </nav>
+    </div>
+    <script>
+        $( "#search" ).click(function(e) {
+        e.preventDefault();
+        $(".search_box").toggleClass('active');
+    });
+        
+        </script>
+        <style>
+       nav{
+ width: 100%;
+ padding:0;
+ height: auto;
+}
+.btn{
+ padding: 10px 1%;
+ margin: 5px;
+ background: #777777
+;
+ color: #fff;
+ text-decoration: none;
+ font-family: sans-serif;
+  -webkit-transition: all 0.1s ease;
+ -moz-transition: all 0.1s ease;
+ -ms-transition: all 0.1s ease;
+ -o-transition: all 0.1s ease;
+ transition: all 0.1s ease;
+}
+.btn:hover{
+ background: #42BBA3
+;
+ -webkit-transition: all 0.1s ease;
+ -moz-transition: all 0.1s ease;
+ -ms-transition: all 0.1s ease;
+ -o-transition: all 0.1s ease;
+ transition: all 0.1s ease;
+}
+#search{
+ float: right;
+ font-size: 1.7em;
+ padding: 5px 12px;
+ -webkit-transform: rotate(181deg);
+ -moz-transform: rotate(181deg);
+ -ms-transform: rotate(181deg);
+ -o-transform: rotate(181deg);
+ transform: rotate(181deg);
+}
+.search_box {
+ clear: both;
+ width: 98%;
+ background: #ccc;
+ padding: 0 1%;
+ margin: 0;
+ height: 0;
+ overflow: hidden;
+ -webkit-transition: all 0.1s ease-in-out;
+ -moz-transition:  all 0.1s ease-in-out;
+ -ms-transition:  all 0.1s ease-in-out;
+ -o-transition:  all0.1s ease-in-out;
+ transition:  all 0.1s ease-in-out;
+}
+.search_box.active{
+ height: auto;
+ padding: 1%;
+ -webkit-transition: all 0.1s ease-in-out;
+ -moz-transition:  all 0.1s ease-in-out;
+ -ms-transition:  all 0.1s ease-in-out;
+ -o-transition:  all 0.1s ease-in-out;
+ transition:  all 0.1s ease-in-out;
+}
+.search_box input {
+ width: 70%;
+ font-size: 1em;
+ margin: 0px;
+ padding:1%;
+ border: none;
+ background: #fff;
+}
+.search_box input.search_icon {
+ clear: both;
+ width:28%;
+ height: auto;
+ padding: 1%;
+ margin: 0;
+ float: right;
+ border: medium none;
+ color: #FFF;
+ cursor: pointer;
+ background: #42BBA3
+;
+ opacity: 1;
+   -webkit-transition: all 0.1s ease;
+ -moz-transition: all 0.1s ease;
+ -ms-transition: all 0.1s ease;
+ -o-transition: all 0.1s ease;
+ transition: all 0.1s ease;
+}
+.search_box input.search_icon:hover {
+ background: #777;
+ -webkit-transition: all 0.1s ease;
+ -moz-transition: all 0.1s ease;
+ -ms-transition: all 0.1s ease;
+ -o-transition: all 0.1s ease;
+ transition: all 0.1s ease;
+}
+</style>-->

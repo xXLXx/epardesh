@@ -1,0 +1,33 @@
+
+.image-builtinapps { background-image:url("http://images.apple.com/macbook/overview/images/overview_builtinapps_large.jpg"); background-size:1266px 385px; width:1266px; height:385px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx) {
+  .image-builtinapps { background-image:url("http://images.apple.com/macbook/overview/images/overview_builtinapps_large_2x.jpg"); }
+}
+@media only screen and (max-width: 1068px) {
+  .image-builtinapps { background-image:url("http://images.apple.com/macbook/overview/images/overview_builtinapps_medium.jpg"); background-size:679px 190px; width:679px; height:190px; }
+}
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 144dpi), only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144), only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
+  .image-builtinapps { background-image:url("http://images.apple.com/macbook/overview/images/overview_builtinapps_medium_2x.jpg"); }
+}
+.image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_large.jpg"); background-size:1111px 1198px; width:1111px; height:1198px; }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx) {
+  .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_large_2x.jpg"); }
+}
+@media only screen and (max-width: 1068px) {
+  .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_medium.jpg"); background-size:667px 719px; width:667px; height:719px; }
+}
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 144dpi), only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144), only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
+  .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_medium_2x.jpg"); }
+}
+@media only screen and (max-width: 735px) and (max-device-width: 768px) {
+  .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_small.jpg"); background-size:406px 437px; width:406px; height:437px; }
+}
+@media only screen and (max-width: 735px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dpi), only screen and (max-width: 735px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 144), only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dppx) {
+  .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_small_2x.jpg"); }
+}
+@media only screen and (max-width: 735px) {
+  html.fluid-support .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_small.jpg"); background-size:406px 437px; width:406px; height:437px; }
+}
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 735px) and (min-resolution: 144dpi), only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 144), only screen and (max-width: 735px) and (min-resolution: 144dppx) {
+  html.fluid-support .image-osx { background-image:url("http://images.apple.com/macbook/overview/images/overview_osx_small_2x.jpg"); }
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <title>Punjabi Singer</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <!--<base href="/active-projects/bupa/web/">-->
+        <!--<base href="/">-->
+        <script>document.write('<base href="' + document.location + '" />');</script>
+        <!-- Include CSS files here-->
+
+
+
+        <!--=== Internet explorer fix ===-->
+        <!-- [if lt IE 9]>
+                <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif] -->
+
+
+
+        <!-- Angular Material style sheet -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="app/content/css/angular-material.min.css" rel="stylesheet" />
+        <link href="app/content/css/bootstrap.min.css" rel="stylesheet" />
+        <!--<link href="app/content/css/font-awesome.min.css" rel="stylesheet" />-->
+        <link href="app/content/css/animate.min.css" rel="stylesheet" />
+
+        <link href="app/content/css/psinger.css" rel="stylesheet" />
+        <link href="app/content/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="app/content/css/icon-font.css" type='text/css' />
+        <link rel="stylesheet" type="text/css" media="all" href="app/content/css/audio.css">
+        <link href="app/content/css/popuo-box.css" rel="stylesheet" type="text/css" media="all">
+        <link href="app/content/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css">
+
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+
+
+        <!--// angular Material Icons  -->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--// angular Material Icons -->
+        <script src="app/content/js/jquery-2.1.4.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    </head>
+    <body class="sticky-header left-side-collapsed">
+        <div ui-view=""></div>
+        <div ui-view="header"></div>
+        <div ui-view="content" autoscroll="true"></div>
+        <span data-cc-scroll-to-top></span>
+
+        <!-- Scripts -->
+        <script src="app/components/scripts/angular.js"></script>
+        <script src="app/components/scripts/angular-animate.js"></script>
+        <script src="app/components/scripts/angular-resource.js"></script>
+
+        <script src="app/components/bootstrap-ui/ui-bootstrap.min.js"></script>
+        <script src="app/components/scripts/bootstrap.js"></script>
+
+        <script src="app/components/scripts/ui-grid.js"></script>
+        <script src="app/components/scripts/angular-ui-router.js"></script>
+        <script src="app/components/scripts/ngStorage.js"></script>
+
+
+        <script type="text/javascript" src="app/content/js/classie.js"></script>
+        <script type="text/javascript" src="app/content/js/uisearch.js"></script>
+        <script type="text/javascript" src="app/content/js/mediaelement-and-player.min.js"></script>
+        <script type="text/javascript" src="app/content/js/responsiveslides.min.js"></script>
+        <script type="text/javascript" src="app/content/js/jquery.magnific-popup.js"></script>
+        <script type="text/javascript" src="app/content/js/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="app/content/js/jplayer.playlist.min.js"></script>
+        <script type="text/javascript" src="app/content/js/jquery.flexisel.js"></script>
+        <script type="text/javascript" src="app/content/js/jquery.nicescroll.js"></script>
+         <script type="text/javascript" src="app/content/js/scripts.js"></script>
+
+
+        <script src="app/components/scripts/angular-aria.min.js"></script>
+        <script src="app/components/scripts/angular-messages.min.js"></script>
+        <script src="app/components/scripts/angular-material.min.js"></script>
+
+        <!-----Bootstrapping(main module)------>
+        <script src="app/app.js"></script>
+        <script src="app/config.js"></script>
+
+        <!-----Services file------>
+        <script src="app/js/services/faps_admin_service.js" type="text/javascript"></script>
+
+        <!-----Directive file------>
+        <script src="app/js/directives/googleautocomplete.js"></script>
+        <!-----Routes file------>
+        <script src="app/routes.js"></script>
+        <!-----controller files------>
+        <script src="app/js/controllers/header.js"></script>
+        <script src="app/js/controllers/home.js"></script>
+        <script src="app/js/controllers/messages.js"></script>
+        <script src="app/js/controllers/artist.js"></script>
+        <script src="app/js/controllers/register.js"></script>
+        <script src="app/js/controllers/change_password.js"></script>
+          <script src="app/js/controllers/view_artist_profile.js"></script>
+    <script src="app/js/controllers/add_plan.js"></script>
+
+          <script src="app/js/controllers/Forgot_password.js"></script>
+            <script src="app/js/controllers/artist_table.js"></script>
+            <script src="app/js/controllers/company_table.js"></script>
+            <script src="app/js/controllers/artist_plan.js"></script>
+            <script src="app/js/controllers/company_plan.js"></script>
+              <script src="app/js/controllers/artist_view.js"></script>
+
+
+        <!--//........... data table ...........\\-->
+<!--        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-datatables/0.5.5/angular-datatables.js'></script>
+        <link rel='stylesheet prefetch' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>--> 
+
+
+     <script src="app/components/scripts/datatables/datatables.bootstrap.js"></script>
+        <script src="app/components/scripts/datatables/jquery.datatables.js"></script> 
+        <link href="app/content/css/dataTables.bootstrap.css" rel="stylesheet" />
+        <!--//........... ./data table ...........\\-->
+
+    </body>
+
+</html>

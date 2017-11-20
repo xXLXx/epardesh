@@ -1,0 +1,35 @@
+<div id="preloader">
+   <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+   <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="Mbadword">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Manage Badwords
+                <small></small>
+            </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <!--<h3 class="box-title"> Manage Badwords</h3>-->
+                </div>
+                <div>
+                    <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <textarea cols="70" rows="10" id="mytextarea"></textarea><br><br>
+                    <button class="btn btn-primary btn-sm" id="manage_word">Update</button>
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">            
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->        
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+</div>
+<script>
+    active("badword-filter");
+</script>

@@ -1,0 +1,3709 @@
+//test file.
+
+doctype html
+html
+    head
+        link(href='/stylesheets/style.css', rel='stylesheet')
+    body
+        h1 EPardesh API Test File
+        h2 Version: 1.0.0
+        h3 Basepath: http://54.172.109.78:4000
+
+        form(action='/register_user', method='post')
+            h3 Register a New User
+            .parameter Description
+            p This API is used to register a new user through Email address for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /register_user
+            .parameter Input Parameters
+            label first name:
+            input(type='text', name='first_name')
+            label last_name:
+            input(type='text', name='last_name')
+            label email:
+            input(type='text', name='email')
+            br
+            br
+            label phone:
+            input(type='text', name='phone')
+            label city:
+            input(type='text', name='city')
+            label state:
+            input(type='text', name='state')
+            br
+            br
+            label country:
+            input(type='text', name='country')
+            label address:
+            input(type='text', name='address')
+            label password :
+            input(type='text', name='password')
+            br
+            br
+            label user_type:
+            input(type='text', name='user_type')
+            label business_name:
+            input(type='text', name='business_name')
+            label website:
+            input(type='text', name='website')
+            input(type='submit',value='submit')
+            br
+
+
+        form(action='/login_user', method='post')
+            h3 Login User
+            .parameter Description
+            p This API is used to login a user through Email address and password for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /login_user
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            label password :
+            input(type='text', name='password')
+            input(type='submit',value='login')
+            br
+
+        form(action='/forgot_password', method='post')
+            h3 Forgot Password
+            .parameter Description
+            p This API is used to when user forgot his/her password for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /forgot_password
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/admin_login', method='post')
+            h3 Admin Login
+            .parameter Description
+            p This API is used for admin login for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_login
+            .parameter Input Parameters
+            label user_name:
+            input(type='text', name='user_name')
+            label Password :
+            input(type='text', name='password')
+            input(type='submit',value='login')
+            br
+
+        form(action='/epardesh_categories', method='post')
+            h3 Epardesh Categories
+            .parameter Description
+            p This API is used to add epardesh categories or subcategories for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /epardesh_categories
+            .parameter Input Parameters
+            label category_name:
+            input(type='text', name='category_name')
+            label parent_id:
+            input(type='text', name='parent_id')
+            label status:
+            input(type='text', name='status')
+            label position:
+            input(type='text', name='position')
+            input(type='submit',value='add')
+            br
+
+        form(action='/view_epardesh_categories', method='post')
+            h3 View Epardesh categories
+            .parameter Description
+            p This API is used to view all epardesh categories for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_epardesh_categories
+            .parameter Input Parameters
+            input(type='submit',value='view_epardesh_categories')
+            br
+
+        form(action='/view_epardesh_sub_categories', method='post')
+            h3 View Epardesh sub categories
+            .parameter Description
+            p This API is used to view all sub-categories of a particular category for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_epardesh_sub_categories
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            input(type='submit',value='view_epardesh_sub_categories')
+            br
+
+        form(action='/edit_epardesh_categories', method='post')
+            h3 Edit Epardesh categories
+            .parameter Description
+            p This API is used to edit categories and sub-categories for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_epardesh_categories
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            label category_name:
+            input(type='text', name='category_name')
+            label parent_id:
+            input(type='text', name='parent_id')
+            label status:
+            input(type='text', name='status')
+            label position:
+            input(type='text', name='position')
+            input(type='submit',value='update')
+            br
+
+        form(action='/delete_epardesh_categories', method='post')
+            h3 Delete Epardesh categories
+            .parameter Description
+            p This API is used to delete epardesh_categories and sub_categories for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_epardesh_categories
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            input(type='submit',value='delete_epardesh_categories')
+            br
+
+        form(action='/view_epardesh_states', method='post')
+            h3 View Epardesh states
+            .parameter Description
+            p This API is used to view states for desired country.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_epardesh_states
+            .parameter Input Parameters
+            label country_id:
+            input(type='text', name='country_id')
+            input(type='submit',value='view_epardesh_states')
+            br
+
+        form(action='/view_epardesh_cities', method='post')
+            h3 View Epardesh cities
+            .parameter Description
+            p This API is used to view cities in particular state.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_epardesh_cities
+            .parameter Input Parameters
+            label country_id:
+            input(type='text', name='country_id')
+            label state_id:
+            input(type='text', name='state_id')
+            input(type='submit',value='view_epardesh_cities')
+            br
+
+        form(action='/update_password', method='post')
+            h3 Update Password
+            .parameter Description
+            p This API is used to when user update his/her password for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_password
+            .parameter Input Parameters
+            label activation_code:
+            input(type='text', name='activation_code')
+            label new_password :
+            input(type='text', name='new_password')
+            input(type='submit',value='update_password')
+            br
+
+        form(action='/change_password', method='post')
+            h3 change Password
+            .parameter Description
+            p This API is used when user changes his/her password for classifieds
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /change_password
+            .parameter Input Parameters
+            label old_password:
+            input(type='text', name='old_password')
+            label new_password :
+            input(type='text', name='new_password')
+            label token :
+            input(type='text', name='token')
+            input(type='submit',value='change_password')
+            br
+
+        form(action='/update_user_profile', method='post')
+            h3 Update user profile
+            .parameter Description
+            p This API is used to update user profile informations for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_user_profile
+            label email :
+            input(type='text', name='email')
+            label first_name :
+            input(type='text', name='first_name')
+            label last_name :
+            input(type='text', name='last_name')
+            br
+            br
+            label phone :
+            input(type='text', name='phone')
+            label phone1 :
+            input(type='text', name='phone1')
+            label phone2 :
+            input(type='text', name='phone2')
+            label city :
+            input(type='text', name='city')
+            label state :
+            input(type='text', name='state')
+            br
+            br
+            label country :
+            input(type='text', name='country')
+            label address :
+            input(type='text', name='address')
+            label business_name :
+            input(type='text', name='business_name')
+            label website :
+            input(type='text', name='website')
+            input(type='submit',value='update_info')
+            br
+
+        form(action='/view_users_profile', method='post')
+            h3 View User profile
+            .parameter Description
+            p This API is used to view user's information
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_users_profile
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view_users_profile')
+            br
+
+        form(action='/update_badwords', method='post')
+            h3 Update badwords
+            .parameter Description
+            p This API is used when admin update bad/irrelevant words string.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_badwords
+            .parameter Input Parameters
+            label badwords_string:
+            input(type='text', name='badwords_string')
+            input(type='submit',value='update')
+            br
+
+        form(action='/view_badwords', method='post')
+            h3 view badwords string
+            .parameter Description
+            p This API is used when admin wants to view bad words string.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_badwords
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/manage_users', method='post')
+            h3 Manage users
+            .parameter Description
+            p This API is used when admin wants to view all the users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /manage_users
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/add_plans', method='post')
+            h3 Add plans
+            .parameter Description
+            p This API is used when admin wants to add new plans.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_plans
+            .parameter Input Parameters
+            label plan_type:
+            input(type='text', name='plan_type')
+            label plan_name:
+            input(type='text', name='plan_name')
+            label plan_price:
+            input(type='text', name='plan_price')
+            input(type='submit',value='add_plans')
+            br
+
+        form(action='/view_plans', method='post')
+            h3 View plans
+            .parameter Description
+            p This API is used to view all the plans.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_plans
+            .parameter Input Parameters
+            input(type='submit',value='view_plans')
+            br
+
+        form(action='/edit_plans', method='post')
+            h3 Edit plans
+            .parameter Description
+            p This API is used by admin to edit plans.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_plans
+            .parameter Input Parameters
+            label plan_id:
+            input(type='text', name='plan_id')
+            label plan_type:
+            input(type='text', name='plan_type')
+            label plan_name:
+            input(type='text', name='plan_name')
+            label plan_price:
+            input(type='text', name='plan_price')
+            input(type='submit',value='update')
+            br
+
+        form(action='/delete_plans', method='post')
+            h3 Delete plans
+            .parameter Description
+            p This API is used by admin to delete plans.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_plans
+            .parameter Input Parameters
+            label plan_id:
+            input(type='text', name='plan_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/view_top_categories', method='post')
+            h3 View top categories on landing page
+            .parameter Description
+            p This API is used to view top categories on landing page.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_top_categories
+            .parameter Input Parameters
+            input(type='submit',value='view_top_categories')
+            br
+
+        form(action='/view_subcategories_by_categories', method='post')
+            h3 View sub categories on the basis of category
+            .parameter Description
+            p This API is used to view sub-categories of a particular category.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_subcategories_by_categories
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            input(type='submit',value='view_subcategories_by_categories')
+            br
+
+        form(action='/upload_image', method='post',enctype="multipart/form-data")
+            h3 Upload image
+            .parameter Description
+            p This API is called when user uploads image for his ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upload_image
+            .parameter Input Parameters
+            label image_type :
+            input(type='text', name='image_type')
+            label Image:
+            input(type='file', name='profile')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/update_images', method='post',enctype="multipart/form-data")
+            h3 Update images
+            .parameter Description
+            p This API is called when user changes image in manage ad section.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_images
+            .parameter Input Parameters
+            label image_id:
+            input(type='text', name='image_id')
+            label Image:
+            input(type='file', name='profile')
+            label image_type:
+            input(type='text', name='image_type')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/delete_images', method='post')
+            h3 Delete images
+            .parameter Description
+            p This API is called when user deletes any image in manage ad section.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_images
+            .parameter Input Parameters
+            label image_id:
+            input(type='text', name='image_id')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/epardesh_ads', method='post')
+            h3 Epardesh ads
+            .parameter Description
+            p This API is called when user posts his ad on Epardesh.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /epardesh_ads
+            .parameter Input Parameters
+            label ad_category_id:
+            input(type='text', name='ad_category_id')
+            label user_id:
+            input(type='text', name='user_id')
+            label ad_sub_category_id:
+            input(type='text', name='ad_sub_category_id')
+            label ad_tittle:
+            input(type='text', name='ad_tittle')
+            br
+            br
+            label ad_description:
+            input(type='text', name='ad_description')
+            label business_name:
+            input(type='text', name='business_name')
+            label ad_price:
+            input(type='text', name='ad_price')
+            label state:
+            input(type='text', name='state')
+            br
+            br
+            label city:
+            input(type='text', name='city')
+            label latitude:
+            input(type='text', name='latitude')
+            label longitude:
+            input(type='text', name='longitude')
+            label images:
+            input(type='text', name='images')
+            br
+            br
+            label ad_type:
+            input(type='text', name='ad_type')
+            label total_payable:
+            input(type='text', name='total_payable')
+            label date_posted:
+            input(type='text', name='date_posted')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/ads_by_category', method='post')
+            h3 View ads by category
+            .parameter Description
+            p This API is called when user wants to view ad on basis of category.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /ads_by_category
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/ads_by_sub_category', method='post')
+            h3 View ads by Sub-category
+            .parameter Description
+            p This API is called when user wants to view ad on basis of sub-category.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /ads_by_sub_category
+            .parameter Input Parameters
+            label category_id:
+            input(type='text', name='category_id')
+            label sub_category_id:
+            input(type='text', name='sub_category_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/approve_ad', method='post')
+            h3 approve ad
+            .parameter Description
+            p This API is used when admin approves some ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /approve_ad
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label ad_id:
+            input(type='text', name='ad_id')
+            label message:
+            input(type='text', name='message')
+            input(type='submit',value='approve')
+            br
+
+        form(action='/edit_epardesh_ads', method='post')
+            h3 Edit ad
+            .parameter Description
+            p This API is used when user wants to edit ads posted by him.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_epardesh_ads
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            label ad_tittle:
+            input(type='text', name='ad_tittle')
+            label ad_description:
+            input(type='text', name='ad_description')
+            label images:
+            input(type='text', name='images')
+            br
+            br
+            label business_name:
+            input(type='text', name='business_name')
+            label user_email:
+            input(type='text', name='user_email')
+            label user_first_name:
+            input(type='text', name='user_first_name')
+            label user_last_name:
+            input(type='text', name='user_last_name')
+            input(type='submit',value='edit')
+            br
+
+        form(action='/cancel_epardesh_ads', method='post')
+            h3 Cancel epardesh ad
+            .parameter Description
+            p This API is used when user wants to cancel ad posted by him.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /cancel_epardesh_ads
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            label date_posted:
+            input(type='text', name='date_posted')
+            input(type='submit',value='cancel')
+            br
+
+        form(action='/upgrade_to_featured', method='post')
+            h3 Upgrade to featured
+            .parameter Description
+            p This API is used when user wants to upgrade its plan to featured.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upgrade_to_featured
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='upgrade')
+            br
+
+        form(action='/upgrade_to_premium', method='post')
+            h3 Upgrade to premium
+            .parameter Description
+            p This API is used when user wants to upgrade its plan to premium.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upgrade_to_premium
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='upgrade')
+            br
+
+        form(action='/view_user_ads', method='post')
+            h3 View ads posted by user
+            .parameter Description
+            p This API is used when user wants to view all ads posted by him.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_user_ads
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_ads', method='post')
+            h3 View ads
+            .parameter Description
+            p This API is used when admin wants to see all ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_ads
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/update_user_type', method='post')
+            h3 Update user type
+            .parameter Description
+            p This API is called when user selects his user type after signing up from facebook or google+.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_user_type
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            label user_type:
+            input(type='text', name='user_type')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='update')
+            br
+
+        form(action='/upload_promotional_image', method='post',enctype="multipart/form-data")
+            h3 Upload promotional images
+            .parameter Description
+            p This API is called when user uploads image for his ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upload_promotional_image
+            .parameter Input Parameters
+            label Image:
+            input(type='file', name='profile')
+            input(type='submit',value='submit')
+            br
+
+
+
+
+        form(action='/add_promotional_ad', method='post')
+            h3 Add promotional ads.
+            .parameter Description
+            p This API is called when promotional _ads are added.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_promotional_ad
+            .parameter Input Parameters
+            label image_type :
+            input(type='text', name='image_type')
+            label image_url :
+            input(type='text', name='image_url')
+            label country :
+            input(type='text', name='country')
+            label state :
+            input(type='text', name='state')
+            br
+            br
+            label city:
+            input(type='text', name='city')
+            label is_nationwide:
+            input(type='text', name='is_nationwide')
+            label start_date:
+            input(type='text', name='start_date')
+            label end_date:
+            input(type='text', name='end_date')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/view_promotional_ads', method='post')
+            h3 View promotional_ads
+            .parameter Description
+            p This API is used when admin wants to see all promotional ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_promotional_ads
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/edit_promotional_ad', method='post')
+            h3 Edit promotional ads.
+            .parameter Description
+            p This API is called when admin wants to edit promotional ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_promotional_ad
+            .parameter Input Parameters
+            label ad_id :
+            input(type='text', name='ad_id')
+            label country :
+            input(type='text', name='country')
+            label state:
+            input(type='text', name='state')
+            label city :
+            input(type='text', name='city')
+            br
+            br
+            label is_nationwide:
+            input(type='text', name='is_nationwide')
+            label start_date :
+            input(type='text', name='start_date')
+            label end_date:
+            input(type='text', name='end_date')
+            label image_url :
+            input(type='text', name='image_url')
+            br
+            br
+            label image_type:
+            input(type='text', name='image_type')
+            input(type='submit',value='update')
+            br
+
+        form(action='/delete_promotional_ad', method='post')
+            h3 Delete promotional_ads
+            .parameter Description
+            p This API is used when admin wants to delete promotional ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_promotional_ad
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='delete')
+            br
+
+         form(action='/view_ads_by_choice', method='post')
+            h3 View ads based on choice
+            .parameter Description
+            p This API is used to view ads to users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_ads_by_choice
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label state:
+            input(type='text', name='state')
+            label city:
+            input(type='text', name='city')
+            label category_id:
+            input(type='text', name='category_id')
+            br
+            br
+            label sub_category_id:
+            input(type='text', name='sub_category_id')
+            label keyword:
+            input(type='text', name='keyword')
+            label count:
+            input(type='text', name='count')
+            input(type='submit',value='view')
+            br
+
+        form(action='/display_promotional_ads', method='post')
+            h3 Display promotional ads
+            .parameter Description
+            p This API is used to display promotional ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /display_promotional_ads
+            .parameter Input Parameters
+            label promo_region:
+            input(type='text', name='promo_region')
+            label country:
+            input(type='text', name='country')
+            input(type='submit',value='view')
+            br
+
+        form(action='/update_view_count', method='post')
+            h3 update view count
+            .parameter Description
+            p This API is used to increase view count of ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_view_count
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_ad_details', method='post')
+            h3 view ad details
+            .parameter Description
+            p This API is used to view all details of an ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_ad_details
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/contact_us', method='post')
+            h3 Contact us
+            .parameter Description
+            p This API is used to when user wants to contact us
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /contact_us
+            .parameter Input Parameters
+            label query_for:
+            input(type='text', name='query_for')
+            label query_type :
+            input(type='text', name='query_type')
+            label name:
+            input(type='text', name='name')
+            label email :
+            input(type='text', name='email')
+            br
+            br
+            label phone:
+            input(type='text', name='phone')
+            label message :
+            input(type='text', name='message')
+            input(type='submit',value='contact_us')
+            br
+
+        form(action='/delete_epardesh_ads_images', method='post')
+            h3 delete images of epardesh ads
+            .parameter Description
+            p This API is used when user deletes any images from his/her ad at time of editing.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_epardesh_ads_images
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            label images:
+            input(type='text', name='images')
+            input(type='submit',value='edit')
+            br
+
+        form(action='/change_admin_password', method='post')
+            h3 change admin Password
+            .parameter Description
+            p This API is used when admin changes his/her password
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /change_admin_password
+            .parameter Input Parameters
+            label old_password:
+            input(type='text', name='old_password')
+            label new_password :
+            input(type='text', name='new_password')
+            label access_token :
+            input(type='text', name='access_token')
+            input(type='submit',value='change_password')
+            br
+
+        form(action='/auto_suggest', method='post')
+            h3 Auto suggest
+            .parameter Description
+            p This API is used to give auto suggestion for search.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /auto_suggest
+            .parameter Input Parameters
+            label keyword:
+            input(type='text', name='keyword')
+            input(type='submit',value='get_suggeation')
+            br
+
+        form(action='/check_email', method='post')
+            h3 Check email exists or not
+            .parameter Description
+            p This API is used to check if email exists or not.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /check_email
+            .parameter Input Parameters
+            label Email:
+            input(type='text', name='email')
+            input(type='submit',value='check')
+            br
+
+        form(action='/check_ad_tittle', method='post')
+            h3 Check ad tittle exists or not
+            .parameter Description
+            p This API is used to check if ad tittle exists or not.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /check_ad_tittle
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label ad_tittle:
+            input(type='text', name='ad_tittle')
+            label ad_category_id:
+            input(type='text', name='ad_category_id')
+            label ad_sub_category_id:
+            input(type='text', name='ad_sub_category_id')
+            input(type='submit',value='check')
+            br
+
+        form(action='/view_special_categories', method='post')
+            h3 view special categories
+            .parameter Description
+            p This API is used to view special categories.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_special_categories
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/approve_ad_by_user', method='post')
+            h3 approve ad by user
+            .parameter Description
+            p This API is used when admin approves some ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /approve_ad_by_user
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='approve')
+            br
+
+        form(action='/view_top_featured_ads', method='post')
+            h3 view top featured ads
+            .parameter Description
+            p This API is used to display top featured ads on home page.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_top_featured_ads
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_full_ad_info', method='post')
+            h3 view full ad info
+            .parameter Description
+            p This API is used to display all ad information to admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_full_ad_info
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='view_full_ad_info')
+            br
+
+
+        form(action='/contact_business_owner', method='post')
+            h3 contact business owner
+            .parameter Description
+            p This API is used when user wants to connect with business user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /contact_business_owner
+            .parameter Input Parameters
+            label name:
+            input(type='text', name='name')
+            label email:
+            input(type='text', name='email')
+            label phone:
+            input(type='text', name='phone')
+            label business_id:
+            input(type='text', name='business_id')
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='view')
+            br
+            br
+           
+
+        form(action='/admin_delete_ad', method='post')
+            h3 Admin delete ad
+            .parameter Description
+            p This API is used when admin wants to delete any ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_delete_ad
+            .parameter Input Parameters
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/admin_block_unblock_ad', method='post')
+            h3 Admin block or unblock ad
+            .parameter Description
+            p This API is used when admin blocks or unblocks any ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_block_unblock_ad
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='block/unblock')
+            br
+
+        form(action='/delete_users', method='post')
+            h3 delete users
+            .parameter Description
+            p This API is used to when admin wants to delete any user from classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_users
+            .parameter Input Parameters
+            label user_array:
+            input(type='text', name='user_array')
+            input(type='submit',value='Delete')
+            br
+
+        form(action='/top_categories', method='post')
+            h3 view top categories
+            .parameter Description
+            p This API is used to view top 24 categories.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /top_categories
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/featured_and_trending_ads', method='post')
+            h3 view featured and trending ads
+            .parameter Description
+            p This API is used to view top featured and trending ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /featured_and_trending_ads
+            .parameter Input Parameters
+            label lat:
+            input(type='text', name='lat')
+            label long:
+            input(type='text', name='long')
+            input(type='submit',value='view')
+            br
+            
+        form(action='/add_favourite_ad', method='post')
+            h3 add favourite ads
+            .parameter Description
+            p This API is used to add ads to favourites.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_favourite_ad
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='add')
+            br
+            
+        form(action='/remove_favourite_ad', method='post')
+            h3 Remove favourite ads
+            .parameter Description
+            p This API is used to remove ads from favourites.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /remove_favourite_ad
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label favourite_id:
+            input(type='text', name='favourite_id')
+            input(type='submit',value='remove')
+            br
+
+        form(action='/filter_ads', method='post')
+            h3 filter ads
+            .parameter Description
+            p This API is used to filter ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /filter_ads
+            .parameter Input Parameters
+            label min_price:
+            input(type='text', name='min_price')
+            label max_price:
+            input(type='text', name='max_price')
+            label posted_within_day:
+            input(type='text', name='posted_within_day')
+            label title:
+            input(type='text', name='title')
+            br
+            br
+            label has_image:
+            input(type='text', name='has_image')
+            label latitude:
+            input(type='text', name='latitude')
+            label longitude:
+            input(type='text', name='longitude')
+            label min_miles:
+            input(type='text', name='min_miles')
+            br
+            br
+            label max_miles:
+            input(type='text', name='max_miles')
+            label user_id:
+            input(type='text', name='user_id')
+            label category_id:
+            input(type='text', name='category_id')
+            label sub_category_id:
+            input(type='text', name='sub_category_id')
+            input(type='submit',value='filter')
+            br
+
+        form(action='/global_search', method='post')
+            h3 view ads searched by user
+            .parameter Description
+            p This API is used to view ads based on user's choice.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /global_search
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label category_id:
+            input(type='text', name='category_id')
+            label subcategory_id:
+            input(type='text', name='subcategory_id')
+            label keyword:
+            input(type='text', name='keyword')
+            br
+            br
+            label lattitude:
+            input(type='text', name='lattitude')
+            label longitude:
+            input(type='text', name='longitude')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/add_events', method='post')
+            h3 Add events
+            .parameter Description
+            p This API is used to add new events by user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_events
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            label event_tittle:
+            input(type='text', name='event_tittle')
+            label location_type:
+            input(type='text', name='location_type')
+            label plan_id:
+            input(type='text', name='plan_id')
+            br
+            br
+            label total_payable:
+            input(type='text', name='total_payable')
+            label event_url:
+            input(type='text', name='event_url')
+            label event_address:
+            input(type='text', name='event_address')
+            label event_lattitude:
+            input(type='text', name='event_lattitude')
+            br
+            br
+            label event_longitude:
+            input(type='text', name='event_longitude')
+            label start_date:
+            input(type='text', name='start_date')
+            label start_time:
+            input(type='text', name='start_time')
+            label end_date:
+            input(type='text', name='end_date')
+            br
+            br
+            label end_time:
+            input(type='text', name='end_time')
+            label timezone:
+            input(type='text', name='timezone')
+            label event_image:
+            input(type='text', name='event_image')
+            label event_phone:
+            input(type='text', name='event_phone')
+            br
+            br
+            label description:
+            input(type='text', name='description')
+            label organisor:
+            input(type='text', name='organisor')
+            label performer:
+            input(type='text', name='performer')
+            label performance_type:
+            input(type='text', name='performance_type')
+            br
+            br
+            label event_ticket_status:
+            input(type='text', name='event_ticket_status')
+            label buy_url:
+            input(type='text', name='buy_url')
+            input(type='submit',value='post')
+            br
+
+        form(action='/approve_events', method='post')
+            h3 approve events
+            .parameter Description
+            p This API is used to approve event via email.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /approve_events
+            .parameter Input Parameters
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='approve_event')
+            br
+
+        form(action='/view_my_events', method='post')
+            h3 view my events
+            .parameter Description
+            p This API is used to view all events posted by that user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_my_events
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='get_events')
+            br
+
+        form(action='/edit_event', method='post')
+            h3 edit events
+            .parameter Description
+            p This API is used to update events by user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_event
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label event_id:
+            input(type='text', name='event_id')
+            label event_tittle:
+            input(type='text', name='event_tittle')
+            label location_type:
+            input(type='text', name='location_type')
+            br
+            br
+            label plan_id:
+            input(type='text', name='plan_id')
+            label event_url:
+            input(type='text', name='event_url')
+            label event_address:
+            input(type='text', name='event_address')
+            label event_lattitude:
+            input(type='text', name='event_lattitude')
+            br
+            br
+            label event_longitude:
+            input(type='text', name='event_longitude')
+            label start_date:
+            input(type='text', name='start_date')
+            label start_time:
+            input(type='text', name='start_time')
+            label end_date:
+            input(type='text', name='end_date')
+            br
+            br
+            label end_time:
+            input(type='text', name='end_time')
+            label timezone:
+            input(type='text', name='timezone')
+            label event_image:
+            input(type='text', name='event_image')
+            label event_phone:
+            input(type='text', name='event_phone')
+            br
+            br
+            label description:
+            input(type='text', name='description')
+            label organisor:
+            input(type='text', name='organisor')
+            label performer:
+            input(type='text', name='performer')
+            label performance_type:
+            input(type='text', name='performance_type')
+            br
+            br
+            label event_ticket_status:
+            input(type='text', name='event_ticket_status')
+            label buy_url:
+            input(type='text', name='buy_url')
+            label user_email:
+            input(type='text', name='user_email')
+            label user_first_name:
+            input(type='text', name='user_first_name')
+            input(type='submit',value='update')
+            br
+
+        form(action='/delete/cancel_event', method='post')
+            h3 delete or cancel event
+            .parameter Description
+            p This API is used to delete or cancel an event by user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete/cancel_event
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='delete/cancel')
+            br
+
+        form(action='/upgrade_event_plan', method='post')
+            h3 upgrade event plan premium or featured
+            .parameter Description
+            p This API is used to upgrade event to premium or featured by user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upgrade_event_plan
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label access_token:
+            input(type='text', name='access_token')
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='upgrade')
+            br
+
+        form(action='/view_all_events', method='post')
+            h3 view all events
+            .parameter Description
+            p This API is used to view all events to admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_all_events
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/admin_delete_event', method='post')
+            h3 Admin delete event.
+            .parameter Description
+            p This API is used when admin wants to delete an event.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_delete_event
+            .parameter Input Parameters
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/top_featured_events', method='post')
+            h3 Top featured events.
+            .parameter Description
+            p This API is used to view top featured event in that area.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /top_featured_events
+            .parameter Input Parameters
+            label lattitude:
+            input(type='text', name='lattitude')
+            label longitude:
+            input(type='text', name='longitude')
+            input(type='submit',value='View')
+            br
+
+        form(action='/add_favourite_event', method='post')
+            h3 Add favourite events.
+            .parameter Description
+            p This API is used when user marks any event as favourite.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_favourite_event
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='Add')
+            br
+
+        form(action='/remove_favourite_event', method='post')
+            h3 remove event from favourite .
+            .parameter Description
+            p This API is used when user removes any event from favourite.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /remove_favourite_event
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label favourite_id:
+            input(type='text', name='favourite_id')
+            input(type='submit',value='remove')
+            br
+
+        form(action='/view_favourite_event', method='post')
+            h3 view favourite events.
+            .parameter Description
+            p This API is used when user wants to see his favourite events.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_favourite_event
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+            
+        form(action='/view_event', method='post')
+            h3 view events.
+            .parameter Description
+            p This API is used to view event details.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_event
+            .parameter Input Parameters
+            label event_id:
+            input(type='text', name='event_id')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+
+        form(action='/view_upcoming_events', method='post')
+            h3 view upcoming events.
+            .parameter Description
+            p This API is used to view upcoming events.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_upcoming_events
+            .parameter Input Parameters
+            label no_of_days:
+            input(type='text', name='no_of_days')
+            label user_id:
+            input(type='text', name='user_id')
+            label lattitude:
+            input(type='text', name='lattitude')
+            label longitude:
+            input(type='text', name='longitude')
+            input(type='submit',value='view')
+            br
+
+        form(action='/filter_events', method='post')
+            h3 filter events.
+            .parameter Description
+            p This API is used to filter events as per user's choice.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /filter_events
+            .parameter Input Parameters
+            label event_name:
+            input(type='text', name='event_name')
+            label to_date:
+            input(type='text', name='to_date')
+            label from_date:
+            input(type='text', name='from_date')
+            input(type='submit',value='filter')
+            br
+
+        form(action='/check_event_tittle', method='post')
+            h3 check events tittle.
+            .parameter Description
+            p This API is used to check if event tittle is available or already taken..
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /check_event_tittle
+            .parameter Input Parameters
+            label event_tittle:
+            input(type='text', name='event_tittle')
+            input(type='submit',value='check')
+            br
+
+        form(action='/add_training_courses', method='post')
+            h3 add training courses.
+            .parameter Description
+            p This API is used when admin wants to add new courses in IT training.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_training_courses
+            .parameter Input Parameters
+            label course_name:
+            input(type='text', name='course_name')
+            input(type='submit',value='Add')
+            br
+
+        form(action='/view_all_courses', method='post')
+            h3 view all training courses.
+            .parameter Description
+            p This API is used to view all available training courses.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_all_courses
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/edit_training_course', method='post')
+            h3 edit training course.
+            .parameter Description
+            p This API is used when admin wants to edit training course.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_training_course
+            .parameter Input Parameters
+            label course_id:
+            input(type='text', name='course_id')
+            label course_name:
+            input(type='text', name='course_name')
+            input(type='submit',value='save')
+            br
+
+        form(action='/training_count', method='post')
+            h3 get count of ads for training course.
+            .parameter Description
+            p This API is used to get count of ads corresponding to training course.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /training_count
+            .parameter Input Parameters
+            label training_course:
+            input(type='text', name='training_course')
+            input(type='submit',value='get_count')
+            br
+
+        form(action='/admin_delete_course', method='post')
+            h3 admin delete training course.
+            .parameter Description
+            p This API is used when admin wants to delete training course.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_delete_course
+            .parameter Input Parameters
+            label course_name:
+            input(type='text', name='course_name')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/contact_event_owner', method='post')
+            h3 contact event owner.
+            .parameter Description
+            p This API is used when user wants to contact event owner.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /contact_event_owner
+            .parameter Input Parameters
+            label name:
+            input(type='text', name='name')
+            label email:
+            input(type='text', name='email')
+            label phone:
+            input(type='text', name='phone')
+            label user_id:
+            input(type='text', name='user_id')
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='contact')
+            br
+            
+        form(action='/message_event', method='post')
+            h3 Send message to event owner.
+            .parameter Description
+            p This API is used when user wants to send email to event owner.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /message_event
+            .parameter Input Parameters
+            label sender_email:
+            input(type='text', name='sender_email')
+            label sender_name:
+            input(type='text', name='sender_name')
+            label message:
+            input(type='text', name='message')
+            label user_id:
+            input(type='text', name='user_id')
+            br
+            br
+            label event_tittle:
+            input(type='text', name='event_tittle')
+            label event_id:
+            input(type='text', name='event_id')
+            input(type='submit',value='message')
+            br
+
+        form(action='/add_it_training', method='post')
+            h3 add it training.
+            .parameter Description
+            p This API is used when user wants to create new it training ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_it_training
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label training_user_id:
+            input(type='text', name='training_user_id')
+            label training_course:
+            input(type='text', name='training_course')
+            label training_tittle:
+            input(type='text', name='training_tittle')
+            label training_plan_id:
+            input(type='text', name='training_plan_id')
+            br
+            br
+            label training_course_type:
+            input(type='text', name='training_course_type')
+            label training_course_url:
+            input(type='text', name='training_course_url')
+            label training_course_address:
+            input(type='text', name='training_course_address')
+            label training_lattitude:
+            input(type='text', name='training_lattitude')
+            br
+            br
+            label training_longitude:
+            input(type='text', name='training_longitude')
+            label training_start_date:
+            input(type='text', name='training_start_date')
+            label training_start_time:
+            input(type='text', name='training_start_time')
+            label training_end_date:
+            input(type='text', name='training_end_date')
+            br
+            br
+            label training_end_time:
+            input(type='text', name='training_end_time')
+            label timezone:
+            input(type='text', name='timezone')
+            label training_image:
+            input(type='text', name='training_image')
+            label training_provider:
+            input(type='text', name='training_provider')
+            br
+            br
+            label training_fee_min:
+            input(type='text', name='training_fee_min')
+            label training_fee_max:
+            input(type='text', name='training_fee_max')
+            label training_description:
+            input(type='text', name='training_description')
+            label training_phone:
+            input(type='text', name='training_phone')
+            br
+            br
+            label training_email:
+            input(type='text', name='training_email')
+            label training_batch:
+            input(type='text', name='training_batch')
+            input(type='submit',value='Add')
+            br
+
+        form(action='/approve_it_training', method='post')
+            h3 approve it-training
+            .parameter Description
+            p This API is used to approve it_training via email.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /approve_it_training
+            .parameter Input Parameters
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='approve_training')
+            br
+
+        form(action='/edit_training_ad', method='post')
+            h3 edit it training.
+            .parameter Description
+            p This API is used when user wants to edit it training ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_training_ad
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label training_id:
+            input(type='text', name='training_id')
+            label training_course:
+            input(type='text', name='training_course')
+            label training_tittle:
+            input(type='text', name='training_tittle')
+            label training_plan_id:
+            input(type='text', name='training_plan_id')
+            br
+            br
+            label training_course_type:
+            input(type='text', name='training_course_type')
+            label training_course_url:
+            input(type='text', name='training_course_url')
+            label training_course_address:
+            input(type='text', name='training_course_address')
+            label training_lattitude:
+            input(type='text', name='training_lattitude')
+            br
+            br
+            label training_longitude:
+            input(type='text', name='training_longitude')
+            label training_start_date:
+            input(type='text', name='training_start_date')
+            label training_start_time:
+            input(type='text', name='training_start_time')
+            label training_end_date:
+            input(type='text', name='training_end_date')
+            br
+            br
+            label training_end_time:
+            input(type='text', name='training_end_time')
+            label timezone:
+            input(type='text', name='timezone')
+            label training_image:
+            input(type='text', name='training_image')
+            label training_provider:
+            input(type='text', name='training_provider')
+            br
+            br
+            label training_fee_min:
+            input(type='text', name='training_fee_min')
+            label training_fee_max:
+            input(type='text', name='training_fee_max')
+            label training_description:
+            input(type='text', name='training_description')
+            label training_phone:
+            input(type='text', name='training_phone')
+            br
+            br
+            label training_email:
+            input(type='text', name='training_email')
+            label training_batch:
+            input(type='text', name='training_batch')
+            label user_email:
+            input(type='text', name='user_email')
+            label user_first_name:
+            input(type='text', name='user_first_name')
+            input(type='submit',value='update')
+            br
+
+        form(action='/view_my_training_ads', method='post')
+            h3 view my training ads.
+            .parameter Description
+            p This API is used when user wants to view training ads posted by him.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_my_training_ads
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/delete/cancel_training_ad', method='post')
+            h3 delete/cancel training ads.
+            .parameter Description
+            p This API is used when user wants to delete/cancel training ads posted by him.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete/cancel_training_ad
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/upgrade_training_plan', method='post')
+            h3 upgrade training plan.
+            .parameter Description
+            p This API is used when user wants to upgrade training ad plan.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upgrade_training_plan
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label access_token:
+            input(type='text', name='access_token')
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='upgrade')
+            br
+
+        form(action='/view_all_training_ads', method='post')
+            h3 view all training ads.
+            .parameter Description
+            p This API is used when user wants to upgrade training ad plan.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_all_training_ads
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/admin_delete_training_ad', method='post')
+            h3 admin delete training ads.
+            .parameter Description
+            p This API is used when admin wants to delete any training ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_delete_training_ad
+            .parameter Input Parameters
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/view_training_ad_details', method='post')
+            h3 view training ad details.
+            .parameter Description
+            p This API is used to view details of any training ad.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_training_ad_details
+            .parameter Input Parameters
+            label training_id:
+            input(type='text', name='training_id')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/add_favourite_training', method='post')
+            h3 Add favourite training ads.
+            .parameter Description
+            p This API is used when user marks any training ad as favourite.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_favourite_training
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='Add')
+            br
+
+        form(action='/remove_favourite_training', method='post')
+            h3 remove training ads from favourite .
+            .parameter Description
+            p This API is used when user removes any training ad from favourite.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /remove_favourite_training
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label favourite_id:
+            input(type='text', name='favourite_id')
+            input(type='submit',value='remove')
+            br
+
+        form(action='/view_favourite_training_ads', method='post')
+            h3 View favourite training ads.
+            .parameter Description
+            p This API is used when user wants to view his favourite training ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_favourite_training_ads
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/contact_training_owner', method='post')
+            h3 contact training owner.
+            .parameter Description
+            p This API is used when user wants to contact training owner.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /contact_training_owner
+            .parameter Input Parameters
+            label training_email:
+            input(type='text', name='training_email')
+            label sender_name:
+            input(type='text', name='sender_name')
+            label sender_phone:
+            input(type='text', name='sender_phone')
+            label sender_email:
+            input(type='text', name='sender_email')
+            label user_id:
+            input(type='text', name='user_id')
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='send')
+            br
+
+        form(action='/send_email/msg', method='post')
+            h3 send email/msg to training owner.
+            .parameter Description
+            p This API is used when user wants to send email/msg to training owner.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_email/msg
+            .parameter Input Parameters
+            label sender_email:
+            input(type='text', name='sender_email')
+            label sender_name:
+            input(type='text', name='sender_name')
+            label message:
+            input(type='text', name='message')
+            label receiver_email:
+            input(type='text', name='receiver_email')
+            label user_id:
+            input(type='text', name='user_id')
+            label training_id:
+            input(type='text', name='training_id')
+            input(type='submit',value='send')
+            br
+
+        form(action='/view_top_featured_training_ads', method='post')
+            h3 view top 5 featured IT-training ads.
+            .parameter Description
+            p This API is used to view top 5 featured IT-training ads..
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_top_featured_training_ads
+            .parameter Input Parameters
+            label lattitude:
+            input(type='text', name='lattitude')
+            label longitude:
+            input(type='text', name='longitude')
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_favourites', method='post')
+            h3 view favourite training, events, ads.
+            .parameter Description
+            p This API is used when user wants to see his favourite training, events, ads.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_favourites
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/add_promocode', method='post')
+            h3 Add promocodes for classifieds.
+            .parameter Description
+            p This API is used when admin wants to add a new promocode.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /add_promocode
+            .parameter Input Parameters
+            label name:
+            input(type='text', name='name')
+            label discount:
+            input(type='text', name='discount')
+            label description:
+            input(type='text', name='description')
+            label is_active_status:
+            input(type='text', name='is_active_status')
+            br
+            br
+            label display_status:
+            input(type='text', name='display_status')
+            input(type='submit',value='Add')
+            br
+
+        form(action='/check_training_tittle', method='post')
+            h3 Check training tittle exists or not
+            .parameter Description
+            p This API is used to check if training tittle exists or not.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /check_training_tittle
+            .parameter Input Parameters
+            label training_tittle:
+            input(type='text', name='training_tittle')
+            input(type='submit',value='check')
+            br
+
+        form(action='/filter_training', method='post')
+            h3 filter training.
+            .parameter Description
+            p This API is used to filter training as per user's choice.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /filter_training
+            .parameter Input Parameters
+            label training_name:
+            input(type='text', name='training_name')
+            label start_date:
+            input(type='text', name='start_date')
+            label end_date:
+            input(type='text', name='end_date')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='filter')
+            br
+            
+        form(action='/view_nearby_training', method='post')
+            h3 View nearby training.
+            .parameter Description
+            p This API is used to view training ads in near-by areas.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_nearby_training
+            .parameter Input Parameters
+            label latitude:
+            input(type='text', name='latitude')
+            label longitude:
+            input(type='text', name='longitude')
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/delete_promocode', method='post')
+            h3 delete promocodes for classifieds.
+            .parameter Description
+            p This API is used when admin wants to delete any promocode.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_promocode
+            .parameter Input Parameters
+            label promocode_id:
+            input(type='text', name='promocode_id')
+            input(type='submit',value='Delete')
+            br
+
+        form(action='/view_all_promocode', method='post')
+            h3 view all promocodes for classifieds.
+            .parameter Description
+            p This API is used to view all promocodes for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_all_promocode
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_homepage_promocode', method='post')
+            h3 view all promocodes that are to be shown on classifieds homepage.
+            .parameter Description
+            p This API is used to view all promocodes view all promocodes that are to be shown on classifieds homepage.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_homepage_promocode
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+            
+        form(action='/apply_classified_promocode', method='post')
+            h3 Apply classified promocodes.
+            .parameter Description
+            p This API is called when user successfully applies a promocode for classifieds.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /apply_classified_promocode
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label promocode:
+            input(type='text', name='promocode')
+            input(type='submit',value='save')
+            br
+
+        form(action='/check_applied_promocode', method='post')
+            h3 Check applied promocode.
+            .parameter Description
+            p This API is called to check if given promocode is valid for particular user or not.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /check_applied_promocode
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label promocode:
+            input(type='text', name='promocode')
+            input(type='submit',value='check')
+            br
+
+        form(action='/find_india_cities', method='post')
+            h3 find indian cities
+            .parameter Description
+            p This API is called to view cities for indian-states.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /find_india_cities
+            .parameter Input Parameters
+            label state_array:
+            input(type='text', name='state_array')
+            input(type='submit',value='view')
+            br
+            
+        form(action='/find_usa_cities', method='post')
+            h3 find usa cities
+            .parameter Description
+            p This API is called to view cities for usa-states.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /find_usa_cities
+            .parameter Input Parameters
+            label state_array:
+            input(type='text', name='state_array')
+            input(type='submit',value='view')
+            br
+
+        form(action='/find_states', method='post')
+            h3 find states
+            .parameter Description
+            p This API is called to view state for countries.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /find_states
+            .parameter Input Parameters
+            label country_array:
+            input(type='text', name='country_array')
+            input(type='submit',value='view')
+            br
+
+        form(action='/send_email_in_ad', method='post')
+            h3 send email in ad.
+            .parameter Description
+            p This API is used to send email to ad owner.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_email_in_ad
+            .parameter Input Parameters
+            label sender_email:
+            input(type='text', name='sender_email')
+            label receiver_email:
+            input(type='text', name='receiver_email')
+            label message:
+            input(type='text', name='message')
+            label sender_name:
+            input(type='text', name='sender_name')
+            br
+            br
+            label sender_phone:
+            input(type='text', name='sender_phone')
+            label ad_id:
+            input(type='text', name='ad_id')
+            input(type='submit',value='send')
+            br
+
+        form(action='/auto_suggest_tittle', method='post')
+            h3 Auto suggest Tittle
+            .parameter Description
+            p This API is used to give tittle suggestion for search.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /auto_suggest_tittle
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label keyword:
+            input(type='text', name='keyword')
+            input(type='submit',value='get_suggestion')
+            br
+
+
+
+
+        h3 **************MATRIMONY***************
+
+
+
+
+        form(action='/register_matrimony_user', method='post')
+            h3 Register a New User
+            .parameter Description
+            p This API is used to register a new user through Email address for matrimony
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /register_matrimony_user
+            .parameter Input Parameters
+            label first name:
+            input(type='text', name='first_name')
+            label last_name:
+            input(type='text', name='last_name')
+            label email:
+            input(type='text', name='email')
+            br
+            br
+            label password :
+            input(type='text', name='password')
+            label mobile:
+            input(type='text', name='mobile')
+            label alternate_mobile:
+            input(type='text', name='alternate_mobile')
+            label city:
+            input(type='text', name='city')
+            label state:
+            input(type='text', name='state')
+            br
+            br
+            label country:
+            input(type='text', name='country')
+            label gender:
+            input(type='text', name='gender')
+            label plan:
+            input(type='text', name='plan')
+            label txn_id:
+            input(type='text', name='txn_id')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/login_matrimony_user', method='post')
+            h3 Login User
+            .parameter Description
+            p This API is used to login a user through Email address and password for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /login_matrimony_user
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            label password :
+            input(type='text', name='password')
+            input(type='submit',value='login')
+            br
+
+        form(action='/change_matrimony_password', method='post')
+            h3 change Password
+            .parameter Description
+            p This API is used when user changes his/her password for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /change_matrimony_password
+            .parameter Input Parameters
+            label old_password:
+            input(type='text', name='old_password')
+            label new_password :
+            input(type='text', name='new_password')
+            label access_token :
+            input(type='text', name='access_token')
+            input(type='submit',value='change_password')
+            br
+
+        form(action='/forgot_matrimony_password', method='post')
+            h3 Forgot Password
+            .parameter Description
+            p This API is used to when user forgot his/her password for matrimony
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /forgot_matrimony_password
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            input(type='submit',value='submit')
+            br
+
+        form(action='/update_matrimony_password', method='post')
+            h3 Update Password
+            .parameter Description
+            p This API is used to when user update his/her password for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_matrimony_password
+            .parameter Input Parameters
+            label activation_code:
+            input(type='text', name='activation_code')
+            label new_password :
+            input(type='text', name='new_password')
+            input(type='submit',value='update_password')
+            br
+
+        form(action='/view_matrimony_religions', method='post')
+            h3 View matrimony religions
+            .parameter Description
+            p This API is used to view religions for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_matrimony_religions
+            .parameter Input Parameters
+            label country_code:
+            input(type='text', name='country_code')
+            input(type='submit',value='view_matrimony_religions')
+            br
+
+        form(action='/update_matrimony_user_profile', method='post')
+            h3 update user profile
+            .parameter Description
+            p This API is used to update user's profile.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_matrimony_user_profile
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label access_token:
+            input(type='text', name='access_token')
+            label id:
+            input(type='text', name='id')
+            br
+            br
+            label about_me:
+            input(type='text', name='about_me')
+            label profile_picture:
+            input(type='text', name='profile_picture')
+            label relevant_picture:
+            input(type='text', name='relevant_picture')
+            label profile_created_by:
+            input(type='text', name='profile_created_by')
+            br
+            br
+            label date_of_birth:
+            input(type='text', name='date_of_birth')
+            label age:
+            input(type='text', name='age')
+            label martial_status:
+            input(type='text', name='martial_status')
+            br
+            br
+            label height:
+            input(type='text', name='height')
+            label height_in_cm:
+            input(type='text', name='height_in_cm')
+            label nationality:
+            input(type='text', name='nationality')
+            label current_residence:
+            input(type='text', name='current_residence')
+            label citizenship:
+            input(type='text', name='citizenship')
+            br
+            br
+            label body_type:
+            input(type='text', name='body_type')
+            label health_information:
+            input(type='text', name='health_information')
+            label diet:
+            input(type='text', name='diet')
+            label skin_tone:
+            input(type='text', name='skin_tone')
+            br
+            br
+            label any_disability:
+            input(type='text', name='any_disability')
+            label blood_group:
+            input(type='text', name='blood_group')
+            label drink:
+            input(type='text', name='drink')
+            label smoke:
+            input(type='text', name='smoke')
+            br
+            br
+            label nakshatra:
+            input(type='text', name='nakshatra')
+            label gana:
+            input(type='text', name='gana')
+            label manglik:
+            input(type='text', name='manglik')
+            br
+            br
+            label social_links:
+            input(type='text', name='social_links')
+            label professional_links:
+            input(type='text', name='professional_links')
+            label horoscope:
+            input(type='text', name='horoscope')
+            label mobile_privacy:
+            input(type='text', name='mobile_privacy')
+            br
+            br
+            label email_privacy:
+            input(type='text', name='email_privacy')
+            label connection_links_privacy:
+            input(type='text', name='connection_links_privacy')
+            label horoscope_privacy:
+            input(type='text', name='horoscope_privacy')
+            br
+            br
+            label religion:
+            input(type='text', name='religion')
+            label mother_tounge:
+            input(type='text', name='mother_tounge')
+            label community:
+            input(type='text', name='community')
+            br
+            br
+            label father_status:
+            input(type='text', name='father_status')
+            label mother_status:
+            input(type='text', name='mother_status')
+            label family_location:
+            input(type='text', name='family_location')
+            label family_type:
+            input(type='text', name='family_type')
+            br
+            br
+            label family_values:
+            input(type='text', name='family_values')
+            label affluence_level:
+            input(type='text', name='affluence_level')
+            label education:
+            input(type='text', name='education')
+            label annual_income:
+            input(type='text', name='annual_income')
+            br
+            br
+            label employer_name:
+            input(type='text', name='employer_name')
+            label working_with:
+            input(type='text', name='working_with')
+            label working_as:
+            input(type='text', name='working_as')
+            br
+            br
+            label major_subject:
+            input(type='text', name='major_subject')
+            label year_of_passing:
+            input(type='text', name='year_of_passing')
+            input(type='submit',value='update')
+            br
+
+        form(action='/update_matrimony_partner_preferences', method='post')
+            h3 update partner profile
+            .parameter Description
+            p This API is used to update user's partner preferences.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_matrimony_partner_preferences
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label access_token:
+            input(type='text', name='access_token')
+            label id:
+            input(type='text', name='id')
+            br
+            br
+            label min_age:
+            input(type='text', name='min_age')
+            label max_age:
+            input(type='text', name='max_age')
+            label martial_status:
+            input(type='text', name='martial_status')
+            label min_height:
+            input(type='text', name='min_height')
+            label min_height_in_cm:
+            input(type='text', name='min_height_in_cm')
+            br
+            br
+            label max_height:
+            input(type='text', name='max_height')
+            label max_height_in_cm:
+            input(type='text', name='max_height_in_cm')
+            label body_type:
+            input(type='text', name='body_type')
+            label skin_tone:
+            input(type='text', name='skin_tone')
+            label religion:
+            input(type='text', name='religion')
+            br
+            br
+            label community:
+            input(type='text', name='community')
+            label father_status:
+            input(type='text', name='father_status')
+            label family_values:
+            input(type='text', name='family_values')
+            label affluence_level:
+            input(type='text', name='affluence_level')
+            br
+            br
+            label education:
+            input(type='text', name='education')
+            label annual_income:
+            input(type='text', name='annual_income')
+            input(type='submit',value='update')
+            br
+
+        form(action='/view_my_profile', method='post')
+            h3 View my profile
+            .parameter Description
+            p This API is used to view all profile information of user for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_my_profile
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='view_my_profile')
+            br
+
+        form(action='/view_partner_preferences', method='post')
+            h3 View partner preferences
+            .parameter Description
+            p This API is used to view partner preferences of user for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_partner_preferences
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='view_partner_preferences')
+            br
+
+        form(action='/send_request', method='post')
+            h3 send request
+            .parameter Description
+            p This API is used when user sends request to someone to connect.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_request
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label sender_user_id:
+            input(type='text', name='sender_user_id')
+            label access_token:
+            input(type='text', name='access_token')
+            label sender_first_name:
+            input(type='text', name='sender_first_name')
+            label sender_last_name:
+            input(type='text', name='sender_last_name')
+            br
+            br
+            label profile_id:
+            input(type='text', name='profile_id')
+            label sender_email:
+            input(type='text', name='sender_email')
+            label receiver_user_id:
+            input(type='text', name='receiver_user_id')
+            label receiver_email:
+            input(type='text', name='receiver_email')
+            br
+            br
+            label receiver_first_name:
+            input(type='text', name='receiver_first_name')
+            label receiver_last_name:
+            input(type='text', name='receiver_last_name')
+            label receiver_mobile:
+            input(type='text', name='receiver_mobile')
+            label is_platinum_status:
+            input(type='text', name='is_platinum_status')
+            input(type='submit',value='send_request')
+            br
+
+        form(action='/send_message', method='post')
+            h3 send message
+            .parameter Description
+            p This API is used when user sends message to someone.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_message
+            .parameter Input Parameters
+            label message:
+            input(type='text', name='message')
+            label access_token:
+            input(type='text', name='access_token')
+            label sender_name:
+            input(type='text', name='sender_name')
+            br
+            br
+            label sender_email:
+            input(type='text', name='sender_email')
+            label receiver_email:
+            input(type='text', name='receiver_email')
+            label sender_id:
+            input(type='text', name='sender_id')
+            label receiver_id:
+            input(type='text', name='receiver_id')
+            input(type='submit',value='send_message')
+            br
+
+        form(action='/view_full_profile', method='post')
+            h3 view full profile
+            .parameter Description
+            p This API is used when user views someone's profile.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_full_profile
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='view_full_profile')
+            br
+
+        form(action='/interested_profiles', method='post')
+            h3 view interested profiles
+            .parameter Description
+            p This API is used when user wants to view interested profiles.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /interested_profiles
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label user_id:
+            input(type='text', name='user_id')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='view_interested_profiles')
+            br
+
+        form(action='/accept_or_reject_request', method='post')
+            h3 accept or reject request
+            .parameter Description
+            p This API is used when user accepts or rejects any request.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /accept_or_reject_request
+            .parameter Input Parameters
+            label status:
+            input(type='text', name='status')
+            label request_id:
+            input(type='text', name='request_id')
+            label access_token:
+            input(type='text', name='access_token')
+            label sender_first_name:
+            input(type='text', name='sender_first_name')
+            label sender_last_name:
+            input(type='text', name='sender_last_name')
+            br
+            br
+            label sender_email:
+            input(type='text', name='sender_email')
+            label sender_mobile:
+            input(type='text', name='sender_mobile')
+            label receiver_first_name:
+            input(type='text', name='receiver_first_name')
+            label receiver_last_name:
+            input(type='text', name='receiver_last_name')
+            label receiver_profile_id:
+            input(type='text', name='receiver_profile_id')
+            label is_platinum_status:
+            input(type='text', name='is_platinum_status')
+            input(type='submit',value='accept_or_reject_request')
+            br
+
+        form(action='/remove_from_favourites', method='post')
+            h3 remove from favourites
+            .parameter Description
+            p This API is used when user removes anyone from favourites.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /remove_from_favourites
+            .parameter Input Parameters
+            label request_id:
+            input(type='text', name='request_id')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='remove_from_favourites')
+            br
+
+        form(action='/matrimony_search', method='post')
+            h3 matrimony search
+            .parameter Description
+            p This API is used when user searches for existing users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_search
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            label keyword:
+            input(type='text', name='keyword')
+            label gender:
+            input(type='text', name='gender')
+            label min_age:
+            input(type='text', name='min_age')
+            label max_age:
+            input(type='text', name='max_age')
+            br
+            br
+            label caste:
+            input(type='text', name='caste')
+            label country:
+            input(type='text', name='country')
+            label religion:
+            input(type='text', name='religion')
+            label mother_tounge:
+            input(type='text', name='mother_tounge')
+            br
+            br
+            label min_height:
+            input(type='text', name='min_height')
+            label max_height:
+            input(type='text', name='max_height')
+            label current_residence:
+            input(type='text', name='current_residence')
+            label education:
+            input(type='text', name='education')
+            input(type='submit',value='search')
+            br
+
+        form(action='/generate_otp', method='post')
+            h3 Generate OTP
+            .parameter Description
+            p This API is used when user generates otp for mobile number verification.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /generate_otp
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            label mobile:
+            input(type='text', name='mobile')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='generate_otp')
+            br
+
+        form(action='/verify_otp', method='post')
+            h3 verify OTP
+            .parameter Description
+            p This API is used when user enters otp for mobile number verification.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /verify_otp
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            label otp:
+            input(type='text', name='otp')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='verify_otp')
+            br
+
+       form(action='/generate_email_otp', method='post')
+            h3 Generate email OTP
+            .parameter Description
+            p This API is used when user generates otp for email verification.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /generate_email_otp
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            label email:
+            input(type='text', name='email')
+            label access_token:
+            input(type='text', name='access_token')
+            input(type='submit',value='generate_email_otp')
+            br
+
+        form(action='/verify_email_otp', method='post')
+            h3 verify email OTP
+            .parameter Description
+            p This API is used when user enters otp for email verification.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /verify_email_otp
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            label otp:
+            input(type='text', name='otp')
+            input(type='submit',value='verify_email_otp')
+            br
+
+        form(action='/view_matrimony_plans', method='post')
+            h3 view matrimony plans
+            .parameter Description
+            p This API is used to view plans to users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_matrimony_plans
+            .parameter Input Parameters
+            input(type='submit',value='view_matrimony_plans')
+            br
+
+        form(action='/view_suggested_profiles', method='post')
+            h3 view suggested profiles
+            .parameter Description
+            p This API is used to view profile suggestions to user based on their partner preferences.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_suggested_profiles
+            .parameter Input Parameters
+            label id:
+            input(type='text', name='id')
+            input(type='submit',value='view_suggested_profiles')
+            br
+
+        form(action='/send_direct_sms', method='post')
+            h3 send direct sms
+            .parameter Description
+            p This API is used to send direct sms.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_direct_sms
+            .parameter Input Parameters
+            label sender_name:
+            input(type='text', name='sender_name')
+            label access_token:
+            input(type='text', name='access_token')
+            label receiver_mobile:
+            input(type='text', name='receiver_mobile')
+            label message:
+            input(type='text', name='message')
+            input(type='submit',value='send sms')
+            br
+
+        form(action='/matrimony_inbox', method='post')
+            h3 Matrimony inbox
+            .parameter Description
+            p This API is used to view all messages received by user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_inbox
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label id:
+            input(type='text', name='id')
+            input(type='submit',value='send_direct_sms')
+            br
+
+        form(action='/view_message_thread', method='post')
+            h3 View message thread
+            .parameter Description
+            p This API is used to view all message thread between two users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_message_thread
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label sender_id:
+            input(type='text', name='sender_id')
+            label receiver_id:
+            input(type='text', name='receiver_id')
+            input(type='submit',value='view_message_thread')
+            br
+
+        form(action='/upgrade_plan', method='post')
+            h3 upgrade plan
+            .parameter Description
+            p This API is used when user wants to upgrade his plan.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upgrade_plan
+            .parameter Input Parameters
+            label access_token:
+            input(type='text', name='access_token')
+            label id:
+            input(type='text', name='id')
+            label txn_id:
+            input(type='text', name='txn_id')
+            label plan:
+            input(type='text', name='plan')
+            input(type='submit',value='upgrade')
+            br
+
+        form(action='/matrimony_manage_users', method='post')
+            h3 matrimony manage users
+            .parameter Description
+            p This API is used to view users info and count of users as per plan.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_manage_users
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/view_details', method='post')
+            h3 view details
+            .parameter Description
+            p This API is used to view user's details to admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_details
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/admin_view_plans', method='post')
+            h3 admin view plans
+            .parameter Description
+            p This API is used to view all plans to admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_view_plans
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/admin_edit_plans', method='post')
+            h3 admin edit plans
+            .parameter Description
+            p This API is used to view all plans to admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_edit_plans
+            .parameter Input Parameters
+            label plan_id:
+            input(type='text', name='plan_id')
+            label plan_name:
+            input(type='text', name='plan_name')
+            label plan_price:
+            input(type='text', name='plan_price')
+            input(type='submit',value='update')
+            br
+
+        form(action='/plan_expiration_alert', method='post')
+            h3 plan expiration alert
+            .parameter Description
+            p This API is used to send notification to users whose membership plan is going to expire.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /plan_expiration_alert
+            .parameter Input Parameters
+            input(type='submit',value='send')
+            br
+
+        form(action='/view_top_profiles', method='post')
+            h3 View top profiles
+            .parameter Description
+            p This API is used to view top 10 paid member's profile on landing page.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_top_profiles
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/profile_completion_alert', method='post')
+            h3 profile completion alert
+            .parameter Description
+            p This API is used to send notification to users whose profile is not complete.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /profile_completion_alert
+            .parameter Input Parameters
+            input(type='submit',value='send')
+            br
+
+        form(action='/interested_profile_counts', method='post')
+            h3 interested profile counts
+            .parameter Description
+            p This API is used to send viewed counts, pending request count, favourites count, accepted count.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /interested_profile_counts
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='view')
+            br
+
+        form(action='/matrimony_check_email', method='post')
+            h3 matrimony check email
+            .parameter Description
+            p This API is used to check if user-name is available or not.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_check_email
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            input(type='submit',value='check')
+            br
+
+        form(action='/matrimony_add_promocode', method='post')
+            h3 matrimony add promocode
+            .parameter Description
+            p This API is used when admin wants to add new promocode.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_add_promocode
+            .parameter Input Parameters
+            label promocode_name:
+            input(type='text', name='promocode_name')
+            label discount:
+            input(type='text', name='discount')
+            input(type='submit',value='matrimony_add_promocode')
+            br
+
+        form(action='/matrimony_view_promocode', method='post')
+            h3 matrimony view promocode
+            .parameter Description
+            p This API is used to view all the promocodes for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_view_promocode
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+
+        form(action='/matrimony_edit_promocode', method='post')
+            h3 matrimony edit promocode
+            .parameter Description
+            p This API is used to edit promocodes for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_edit_promocode
+            .parameter Input Parameters
+            label promocode_id:
+            input(type='text', name='promocode_id')
+            label promocode_name:
+            input(type='text', name='promocode_name')
+            label promocode_discount:
+            input(type='text', name='promocode_discount')
+            input(type='submit',value='edit')
+            br
+            
+        form(action='/matrimony_delete_promocode', method='post')
+            h3 matrimony delete promocode
+            .parameter Description
+            p This API is used to delete promocodes for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_delete_promocode
+            .parameter Input Parameters
+            label promocode_id:
+            input(type='text', name='promocode_id')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/matrimony_report_spam', method='post')
+            h3 matrimony report spam
+            .parameter Description
+            p This API is used when one user marks some user as spam.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_report_spam
+            .parameter Input Parameters
+            label report_from:
+            input(type='text', name='report_from')
+            label report_to:
+            input(type='text', name='report_to')
+            label message:
+            input(type='text', name='message')
+            input(type='submit',value='mark spam')
+            br
+
+        form(action='/matrimony_admin_blck_user', method='post')
+            h3 matrimony admin block user
+            .parameter Description
+            p This API is used when admin wants to block or unblock any user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /matrimony_admin_blck_user
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            label status:
+            input(type='text', name='status')
+            input(type='submit',value='block/unblock')
+            br
+
+        form(action='/update_matrimony_badwords', method='post')
+            h3 Update badwords
+            .parameter Description
+            p This API is used when admin update bad/irrelevant words string for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_matrimony_badwords
+            .parameter Input Parameters
+            label badwords_string:
+            input(type='text', name='badwords_string')
+            input(type='submit',value='update')
+            br
+            
+        form(action='/view_matrimony_badwords', method='post')
+            h3 view matrimony badwords
+            .parameter Description
+            p This API is used when to view bad/irrelevant words/string for matrimony.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_matrimony_badwords
+            .parameter Input Parameters
+            input(type='submit',value='view')
+            br
+            
+        form(action='/filter_matrimony_user', method='post')
+            h3 Filter matrimony user
+            .parameter Description
+            p This API is used to filter matrimony users in admin panel.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /filter_matrimony_user
+            .parameter Input Parameters
+            label activate_status:
+            input(type='text', name='activate_status')
+            label plan_type:
+            input(type='text', name='plan_type')
+            label days_to_expire:
+            input(type='text', name='days_to_expire')
+            input(type='submit',value='filter')
+            br
+
+        form(action='/delete_matrimony_user', method='post')
+            h3 Delete matrimony user
+            .parameter Description
+            p This API is used to delete matrimony users in admin panel.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_matrimony_user
+            .parameter Input Parameters
+            label user_email:
+            input(type='text', name='user_email')
+            label user_first_name:
+            input(type='text', name='user_first_name')
+            label user_last_name:
+            input(type='text', name='user_last_name')
+            input(type='submit',value='delete')
+            br
+
+        form(action='/pay_with_bitcoin', method='post')
+            h3 pay with bitcoin
+            .parameter Description
+            p This API is used to pay with bitcoin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /pay_with_bitcoin
+            .parameter Input Parameters
+            input(type='submit',value='pay_with_bitcoin')
+            br
+
+        form(action='/send_by_bitcoin', method='post')
+            h3 send by bitcoin
+            .parameter Description
+            p This API is used to send bitcoin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /send_by_bitcoin
+            .parameter Input Parameters
+            label address:
+            input(type='text', name='address')
+            label amount:
+            input(type='text', name='amount')
+            input(type='submit',value='send_by_bitcoin')
+            br
+
+        form(action='/get_transaction_details', method='post')
+            h3 get_transaction_details
+            .parameter Description
+            p This API is used to get_transaction_details
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /get_transaction_details
+            .parameter Input Parameters
+            label address:
+            input(type='text', name='address')
+            input(type='submit',value='get')
+            br
+        
+        form(action='/view_stats', method='post')
+            h3 view_stats
+            .parameter Description
+            p This API is used to view_stats
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /view_stats
+            .parameter Input Parameters
+            label user_id:
+            input(type='text', name='user_id')
+            input(type='submit',value='get')
+            br

@@ -1,0 +1,1172 @@
+<style>
+    
+    .drop_btn .input-group-btn.search-panel {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    background-color: #efefef;
+    background: #efefef;
+    /* color: #232f3e; */
+} 
+    .dropdown-menu {
+        min-width: 130px;
+    }
+    .autosugest
+{
+     float: right;
+    margin-right: 14px;
+     margin-top: -13px;
+
+}
+    .mob{
+        display: none;
+    }
+    .desk{
+        display: block;
+    }
+
+    @media (max-width: 480px){
+        .mob-header .top_right ul li a {
+            font-size: 8px;
+            padding: 0px 0px;
+        }
+        .list_search
+        {
+            height: auto !important;
+        }
+        
+        .autosugest {
+    float: right;
+    margin-right: 12px;
+    margin-top: -10px;
+    font-size: 8px;
+}
+    }
+    @media (max-width: 768px){
+        .pad-0{
+            padding-left:0!important;
+            padding-right: 0!important;
+        }
+        .mob-header .top_left ul li.top_link {
+            margin-right: 0px;
+            color: black;
+        }
+        .mob{
+            display: block;
+        }
+        .desk{
+            display: none;
+        }
+        .navbar {
+            margin-bottom: 0px;
+        }
+        .category_icon ul li b {
+            display: block;
+            padding:2px 0 0;
+            font-size: 9px;
+        }
+        .navbar-collapse {
+            padding-right: 0px;
+            padding-left: 0px;
+            border-top: none !important; 
+        }
+    }
+    @media (max-width: 420px)
+    {
+        .cntry-btn{
+            padding: 0px 6px !important;
+            font-size: 10px !important;
+        }
+        .mob-header .top_right ul li a {
+            font-size: 6px;
+            padding:2px 0px;
+        }
+        .top_left ul li a {
+            font-size: 8px;
+        }
+        .cntry-Img{
+            display: none;
+        }
+        
+    }
+    #searchDiv {
+        display: none;
+    width: 684px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: 9;
+    border: solid 2px rgb(224,224,224);
+    left: 26.25%;
+    margin-top: 2.75%;
+    background-color: rgb(250,250,250);
+    border-radius: 3px;
+    }
+    #searchDiv1
+    {
+    display: none;
+    width: 200px;
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: 9;
+    border: solid 2px rgb(224,224,224);
+    left: 25.25%;
+    margin-top: 8.75%;
+    background-color: rgb(250,250,250);
+    border-radius: 3px;
+    }
+    .search_anchor
+    {
+        text-decoration: none;
+        overflow-x: hidden;
+        color:black;
+        font-size: 12px;
+        margin: 0px 0px 0px 20px;
+        cursor: pointer;
+
+    }
+
+    .list_search
+    {
+
+        border-bottom: 1px solid gainsboro;
+        /*height: 40px;*/
+
+    }
+    .search_anchor a:hover{
+        background-color:#000000;
+    }
+    .sett
+    {
+        margin-top: -1px;
+        height: 400px;
+    overflow-y: scroll;
+    }
+    
+    .autotitle
+    {
+     padding: 1px 29px;
+    margin-top: -12px;
+    font-size: 15px;
+}
+    
+    
+    
+    .catul
+    {
+        list-style:none;
+    }
+    .all-ser-res {
+        width: 100%;
+        padding-top: 10px;
+        list-style:none;
+        left: 61px;
+    text-align: left;
+    /* overflow: hidden; */
+    font-size: 16px;
+        /*border:1px solid;*/
+    }
+    .all-ser-res ul li {
+
+        display: inline-block;
+        width: 31%;
+        /*margin-left: -67px*/
+    }
+    .all-ser-res1 ul li {
+
+        display: inline-block;
+        width: 100%;
+        /*margin-left: -67px*/
+    }
+    .all-ser-res1 {
+    
+    width: 100%;
+    /*padding: 6px 77px;*/
+    list-style: none;
+    /* border: 1px solid; */
+    /*left: 36px;*/
+    text-align: left;
+    overflow-y: auto;
+    font-size: 16px;
+    height: 100px;
+    }
+    .nofound
+    {
+      width: 100%;
+    /* padding: 6px 77px; */
+    list-style: none;
+    /* border: 1px solid; */
+    /* left: 36px; */
+    text-align: left;
+    font-size: 16px;
+    height: 131px;
+    
+    }
+   
+   
+/*    .crsr-ptr:hover
+    {
+        background-color:#f58705;
+    }*/
+    .all-ser-res1 ul li:hover
+    {
+        background-color:#0e54f2;
+    }
+/*     .all-ser-res1 ul li
+    {
+        left:0px;
+    }*/
+     .all-ser-res ul li:hover
+    {
+        background-color:#0e54f2;
+    }
+/*    .all-ser-res ul li
+    {
+        left:0px;
+    }*/
+    .all-ser-fulltitle {
+        color: #0e54f2;
+        cursor: default;
+        display: block;
+
+        font-size: 20px;
+        letter-spacing: .5px;
+        overflow: hidden;
+        padding-bottom: 6px;
+        padding-top: 18px;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        z-index: 1;
+        /*    border-right: 1px solid #8c8b8b;*/
+    }
+</style>
+<style>
+  
+    .dropdown-menu {
+        min-width: 200px;
+    }
+    .dropdown-menu.columns-2 {
+        min-width: 400px;
+    }
+    .dropdown-menu.columns-3 {
+        min-width: 600px;
+    }
+    .dropdown-menu li a {
+        padding: 5px 15px;
+        font-weight: 300;
+    }
+    .multi-column-dropdown {
+        list-style: none;
+        
+    }
+    .multi-column-dropdown li a {
+        display: block;
+        clear: both;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: normal;
+    }
+    .multi-column-dropdown li a:hover {
+        text-decoration: none;
+        color: #262626;
+        background-color: #f5f5f5;
+    }
+
+
+    @media (max-width: 767px) {
+        .dropdown-menu.multi-column {
+            min-width: 405px !important;
+            overflow-x: hidden;
+        }
+        .pac-container {
+    margin-top:-60px !important;
+    z-index: 1051 !important;
+}
+ 
+    }
+
+    @media (max-width: 480px) {
+        .content {
+            width: 90%;
+            margin: 50px auto;
+            padding: 10px;
+        }
+        .pac-container {
+    margin-top:-60px !important;
+    z-index: 1051 !important;
+}
+ 
+    }
+
+    .dropdown-content {
+        display: none;
+
+    }
+
+    .drop:hover .dropdown-content{
+
+        display: block;
+    }
+    .drop
+    {
+/*        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 13px 26px;
+        color: #ffffff !important;*/
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #ffffff !important;
+    padding: 14px 20px 14px 20px;
+  
+       
+    }
+    .modal-backdrop
+    {
+        /*display:none;*/
+    }
+   
+    .input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    background-color: #0e54f2;
+    }
+
+.pac-container {
+    z-index: 1051 !important;
+}
+.modal{
+    z-index: 20;   
+}
+.modal-backdrop{
+    z-index: 10;        
+}​
+
+  button.btn.req_btn:hover {
+    background: #232e3f;
+    color: #fff;
+}
+.fix-popular 
+{
+    /*background:#232e3f;*/
+/*    margin-bottom:-5px;*/
+}
+.fix-popular .multi-column-dropdown li a
+{
+    text-decoration: none;
+    color: #fff;
+    background: #232f3e;
+        border-radius: 5px;
+}
+.fix-popular .multi-column-dropdown li a:hover
+{
+    text-decoration: none;
+/*        color: #000;*/
+    background:#000;
+}
+.input-group.drop_btn.mobile_view {
+    position: fixed;
+    width: 71%;
+}
+div#bs-example-navbar-collapse-1 {
+    height:48px;
+}
+.header_top.mob {
+    height: 48px;
+}
+
+</style>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" data-ng-controller='header as vm'>
+    <!-- header for desktop---->
+    <div class="header_pos desk">
+        <!------ top header------->
+        <div class="top_bg">
+            <div class="container">
+                <div class="header_top-sec">
+                    <div class="top_right">
+                        <ul>
+                            <!--<li><a ui-sref="home"> <img src="app/content/img/e-pardesh.png" alt=""/></a></li>-->
+                           <li><a  ng-click="vm.redirect();"> <img src="app/content/img/logoEpardesh.png" alt=""/></a></li>
+                            <!--<li><a ui-sref="main">Home</a></li>-->
+                            <!--<li><a ui-sref="contact">Contact us</a></li>|-->
+                            <!--<li><a ui-sref="about">About us</a></li>-->
+                        </ul>
+                    </div>
+
+
+                    <div class="top-left  btn-group flag_select1">
+
+
+                        <a  style="color:#232f3e;font-weight:bold;" id="select_loc"><i class="fa fa-map-marker"></i>&nbsp;{{vm.current_country}}&nbsp;&nbsp;<i class="fa fa-angle-down margin5l"></i></a>
+                                  
+
+                        <!--                        <li class="top_link"><a ui-sref="#">Post Ad</a></li>-->
+                        
+<!--                          <div class="btn-group flag_select">
+                                            <button type="button" class="btn btn-default dropdown-toggle country_toggle" data-toggle="dropdown">
+                                                <img src="app/content/img/India_flag.png" alt=""/>  India <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu country_menu" role="menu">
+                                                <li><a ng-click="vm.changeCountry('India')" id="ct1"> <img src="app/content/img/India_flag.png" alt=""/> India</a></li>
+                                                <li><a ng-click="vm.changeCountry('USA')" id="ct2"><img src="app/content/img/USA_flag.png" alt=""/>USA</a></li>
+                                            </ul>
+                                        </div>-->
+                                                    <a ng-if="vm.conCode ==1" id="ct1"> <img style='width: 26px;' src="app/content/img/India_flag.png" alt=""/></a>
+                                                <a ng-if="vm.conCode ==2"  id="ct2"><img  style='width: 26px;'src="app/content/img/USA_flag.png" alt=""/></a>
+                        
+                        
+                        
+                    </div>
+
+                    <div class="top-left  btn-group flag_select1" ng-show='vm.isLogIn'>
+
+                        <a style="color:#232f3e; text-transform: capitalize;font-weight:bold;" class=" dropdown-toggle" data-toggle="dropdown">
+                             {{vm.user_name}} &nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu settingLi" role="menu">
+                            <li>
+                                <a ng-if="vm.userType==2" ui-sref="setting"><i class="fa fa-cog"></i>&nbsp;&nbsp;My Account</a>
+                                <a ng-if="vm.userType==1" ui-sref="settings">My Account</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a  ng-click="vm.logout();"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="top-left  btn-group flag_select1" ng-show='vm.isLogOut'>
+
+                        <a style="color:#232f3e;font-weight:bold;" class="dropdown-toggle" data-toggle="dropdown">
+                             Login&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu settingLi" role="menu">
+                            <li class="top_link"><a ui-sref="sign" style="padding: 14px 17px;"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;&nbsp;Sign Up</a></li>
+
+                            <li class="top_link"><a ui-sref="login" style="padding: 14px 17px;"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;&nbsp;Log In</a></li>
+                        </ul>
+
+                    </div>
+
+
+
+
+
+
+                                      
+                    <!--                     <span class='top-right'>
+                                             <ul>
+                                                 <li class=""><button type="button" style="" class="btn btn-default" ng-click='vm.goToPostAd();'>
+                                                Post Ad
+                                            </button>
+                                            </li>
+                                           
+                                            </ul>
+                                            </span>-->
+                    <!--<input type="text" gm-places-autocomplete ng-model="autocomplete" style="width: 300px;"/>-->
+                 
+                    <div class="drop">
+                        <a style="color:#232f3e;font-weight:bold;" class="dropdown-toggle" >
+                            Popular Categories<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-content dropdown-menu multi-column columns-3" role="menu">
+                            <li><div class="row" ng-if="vm.top_categories!=''">
+                                    <div class="col-md-4" ng-repeat='top in vm.top_categories'>
+                                        <ul class="multi-column-dropdown">
+                                            <li><a ng-click="vm.getCat(top.id)">{{top.name}}</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="multi-column-dropdown">
+                                            <li> <a  ng-click="vm.open_pop()">See All Categories</a></li>
+                                           
+                                        </ul>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="row fix-popular">
+                                    <div class='col-md-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <!--<li class="divider"></li>-->
+                                            <li><a ui-sref="events">Event</a></li>
+                                        </ul>
+                                    </div>
+                                   
+                                   <div class='col-md-4'>
+                                        <ul class='multi-column-dropdown'>
+                                            <!--<li class="divider"></li>-->
+                                            <li><a  ui-sref="training">IT Training</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class='col-md-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <!--<li class="divider"></li>-->
+                                            <li ><a  ui-sref="mhome">Matrimony >></a></li>
+                                            
+                                        </ul>
+                                    </div>
+<!--                                     <div class='col-md-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <li class="divider"></li>
+                                            <li><a  ng-click="vm.open_pop()">See All Categories >></a></li>
+                                        </ul>
+                                    </div>-->
+                                    
+                            
+                            </div> 
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="btn-group top-left" ng-if="vm.isLogIn==true">
+                        <button type="button" style="color:#fff;font-weight:bold;" class="btn btn-default" ng-click='vm.goToPostAd();'>
+                            Post Ad
+                        </button>
+
+                    </div>
+                      <div class="btn-group top-left" ng-if="vm.isLogOut==true">
+                        <button type="button" style="color:#fff;font-weight:bold;" class="btn btn-default" ui-sref="login">
+                            Post Ad
+                        </button>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+
+<!---------------post ads------------->
+        <div id="postads" class="modal fade" role="dialog" style="margin-top: 82px;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Select Ads Type</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                
+                                <input   id="event" ng-click="vm.eventad()" name="loc" type="radio">&nbsp;&nbsp;Event
+                                
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                <input   id="itTraining" ng-click="vm.itTraining()" name="loc" type="radio">&nbsp;&nbsp;IT Training
+                                
+                                
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                
+                                <input   id="ads"  ng-click="vm.ads()" name="loc" type="radio">&nbsp;&nbsp;Ads
+                                
+                            </div>
+                            <br><br>
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- modal-->
+        
+        <!---------------modal------------->
+        <div id="loc" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title">Search Location</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+       
+                        <input class="form-control" placeholder="Search .." vs-google-autocomplete vs-latitude="latitude" vs-longitude="longitude" vs-city="city" vs-country="country" vs-state="state" vs-place="place" id="cloc" ng-model="loc" name="loc" type="text">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="vm.clocation();">Change Location</button>
+                       <button type="button" class="btn btn-default" ng-click="vm.closeModal();">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal-->
+
+        
+         <!---------------modal------------->
+         
+        <div id="locdefault" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title">Search Location</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+       
+                        <input class="form-control" placeholder="Search .." vs-google-autocomplete vs-latitude="latitude" vs-longitude="longitude" vs-city="city" vs-country="country" vs-state="state" id="cloc" ng-model="loc" name="loc" type="text">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="vm.clocation();">Change Location</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal-->
+
+
+        <!------/end top header------->
+<!--        ----middle header-----
+        <div class="header_top">
+            <div class="container">
+                <div class="col-md-2 col-sm-2 col-xs-12  logo">
+                    <a ui-sref="home"> <img src="app/content/img/logo.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-12" style="padding-left:0px; padding-right:5px">
+                    <div class="select_search_pad">
+                        <form>                          
+                            <select class="form-control select_center" ng-model="vm.getState" ng-change="vm.stateChangeFun(vm.getState);">
+                                <option value="" selected>State</option>
+                                <option ng-repeat="group in vm.states" value="{{group.location_name}},{{group.id}}">
+                                    {{group.location_name}}
+                                </option>
+                            </select>                          
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-12" style="padding-left:5px; padding-right:0px">
+                    <div class="select_search_pad">
+                        <form>                          
+                            <select class="form-control select_center" ng-model="vm.city" ng-change="vm.getCity(vm.city)">
+                                <option value="" selected>Region</option>
+                                <option ng-repeat="group in vm.cities track by $index" value="{{group.city_name}}">
+                                    {{group.city_name}}
+                                </option>
+                            </select>                          
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-5 col-xs-12 search_bx">
+                    <form>
+                                                <div class="input-group" style="margin-bottom:5px;">
+                                                    <input type="text" class="form-control" placeholder="Search..." ng-model='vm.searchObj.keyword' ng-change="vm.onChangeKeyword()">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn" style="background: #77131c;" type="button" ng-click="vm.findFunc();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                                    </span>
+                                                </div>
+                        <input type="text" value=""  placeholder="Search..." ng-model='vm.searchObj.keyword' ng-change="vm.onChangeKeyword()">
+                        <a><button ng-click="vm.findFunc();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></a>
+                    </form>
+
+                    <div id="searchDiv">
+                        <div class="text-center" ng-show='vm.searchContentLoader'><img src="app/content/img/loadingdata.gif"></div>
+                        <span ng-hide='vm.searchContentLoader'>
+                            <div ng-if="vm.searchData != ''">
+
+                                <div class="row list_search" ng-repeat="ss in vm.searchData" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.s(ss.ad_tittle)"><h4 style="padding: 10px 19px;" class="search_P" ng-bind-html="ss.ad_tittle"></h4></a><br>
+                                </div>
+
+                            </div>
+                            <div class="row" style="margin-top:10px" ng-if="vm.searchData == ''">
+                                <p class="search_P" style="margin-left: 17%;margin-top: 18%; font-size: 18px">No matches found, Please try again..</p>
+                            </div>
+                        </span>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>-->
+        
+          <!------middle header------->
+        <div class="header_top">
+            <div class="container">
+                   <div id="searchDiv">
+                        <div class="text-center" ng-show='vm.searchContentLoader'><img src="app/content/img/loadingdata.gif"></div>
+                        <span ng-hide='vm.searchContentLoader'>
+                            <div ng-if="vm.searchData != ''">
+
+                                <div class="row list_search" ng-repeat="ss in vm.searchData.suggestion_for_ads" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.s(ss.ad_tittle,ss.ad_id)"><h4 style="padding: 0px 19px;margin-top:-12px;" class="search_P" ng-bind-html="ss.ad_tittle"></h4><span class="autosugest">in Ads</span></a><br>
+                                </div>
+                                
+                               <div class="row list_search" ng-repeat="ss1 in vm.searchData.suggestion_for_events" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.sevent(ss1.event_tittle,ss1.event_id)"><h4 style="padding: 0px 19px;margin-top:-12px;" class="search_P" ng-bind-html="ss1.event_tittle"></h4><span class="autosugest">in Events</span></a><br>
+                                </div>
+                                <div class="row list_search" ng-repeat="ss in vm.searchData.suggestion_for_trainings" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.straining(ss.training_tittle,ss.training_id)"><h4 style="padding: 0px 19px;margin-top:-12px;" class="search_P" ng-bind-html="ss.training_tittle"></h4><span class="autosugest">in It Training</span></a><br>
+                                </div>
+                                
+                            </div>
+                            <div class="row" style="margin-top:10px" ng-if="vm.searchData == ''">
+                                <p class="search_P" style="margin-left: 17%;margin-top: 18%; font-size: 18px">No matches found, Please try again..</p>
+                            </div>
+                        </span>
+                    </div>
+          
+                             <div class="col-md-8 col-sm-10 col-xs-10 col-xs-offset-2">
+				<div class="input-group drop_btn">
+					<div class="input-group-btn search-panel">
+						<button type="button" style="color: #232f3e;"class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							<span id="search_concept">All</span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu sett " role="menu">
+                                                    <li><a ng-click='fixdropFun("All")'>All</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a ng-click='fixdropFun("Events")'>Events</a></li>
+						  <li class="divider"></li>
+                                                  <li><a ng-click='fixdropFun("IT Training")'>IT Training</a></li>
+                                                  <li class="divider"></li>
+                                                  <li ng-repeat="top in vm.top_categories">
+
+<!--                                                  <li ng-repeat="top in vm.top_categories | limitTo: 5">-->
+                                                    <a ng-click="dropFun(top)">{{top.name}}</a>
+                                                    
+                                                  </li>
+<!--                                                  <li class="divider"></li>
+                                                  <li><a ng-click='fixdropFun("IT Training")'>IT Training</a></li>
+                                                  <li class="divider"></li>
+						  <li><a ng-click='fixdropFun("Events")'>Events</a></li>
+						  <li class="divider"></li>
+						  <li><a ng-click='fixdropFun("All")'>All</a></li>-->
+						</ul>
+					</div>
+                                    
+                                    
+					<input type="hidden" name="search_param" value="" id="search_param">         
+					<input type="text" ng-model='vm.searchObj.keyword' ng-change="vm.onChangeKeyword()"class="form-control" name="x" placeholder="Search">
+					<span class=" ser input-group-btn">
+                                            <a><button ng-click="vm.findFunc();" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button></a>
+					</span>
+</form>
+				</div>
+			</div>
+
+
+
+            </div>
+            <div class="clearfix"></div>
+            
+        </div>
+        
+        
+        <!------end of middle header------->
+        <!--------header category start------------->
+<!--        <div class="container">
+            <div class="col-md-12 text-center">
+                <div class="category_icon">
+                    <ul>
+                        <li ng-repeat='dt in vm.allCat' class='cursor:pointer'><a title="{{dt.category}}" ng-click='vm.searchByFixCat(dt.id)'><img src="app/content/img/{{vm.allCategoryImgArr[$index]}}" alt="Events"><b>{{dt.category}}</b></a></li>
+                                             <li class="cursor:pointer ng-scope"><a title="Post Free Ad" ng-click='vm.goToPostAd();'><img src="app/content/img/more-icon.png" alt="Events"><b class="ng-binding">Post Free Ad</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+        <!-------------------------end header category----------------------->
+    </div>
+    <!--end of header for desktop---->
+
+    <!-- header for Mobile view---->
+    <nav class="navbar navbar-default mob">
+        <!---- top header----->
+        <div class="top_bg">
+            <div class="container">
+                <div class="header_top-sec mob-header">
+                    <div class="col-sm-4 col-xs-4 pad-0">
+                        <div class="top_right">
+                            <ul>
+                                 <li><a ng-click="vm.redirect();"> <img src="app/content/img/logoEpardesh.png" height="40px" width="150px"alt=""/></a></li>
+<!--                                <li><a ui-sref="home">Home</a></li>|
+                                <li><a ui-sref="contact">Contact us</a></li>|
+                                <li><a ui-sref="about">About us</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-3 pad-0 btn-group flag_select1">
+<!--                        <button type="button" class="btn btn-default dropdown-toggle country_toggle cntry-btn" data-toggle="dropdown">
+                            <img class="cntry-Img" src="app/content/img/India_flag.png" alt=""/>  India <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu country_menu" role="menu">
+                            <li><a ng-click="vm.changeCountry('India')" id="ct1"> <img src="app/content/img/India_flag.png" alt=""/> India</a></li>
+                            <li><a ng-click="vm.changeCountry('USA')" id="ct2"><img src="app/content/img/USA_flag.png" alt=""/>USA</a></li>
+                        </ul>-->
+
+
+
+                    <!--<a  style="color:#fff;" id="select_loc1"><i class="fa fa-map-marker"></i>&nbsp;{{vm.current_country}}&nbsp;</a>-->
+                    <a  style="color:#232f3e;font-size: 12px;" id="select_loc1"><i class="fa fa-map-marker"></i>&nbsp;{{vm.current_country |limitTo: 3 }}{{vm.current_country.length > 3 ? ".." : ""}}</a>
+                             <a ng-if="vm.conCode ==1" id="ct1"> <img  src="app/content/img/India_flag.png" alt=""/></a>
+                             <a ng-if="vm.conCode ==2"  id="ct2"><img  src="app/content/img/USA_flag.png" alt=""/></a>
+                        
+
+                    </div>
+                    <div class="col-sm-5 col-xs-5 pad-0">
+<!--                        <div class="top_left" ng-show='vm.isLogOut'>
+                            <ul>
+                                <li class="top_link"><a ui-sref="sign">Sign Up</a></li>|
+                                <li class="top_link"><a ui-sref="login">Log In</a></li>|
+                                <li class="top_link"><a ui-sref="login">Post Ad</a></li>
+                            </ul>
+                        </div>
+                        <div class="top-left btn-group flag_select" ng-show='vm.isLogIn'>
+                            <button type="button" class="btn btn-default dropdown-toggle cntry-btn" data-toggle="dropdown">
+                                <span data-bind="label"> {{vm.user_name}} &nbsp;<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu settingLi" role="menu">
+                                <li>
+                                    <a ng-if="vm.userType==2" ui-sref="setting">My Account</a>
+                                    <a ng-if="vm.userType==1" ui-sref="settings">My Account</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a ng-click="vm.logout();">Logout</a></li>
+                            </ul>
+                        </div>-->
+                          <div class="top-left  btn-group flag_select1" ng-show='vm.isLogIn'>
+
+                        <a style="color:#232f3e;font-size: 12px;" class=" dropdown-toggle" data-toggle="dropdown">
+                             {{vm.user_name}} &nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu settingLi" role="menu">
+                            <li>
+                                <a ng-if="vm.userType==2" ui-sref="setting"><i class="fa fa-cog"></i>&nbsp;&nbsp;My Account</a>
+                                <a ng-if="vm.userType==1" ui-sref="settings">My Account</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a  ng-click="vm.logout();"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="top-left  btn-group flag_select1" ng-show='vm.isLogOut'>
+
+                        <a style="color:#232f3e;font-size: 12px;" class="dropdown-toggle" data-toggle="dropdown">
+                             Login&nbsp;<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu settingLi" role="menu">
+                            <li class="top_link"><a ui-sref="sign" style="padding: 14px 17px;"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;&nbsp;Sign Up</a></li>
+
+                            <li class="top_link"><a ui-sref="login" style="padding: 14px 17px;"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;&nbsp;Log In</a></li>
+                        </ul>
+
+                    </div>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+              <!---------------modal------------->
+        <div id="loc1" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                        <h4 class="modal-title">Search Location</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control" placeholder="Search .." vs-google-autocomplete vs-latitude="latitude1" vs-longitude="longitude1" vs-city="city1" vs-country="country1" vs-state="state1" vs-place="place1" id="cloc" ng-model="loc1" name="loc1" type="text">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="vm.clocation1();">Change Location</button>
+                        <button type="button" class="btn btn-default" ng-click="vm.closeModal1();">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal-->
+        </div>
+        <!----/end top header----->
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                 
+                    <div class="drop">
+                        <a style="color:#fff;" class="dropdown-toggle" >
+                            Popular Categories<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-content dropdown-menu multi-column columns-3" role="menu">
+                            <li><div class="row" ng-if="vm.top_categories!=''">
+                                    <div class="col-sm-4 col-xs-4" ng-repeat='top in vm.top_categories'>
+                                        <ul class="multi-column-dropdown" style="font-size:15px;">
+                                            <li><a ng-click="vm.getCat(top.id)">{{top.name |limitTo: 8 }}{{top.name.length > 8 ? ".." : ""}}</a></li>
+<!--{{vm.current_country |limitTo: 4 }}{{vm.current_country.length > 4 ? ".." : ""}}-->
+                                        </ul>
+                                    </div>
+                                    <div class='col-sm-4 col-xs-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <!--<li class="divider"></li>-->
+                                            <li><a ng-click="vm.open_pop()">All Cat..</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row fix-popular">
+                                    <div class='col-sm-4 col-xs-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <!--<li class="divider"></li>-->
+                                            <li><a ui-sref="events">Event</a></li>
+                                        </ul>
+                                    </div>
+                                   
+                                   <div class='col-sm-4 col-xs-4'>
+                                        <ul class='multi-column-dropdown'>
+                                            <!--<li class="divider"></li>-->
+                                            <li><a ui-sref="training">IT Training</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class='col-sm-4 col-xs-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <!--<li class="divider"></li>-->
+                                            <li><a  ui-sref="mhome">Matrimony</a></li>
+<!--                                            <li><a style="font-size:10px" ng-click="vm.open_pop()">All Cat..</a></li>-->
+                                        </ul>
+                                    </div>
+<!--                                     <div class='col-sm-4 col-xs-4'>
+                                        <ul class='multi-column-dropdown'>
+                                             <li class="divider"></li>
+                                            <li><a  ng-click="vm.open_pop()">All Cat..</a></li>
+                                        </ul>
+                                    </div>-->
+                                    
+                            
+                            </div> 
+                            </li>
+
+                        </ul>
+                    </div>
+                
+                
+                   <div class="btn-group top-left" ng-if="vm.isLogIn==true">
+                        <button type="button" style="font-weight: bold;color:#fff;" class="btn btn-default" ng-click='vm.goToPostAd1();'>
+                            Post Ad
+                        </button>
+
+                    </div>
+                      <div class="btn-group top-left" ng-if="vm.isLogOut==true">
+                        <button type="button" style="font-weight: bold;color:#fff;" class="btn btn-default" ui-sref="login">
+                            Post Ad
+                        </button>
+
+                    </div>
+                
+                
+                <!---------------post ads------------->
+        <div id="postads1" class="modal fade" role="dialog" style="margin-top: 130px;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Select Ads Type</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                
+                                <input   id="event" ng-click="vm.eventad()" name="loc" type="radio">&nbsp;&nbsp;Event
+                                
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                <input   id="itTraining" ng-click="vm.itTraining()" name="loc" type="radio">&nbsp;&nbsp;IT Training
+                                
+                                
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 7px 0px 11px 15px;">
+                                
+                                <input   id="ads"  ng-click="vm.ads()" name="loc" type="radio">&nbsp;&nbsp;Ads
+                                
+                            </div>
+                            <br><br>
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- modal-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button><!--
+                <a ui-sref="home"> <img src="app/content/img/logo.jpg" alt=""/></a>-->
+               
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              
+                 
+                
+                
+                <div class="header_top">
+<!--                    <div class="col-md-1 col-sm-3 col-xs-12">
+                        <div class="select_search_pad">
+                            <form>                          
+                                <select class="form-control select_center" ng-model="vm.getState" ng-change="vm.stateChangeFun(vm.getState);">
+                                    <option value="" selected>State</option>
+                                    <option ng-repeat="group in vm.states" value="{{group.location_name}},{{group.id}}">
+                                        {{group.location_name}}
+                                    </option>
+                                </select>                          
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-3 col-xs-12 pad-left-5">
+                        <div class="select_search_pad">
+                            <form>                          
+                                <select class="form-control select_center" ng-model="vm.city" ng-change="vm.getCity(vm.city)">
+                                    <option value="" selected>Region</option>
+                                    <option ng-repeat="group in vm.cities track by $index" value="{{group.city_name}}">
+                                        {{group.city_name}}
+                                    </option>
+                                </select>                          
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <form>
+                            <div class="input-group" style="margin-bottom:5px;">
+                                <input type="text" class="form-control" placeholder="Search..." ng-model='vm.searchObj.keyword' ng-change="vm.onChangeKeyword()">
+                                <span class="input-group-btn">
+                                    <button class="btn" style="background: #77131c;" type="button" ng-click="vm.findFunc();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </span>
+                            </div>
+                                                            <input type="text" value="" placeholder="Search..." >
+                                                            <a><button ng-click="vm.findFunc();">Find</button></a>
+                        </form>
+                    </div>-->
+                            <div id="searchDiv1">
+                        <div class="text-center" ng-show='vm.searchContentLoader'><img src="app/content/img/loadingdata.gif"></div>
+                        <span ng-hide='vm.searchContentLoader'>
+                            <div ng-if="vm.searchData != ''">
+
+                               <div class="row list_search" ng-repeat="ss in vm.searchData.suggestion_for_ads" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.s(ss.ad_tittle,ss.ad_id)"><h4 style="padding: 0px 19px;margin-top:-12px;font-size:10px;    width: 147px; word-wrap: break-word;" class="search_P" ng-bind-html="ss.ad_tittle"></h4><span class="autosugest">in Ads</span></a><br>
+                                </div>
+                                
+                               <div class="row list_search" ng-repeat="ss1 in vm.searchData.suggestion_for_events" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.sevent(ss1.event_tittle,ss1.event_id)"><h4 style="padding: 0px 19px;margin-top:-12px;font-size:10px;width: 147px;word-wrap: break-word;" class="search_P" ng-bind-html="ss1.event_tittle"></h4><span class="autosugest">in Events</span></a><br>
+                                </div>
+                                <div class="row list_search" ng-repeat="ss2 in vm.searchData.suggestion_for_trainings" >
+
+                                    <a href="#" class ="search_anchor" ng-click="vm.straining(ss2.training_tittle,ss2.training_id)"><h4 style="padding: 0px 19px;margin-top:-12px;font-size:10px;width: 147px; word-wrap: break-word;" class="search_P" ng-bind-html="ss2.training_tittle"></h4><span class="autosugest">in It Training</span></a><br>
+                                </div>
+                                
+                            </div>
+                            <div class="row" style="margin-top:10px" ng-if="vm.searchData == ''">
+                                <p class="search_P" style="margin-left: 17%;margin-top: 18%; font-size: 18px">No matches found, Please try again..</p>
+                            </div>
+                        </span>
+                    </div>
+          
+                             <div class="col-md-10 col-sm-12 col-xs-10 col-xs-offset-1">
+				<div class="input-group drop_btn mobile_view">
+					<div class="input-group-btn search-panel">
+						<button style="color: #232f3e;"type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							<span id="search_concept">All</span> <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu sett " role="menu">
+                                                  <li ng-repeat="top in vm.top_categories | limitTo: 5">
+                                                    <a ng-click="dropFun(top)">{{top.name}}</a>
+                                                  </li>
+                                                  <li class="divider"></li>
+                                                  <li><a ng-click='fixdropFun("IT Training")'>IT Training</a></li>
+                                                  <li class="divider"></li>
+						  <li><a ng-click='fixdropFun("Events")'>Events</a></li>
+						  <li class="divider"></li>
+						  <li><a ng-click='fixdropFun("All")'>All</a></li>
+						</ul>
+					</div>
+                                    
+                                    
+                                    
+                                                
+                                 
+                                    
+					<input type="hidden" name="search_param" value="all" id="search_param">         
+					<input type="text" ng-model='vm.searchObj.keyword' ng-change="vm.onChangeKeyword()"class="form-control" name="x" placeholder="Search">
+					<span class="input-group-btn">
+                                            <a><button ng-click="vm.findFunc();" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button></a>
+					</span>
+</form>
+				</div>
+			</div>
+                    <div class="clearfix"></div>
+                </div>
+<!--                <div class="container">
+                    <div class="col-md-12 text-center">
+                        <div class="category_icon">
+                            <ul>
+                                <li ng-repeat='dt in vm.allCat' class='cursor:pointer'><a title="{{dt.category}}" ng-click='vm.searchByFixCat(dt.id)'><b>{{dt.category}}</b></a></li>
+                                                           <li class="cursor:pointer ng-scope"><a title="Post Free Ad" ng-click='vm.goToPostAd();'><img src="app/content/img/more-icon.png" alt="Events"><b class="ng-binding">Post Free Ad</b></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>-->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--end of header for mob---->
+    
+    
+    
+</div>
+<script type="text/javascript">
+    $(function() {
+
+    });
+</script>

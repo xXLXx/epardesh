@@ -1,0 +1,52 @@
+<style>
+        .success{
+        color:#0e54f2;
+    }
+    .danger{
+        color:red;
+    }
+</style>
+<div class="single-sec" data-ng-controller="adApprove as vm">
+
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 col-md-offset-2  add_bx" style="text-align: center;">
+<!--          <a ng-if="vm.status == '1'" ng-click='vm.adDetailFun(vm.ad_id);' class="crsr-ptr"><button class="btn go-back">View the Ad&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+          <a ng-if="vm.status == '2'" ng-click='vm.eventDetailFun(vm.ad_id);' class="crsr-ptr"><button class="btn go-back">View the Event&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+          <a ng-if="vm.status == '3'" ng-click='vm.trainingDetailFun(vm.ad_id);' class="crsr-ptr"><button class="btn go-back">View the Training&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+        -->
+        <div class="row">
+                <h3 style="text-align: center;color:green">!!!! Congratulation !!!!</h3>
+                
+            </div>
+            <div class="row">
+                <br><h4 class="{{vm.type}}">{{vm.msg}}</h4><br>
+                <p ng-if="vm.status == '1'" >Your Ad <a style="color:#0e54f2" ng-click='vm.adDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a> is now searchable to all Users and Visitors in EPARDESH website.</p>
+                <p ng-if="vm.status == '2'" >Your Ad <a style="color:#0e54f2" ng-click='vm.eventDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a> is now searchable to all Users and Visitors in EPARDESH website.</p>
+                <p ng-if="vm.status == '3'" >Your Ad <a style="color:#0e54f2" ng-click='vm.trainingDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a> is now searchable to all Users and Visitors in EPARDESH website.</p>
+               
+                
+                <br>
+                <p>You can view your Ad by clicking the link below or from your my account Page.</p>
+               
+            </div>
+        <div class="row" style="padding: 20px;">
+            <a style="color:#0e54f2" ng-if="vm.status == '1'" ng-click='vm.adDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a>
+          <a style="color:#0e54f2" ng-if="vm.status == '2'" ng-click='vm.eventDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a>
+          <a style="color:#0e54f2" ng-if="vm.status == '3'" ng-click='vm.trainingDetailFun(vm.ad_id);' class="crsr-ptr">EPC{{vm.ad_id}}</a>
+                 
+        </div>
+            <div class="col-md-4">
+<!--                <img src="app/content/img/"-->
+            <p>Thanks</p>
+            <p>EPARDESH Team</p>
+            <a style="color:#0e54f2" href="http://epardesh.com">http://epardesh.com</a>
+                
+            </div>
+        </div>
+          <div class="col-md-2"></div>
+        
+    
+    </div>	 
+
+</div>

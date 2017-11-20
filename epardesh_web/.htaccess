@@ -1,0 +1,17 @@
+#Enable URL # Problem
+RewriteEngine On 
+Options FollowSymLinks
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /#/$1 [L]
+#End URL # Problem
+
+#Redirect Non WWW to WWW 
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.epardesh.com/$1 [L,R=301]
+#End of Redirect Non WWW to WWW

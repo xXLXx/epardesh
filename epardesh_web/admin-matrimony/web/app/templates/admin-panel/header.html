@@ -1,0 +1,80 @@
+<div  data-ng-controller='header as vm' class="header">
+<!--    <div class="wrapper">-->
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a ui-sref="category" class="logo">
+                <span class="logo-mini"><b>e</b>P</span>
+                <span class="logo-lg"><img src="app/content/img/logo.jpg" style="width: 82%;"></span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="javascript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle">
+                                <img src="app/content/img/user.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">admin</span>
+                            </a>
+                            <!-- Control Sidebar Toggle Button -->
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i></a>
+                            <ul class="dropdown-menu animated fadeInLeft">
+                                <li><a ui-sref="password">Change Password</a></li>
+                                <li><a ui-sref="home">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+<!--                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>-->
+                <!-- /.search form -->
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu">
+<!--                    <li class="header">DASHBOARD</li>-->
+<!--                    <li class="menu category"><a ui-sref="category"><i class="fa fa-leaf"></i> <span>Category</span></a></li>
+                    <li class="menu sub-category"><a ui-sref="sub-category"><i class="fa fa-sitemap"></i> <span>Sub-Category</span></a></li>
+                    <li class="menu manage-ads"><a ui-sref="ads"><i class="fa fa-leaf"></i> <span>Manage Ads</span></a></li>
+                     <li class="menu promotional-ads"><a ui-sref="promotion-ads"><i class="fa fa-briefcase"></i> <span>Promotional Ads</span></a></li>
+                     <li class="menu plans"><a ui-sref="plans"><i class="fa fa-briefcase"></i> <span>Plans</span></a></li>
+                     <li class="menu badword-filter"><a ui-sref="badword-filter"><i class="fa fa-sitemap"></i> <span>Manage Badword</span></a></li>
+                    <li class="menu users"><a ui-sref="users"><i class="fa fa-user"></i> <span>Manage Users</span></a></li>
+                    
+                      <li class="header mheader">Matrimony</li>-->
+                   <li class="menu matrimony-category"><a ui-sref="matrimony-category"><i class="fa fa-user"></i> <span>Manage Users</span></a></li>
+                   <li class="menu matrimony-plans"><a ui-sref="matrimony-plans"><i class="fa fa-cubes"></i> <span>Plans</span></a></li>
+                   <li class="menu send-notification"><a ui-sref="matrimony-promocode"><img src="app/content/img/discount (1).png" class="img_promo" alt="Promo Image"> <span>Promocode</span></a></li>
+                    <li class="menu send-notification"><a ui-sref="send-notification"><i class="fa fa-bell"></i> <span>Send Push Notification</span></a></li>
+                          <li class="menu badword-filter"><a ui-sref="matrimony-badword-filter"><i class="fa fa-sitemap"></i> <span>Manage Badword</span></a></li>
+                   
+                    <!--            <li class="treeview">
+                                  <a href="#"><i class="fa fa-sitemap"></i> <span>Sub-Category</span> <i class="fa fa-angle-down pull-right"></i></a>
+                                  <ul class="treeview-menu">
+                                    <li><a href="#">Category 1</a></li>
+                                    <li><a href="#">Category 2</a></li>
+                                  </ul>
+                                </li>-->
+                </ul><!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+    </div>
+<!--</div>-->

@@ -1,0 +1,126 @@
+<div ng-controller="add_plan">
+  <style>
+    .abc {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 60px;
+      font-family: 'MavenPro-Regular';
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #444;
+    }
+    
+    .btn11 {
+      width: 100%;
+      background: #EA57A6;
+      color: black !important;
+      padding: 10px 40px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <div ng-include="'app/templates/header.html'"></div>
+  <div ng-include="'app/templates/sidebar.html'"></div>
+  <md-content class="col-md-4 col-md-offset-4 ">
+
+    <form name="add_plan">
+      <div layout="row">
+        <md-input-container flex="100">
+          <h2 class="abc"> ADD PLAN</h2>
+        </md-input-container>
+
+      </div>
+
+
+      <div layout="row">
+        <md-input-container class="md-accent" flex="100">
+          <label class="text1">Plan Name</label>
+
+          <input name="name" ng-model="planData.name" ng-minlength="3" ng-maxlength="25" required>
+          <div ng-messages="add_plan.name.$error">
+            <div ng-message="required"> Required.</div>
+
+            <div ng-message="minlength"> Too short</div>
+            <div ng-message="maxlength">Too long</div>
+          </div>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container class="md-accent" flex="100">
+          <label class="text1">Description</label>
+
+          <textarea ng-model="planData.description" name="description" maxlength="150" md-select-on-focus></textarea>
+          <div ng-messages="add_plan.description.$error">
+            <div ng-message="required"> Required.</div>
+
+
+          </div>
+        </md-input-container>
+      </div>
+
+      <div layout="row">
+        <md-input-container class="md-accent" flex="100">
+          <label class="text1">Amount</label>
+
+          <input name="amount" type="number" ng-model="planData.amount" ng-pattern="positive">
+          <div ng-messages="add_plan.amount.$error">
+            <div ng-message="required"> Required.</div>
+
+            <div ng-message="pattern"> enter positive no</div>
+            <div ng-message="number">invalid</div>
+          </div>
+
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container class="md-accent" flex="100">
+          <label class="text1">Validity</label>
+
+          <input name="validity" ng-model="planData.validity" required>
+          <div ng-messages="add_plan.validity.$error">
+            <div ng-message="required"> Required.</div>
+
+
+          </div>
+        </md-input-container>
+      </div>
+      <div layout="row">
+
+        <md-radio-group ng-model="planData.plan_type" required>
+          <label class="text1">Plan Type</label>
+
+          <md-radio-button value="1">Artist</md-radio-button>
+          <md-radio-button value="2">Company </md-radio-button>
+
+        </md-radio-group>
+
+      </div>
+
+      <div class="alert alert-success"></div>
+      <div class="alert alert-danger"></div>
+
+      <md-button type="submit" class="fullWidth" ng-disabled="add_plan.$invalid" ng-click="add_plan1()"><b class="btn11">Submit</b></md-button>
+
+    </form>
+  </md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

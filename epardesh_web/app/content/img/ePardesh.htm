@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://localhost:8888/ePardesh-web/web/#/main -->
+<html lang="en" ng-app="app" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>ePardesh</title>
+
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="./ePardesh_files/font-awesome.min.css">
+        <link href="./ePardesh_files/css" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/css(1)" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/css(2)" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/bootstrap-glyphicons.css" rel="stylesheet">
+        <link href="./ePardesh_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/chosen.css" rel="stylesheet" type="text/css">             
+        <link href="./ePardesh_files/style.css" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/etalage.css" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/circle.css" rel="stylesheet" type="text/css">
+        <link href="./ePardesh_files/epardesh.css" rel="stylesheet" type="text/css">
+        <script src="./ePardesh_files/jquery-2.1.4.js"></script>
+    </head>
+    <body>
+        <!-- uiView:  --><div ui-view="" class="ng-scope"></div>
+        <!-- uiView: header --><div ui-view="header" class="ng-scope"></div> 
+        <!-- uiView: content --><div ui-view="content" autoscroll="true" class="ng-scope"><style class="ng-scope">
+    .main_back {
+        background-image: none;
+    }
+    .top_bg {
+        background: #77131c;
+    }
+    .top_right {
+        margin-top: 0px; 
+    }
+    .top_left {
+        margin-top: 6px;
+    }
+    .header_top-sec {
+        padding: 0px;
+    }
+    .main_back .top_bg {
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+    .top_right ul li a:hover, .top_left ul li a:hover {
+        color: #f6a95b;
+        text-decoration: none;
+    }
+    .top_right ul li {
+        text-align: center; 
+        display: block;
+        color: #ffffff;
+     
+        border-right: 1px solid #ECE9E0;
+        float: left;
+        font-weight: bold;
+        height: 34px;
+        line-height: 33px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0;
+    }
+     .top_right ul li a {
+        font-size: 12px;  
+           }
+     .top_right ul  > li:first-child {
+     border-left: 1px solid #FBFBFB;
+     }
+
+    .main_design{
+        /*border: 1px solid black; */
+        width: 100%;
+        text-align:center;
+        background-color: rgba(2, 41, 102, 0);
+        margin: 2em auto;
+    }
+    .main_design  button {
+        border: 2px solid #f5a85d;
+        font-family: inherit;
+        font-size: 20px;
+        line-height: 10p;
+        padding: 13px 0px;
+        color: white;
+        background-color: rgb(119, 19, 28);
+        /* margin: 10px; */
+        width: 30%;
+    }
+    /*    .main_design  button a:hover {
+            color: #e49b4f;
+        }*/
+    .main_design  button:hover {
+        color: #e49b4f;
+    }
+    .main_design  button a {
+        color: white;
+        text-decoration: none;
+    }
+    .banner{
+        padding:0px;
+    }
+    .banner-img{
+        width:100%;
+    }
+    .margin_60 {
+        margin: 60px 0;
+    }
+    .find_someone_head {
+        color: #77131c;
+        font-size: 35px;
+        text-align: center;
+        font-family: 'Raleway',sans-serif !important;
+        font-weight: 500;
+    }
+    .sign_up, .interact, .connect {
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left 1px;
+        height: 148px;
+        width: 133px;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        background-size: 100%;
+    }
+    .interact {
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left -292px;
+        background-size: 100%;
+    }
+    .connect {
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left -591px;
+        background-size: 100%;
+    }
+    .sign_up span, .interact span, .connect span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 148px;
+        width: 133px;
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left -147px;
+        opacity: 0;
+        background-size: 100%;
+    }
+    .interact span {
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left -440px;
+        background-size: 100%;
+    }
+    .connect span {
+        background: url(https://img2.shaadi.com/assests/2016/images/home-icon-sprite.png) no-repeat left -739px;
+        background-size: 100%;
+    }
+    .sign_up span:hover, .interact span:hover, .connect span:hover {
+        opacity: 1;
+    }
+    .footer-content {
+        clear: both;
+        width: 100%;
+        /* position: absolute; */
+        /* bottom: 0px; */
+        margin-top: 14px;
+        background: #77131c;
+        padding: 0em 0;
+    }
+    .p-classified{
+        margin-top:-30px;
+    }
+    .classified{
+        margin-top:15px;
+    }
+    .main_design button :hover {
+        /*        border: 2px solid #77131c;
+                font-family: inherit;
+                font-size: 20px;
+                line-height: 10p;
+                padding: 13px 0px;*/
+        color: #e49b4f;
+        /*        background-color: #f5a85d;
+                 margin: 10px; 
+                width: 30%;*/
+    }
+    /*    .top_bg {
+            height: 36px;
+        }*/
+    @media only screen and (max-width: 480px){
+        .top_left {
+            float: none;
+            color: #fff;
+            text-align: center;
+            margin-left: 0em;
+        }
+        .main_foot_col button {
+            font-size: 16px;
+            padding: 0.4em 3em;
+        }
+        .main_design button {
+            width: 60%;
+        }
+    }
+</style>
+
+
+    <!-- ------------------ header ---------------------->
+    <div class="top_bg ng-scope">
+        <div class="container">
+            <div class="header_top-sec">
+                <div class="col-md-3 col-sm-4 col-xs-12 logo">
+                    <a href="http://localhost:8888/ePardesh-web/web/index.html"> <img src="./ePardesh_files/logo.jpg" alt="" style="width: 258px;height: 36px;"></a>
+                </div>
+                <div class="col-md-7 col-sm-8 col-xs-12 top_right">
+                    <ul> <li class="top_link"><a ui-sref="home" href="http://localhost:8888/ePardesh-web/web/#/home">Classified</a></li>
+                        <li class="top_link"><a href="http://localhost:8888/ePardesh-web/web/#">Matrimony</a></li>
+                        <li><a ui-sref="about" href="http://localhost:8888/ePardesh-web/web/#/about">About us</a></li>
+                        <li><a ui-sref="contact" href="http://localhost:8888/ePardesh-web/web/#/contact">Contact us</a></li>
+                        <li class="top_link"><a ui-sref="sign" href="http://localhost:8888/ePardesh-web/web/#/sign">Sign Up</a></li>
+                        <li class="top_link"><a ui-sref="login" href="http://localhost:8888/ePardesh-web/web/#/login">Log In</a></li>
+
+
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+
+            </div>
+        </div>
+    </div>
+    <!-----------------conatiner content---------------------->
+    <div class="col-md-12 banner ng-scope">
+        <img class="banner-img" src="./ePardesh_files/banner.png">
+    </div>
+
+    <div class="col-md-12 ng-scope">
+        <div class="container">
+            <div class="find_someone_head margin_60">Find your Special Someone</div>
+        </div>
+        <div class="container">
+            <div class="col-sm-4 text-center">
+                <a href="http://localhost:8888/ePardesh-web/web/#" class="sign_up"><span></span></a>
+                <div class="special_someone_wrap">
+                    <h3>
+                        <a href="http://localhost:8888/ePardesh-web/web/#">Sign up</a>
+                    </h3>
+                    <div>Register for free &amp; put up your Profile</div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="http://localhost:8888/ePardesh-web/web/#" class="interact"><span></span></a>
+                <div class="special_someone_wrap">
+                    <h3>
+                        <a href="http://localhost:8888/ePardesh-web/web/#">Connect</a>
+                    </h3>
+                    <div>Select &amp; Connect with Matches you like</div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="http://localhost:8888/ePardesh-web/web/#" class="connect"><span></span></a>
+                <div class="special_someone_wrap">
+                    <h3>
+                        <a href="http://localhost:8888/ePardesh-web/web/#">Interact</a>
+                    </h3>
+                    <div>Become a Premium Member &amp; Start a Conversation</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-12 main_design ng-scope">
+        <!--<button><a href="index.html">Link To Classified</a></button><br>-->
+        <button>MATRIMONY</button>
+    </div>
+
+    <div class="col-md-12 ng-scope">
+        <div class="container">
+            <div class="find_someone_head margin_60 classified">Connect with the right professionals to get your job done.</div>
+        </div>
+        <div class="container">
+            <p class="p-classified">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+
+    </div>
+    <div class="col-md-12 main_design ng-scope">
+        <button><a ui-sref="home" href="http://localhost:8888/ePardesh-web/web/#/home">CLASSIFIED</a></button>
+    </div>
+
+    <!--        <div class="container">
+                <div class="col-md-12 main_div_align">
+                    <div class="col-md-6 main_design">
+                        <button><a href="index.html">CLASSIFIED</a></button><br>
+                        <button>Link To Matrimonial</button>
+                    </div>
+                    <div class="col-md-6 main_design" style="float:right;">
+                        <button><a href="index.html">Link To Classified</a></button><br>
+                        <button>MATRIMONY</button>
+                    </div>
+                </div>
+            </div>-->
+    <!-----------------footer content---------------------->
+    <div class="row ng-scope">
+        <p class="Popular_txt">Popular Cities</p>
+        <div class="row main_foot_col">
+            <div class="container">                            
+                <div class="col-md-12" style="text-align:center;">                                      
+                    <button>Find Ads in Popular Cities</button>
+                </div>               
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-12 city_img_mar">
+                        <img src="./ePardesh_files/los-angeles.jpg" style="width:100%">
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Atlanta</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Austin</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Boston</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Baltimore</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Charlotte</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Chicago</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Columbus</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Denvar</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Dellas</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">cleveland</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-12 city_img_mar">
+                        <img src="./ePardesh_files/houston.png" style="width:100%">
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Atlanta</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Austin</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Boston</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Baltimore</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Charlotte</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Chicago</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Columbus</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Denvar</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Dellas</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">cleveland</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-12 city_img_mar">
+                        <img src="./ePardesh_files/Chicago.jpg" style="width:100%">
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Atlanta</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Austin</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Boston</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Baltimore</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Charlotte</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Chicago</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Columbus</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Denvar</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Dellas</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">cleveland</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-12 city_img_mar">
+                        <img src="./ePardesh_files/orlando.jpg" style="width:100%">
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Atlanta</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Austin</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Boston</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Baltimore</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Charlotte</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6  col-sm-6 col-xs-12">
+                        <ul>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Chicago</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Columbus</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Denvar</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">Dellas</a></li>
+                            <li><a href="http://localhost:8888/ePardesh-web/web/#">cleveland</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-content ng-scope">
+        <div class="container">
+            <div class="container">
+                <div class="col-md-6 col-sm-6 col-xs-12 store">
+                    <ul>
+                        <li><a ui-sref="term-condition" href="http://localhost:8888/ePardesh-web/web/#/term-condition">Terms &amp; Conditions</a></li>
+                        <li><a href="http://localhost:8888/ePardesh-web/web/#">|</a></li>
+                        <li><a ui-sref="privacy-policy" href="http://localhost:8888/ePardesh-web/web/#/privacy-policy">Private Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 social">
+                    <ul>
+                        <li><a href="http://localhost:8888/ePardesh-web/web/#"><i class="facebook"></i></a></li>
+                        <li><a href="http://localhost:8888/ePardesh-web/web/#"><i class="twitter"></i></a></li>
+                        <li><a href="http://localhost:8888/ePardesh-web/web/#"><i class="dribble"></i></a></li>
+                        <li><a href="http://localhost:8888/ePardesh-web/web/#"><i class="google"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="copywrite">
+                <p>Copyright © 2016</p>
+            </div>
+
+        </div>
+    </div></div>
+        <span data-cc-scroll-to-top=""></span>
+
+        <!-- Scripts -->
+        <script src="./ePardesh_files/angular.js"></script>
+         <script src="./ePardesh_files/angular-animate.js"></script>
+        <script src="./ePardesh_files/angular-resource.js"></script>
+        <script src="./ePardesh_files/angular-sanitize.js"></script>
+        <script src="./ePardesh_files/ui-bootstrap.min.js"></script>
+        <script src="./ePardesh_files/bootstrap.js"></script>
+        <script src="./ePardesh_files/angular-ui-router.js"></script>
+        <script src="./ePardesh_files/ui-grid.js"></script>
+        <script src="./ePardesh_files/ngStorage.js"></script>
+        <script src="./ePardesh_files/satellizer.js"></script>
+        <script src="./ePardesh_files/chosen.jquery.js"></script>
+        <script src="./ePardesh_files/menu_jquery.js"></script>
+        <script src="./ePardesh_files/responsiveslides.min.js"></script>
+        <script src="./ePardesh_files/validation.js"></script>
+        <script src="./ePardesh_files/jquery.etalage.min.js"></script>
+        <script src="./ePardesh_files/rotationalslider.js"></script>
+         <!-- Angular Material Library -->
+        <script src="./ePardesh_files/angular-aria.min.js"></script>
+        <!-----Bootstrapping(main module)------>
+        <script src="./ePardesh_files/app.js"></script>
+        <script src="./ePardesh_files/config.js"></script>
+
+        <!-----Services file------>
+        <script src="./ePardesh_files/login-reg-services.js"></script>
+        <!-----Directive file------>
+
+        <!-----Routes file------>
+        <script src="./ePardesh_files/routes.js"></script>
+        <!-----controller files------>
+        <script src="./ePardesh_files/header.js"></script>
+        <script src="./ePardesh_files/register.js"></script>
+        <script src="./ePardesh_files/login.js"></script>
+    
+
+</body></html>

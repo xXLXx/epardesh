@@ -1,0 +1,120 @@
+<div ng-controller="home">
+<style>
+.btn11 {
+width: 100%;
+background:#45B39D;
+color: black !important;
+padding: 10px 40px;
+
+}
+body{
+
+    background: #c9eaed;
+
+
+}
+.abc{
+  text-align: center;
+  font-size:30px;
+
+  font-family: 'MavenPro-Regular';
+  font-size: 1.8em;
+font-weight: 700;
+color: #444;
+}
+
+.md-button:not:hover {
+ background-color: rgb(69, 179, 157) ;
+}
+.login{
+padding-bottom: 100px;
+}
+.text{
+font-size: 30px;
+text-align:center;
+}
+.bg{
+  background: #c9eaed;
+}
+.text1{
+  font-weight: 300;
+  color:#EA57A6;
+
+}
+a.md-button.md-default-theme:hover:not([disabled]), a.md-button:hover:not([disabled]), .md-button.md-default-theme:hover:not([disabled]), .md-button:hover:not([disabled]) {
+   background:none; 
+}
+</style>
+
+
+          <div ng-include="'app/templates/header2.html'"></div>
+
+            <md-content class="col-md-4 col-md-offset-4 bg" ng-cloak >
+                <form name="projectForm" >
+                  <div layout="row">
+                    <md-input-container flex="100">
+                      <h2 class="abc"> LOGIN</h2>
+                    </md-input-container>
+                  </div>
+                  <div layout="row">
+                        <md-input-container  flex="100">
+                            <label class="text1">E-mail</label>
+
+                            <input required name="email" type="email" ng-model="loginData.email"  ng-minlength="3" ng-maxlength="25" required>
+                            <div ng-messages="projectForm.email.$error">
+                              <div ng-message="required">  Email is Required.</div>
+                              <div ng-message="email">Invalid</div>
+                              <div ng-message="minlength">Email too short</div>
+                              <div ng-message="maxlength">Email too long</div>
+                            </div>
+                        </md-input-container>
+
+                    </div>
+                    <div layout="row">
+                        <md-input-container  flex="100">
+                            <label class="text1">Password</label>
+
+                            <input required name="password" type="password" ng-model="loginData.password">
+                            <div ng-messages="projectForm.password.$error">
+                              <div ng-message="required">Password is required.</div>
+                              <div ng-message="minlength">Too short.</div>
+                              <div ng-message="maxlength">Too long.</div>
+                            </div>
+                        </md-input-container>
+
+                    </div>
+                    <div class="alert alert-success">login </div>
+                <div class="alert alert-danger"></div>
+
+  
+                    <div class="login">
+                        <md-button type="submit"  class="" ng-disabled="projectForm.$invalid" ng-click="login()"><b class="btn11">Submit</b></md-button>
+<!--                        <a data-ui-sref="Forgot_password" >Forgot Password....</a>-->
+
+                    </div>
+                </form>
+            </md-content>
+
+
+
+
+          <!-- //header-ends -->
+
+
+
+
+      <!--footer section start-->
+      <footer>
+          <p>&copy 2017 FAPS All Rights Reserved </p>
+      </footer>
+      <!--footer section end-->
+      <!-- /w3l-agile -->
+      <!-- main content end-->
+
+      <!--<script type="text/javascript" src="app/content/js/scripts.js"></script>-->
+
+
+</div>
+
+
+</div>

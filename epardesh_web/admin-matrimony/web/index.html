@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>ePardesh</title>
+        <link href="app/content/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="app/content/css/font-awesome.min.css" rel='stylesheet' type='text/css' />
+        <link href="app/content/css/AdminLTE.min.css" rel='stylesheet' type='text/css' />
+        <link  href="app/content/css/skin-blue.min.css" rel='stylesheet' type='text/css' />
+        <link href="app/content/css/data-table.css" rel='stylesheet' type='text/css' />
+        <link href="app/content/css/epardesh.css" rel='stylesheet' type='text/css' />
+         <link href="app/content/css/matrimony.css" rel='stylesheet' type='text/css' />
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+            <!--            <div ui-view=""></div>-->
+            <div ui-view="header"></div> 
+            <div ui-view="content" autoscroll="true"></div>
+            <span data-cc-scroll-to-top></span>
+        </div>
+        <!-- Scripts -->
+        <script src="app/components/scripts/jquery-2.1.4.js"></script>
+        <script src="app/components/scripts/angular.js"></script>
+        <script src="app/components/scripts/angular-ui-router.js"></script>
+        <script src="app/components/scripts/jquery.dataTables.js"></script>
+        <script src="app/components/scripts/data-table.js"></script>
+        <script src="app/components/scripts/bootstrap.js"></script>
+
+        <!-----Routes file------>
+        <script src="app/app.js"></script>
+        <script src="app/config.js"></script>
+        <script src="app/routes.js"></script>
+
+        <!-----Services file------>
+        <script src="app/js/services/log_reg_services.js"></script>
+        <script src="app/js/services/category_services.js"></script>
+        <script src="app/js/services/manageuser_services.js"></script>
+        <script src="app/js/services/plans_services.js"></script>
+        <script src="app/js/services/manage_badword_services.js"></script>
+        <script src="app/js/services/manage_ads.services.js"></script>
+        <script src="app/js/services/add_promotional_services.js"></script>
+        <script src="app/js/services/header_services.js"></script>
+        <script src="app/js/services/promo-services.js"></script>
+        
+        <script src="app/js/services/matrimony/matrimony_user_services.js"></script>
+        <script src="app/js/services/matrimony/matrimony_plan_services.js"></script>
+        <script src="app/js/services/matrimony/matrimony_notification_services.js"></script>
+        <script src="app/js/services/matrimony/matrimony_promocode_services.js"></script>
+        <script src="app/js/services/matrimony/MbadwordServices.js"></script>
+        <!-----Directive file------>
+
+
+
+        <!-----controller files------>
+        <script src="app/js/controllers/header.js"></script>
+        <script src="app/js/controllers/login.js"></script>
+        <script src="app/js/controllers/categories.js"></script>
+        <script src="app/js/controllers/subcategory.js"></script>
+        <script src="app/js/controllers/badword.js"></script>
+        <script src="app/js/controllers/manageuser.js"></script>
+        <script src="app/js/controllers/plans.js"></script>
+        <script src="app/js/controllers/manage_ads.js"></script>
+        <script src="app/js/controllers/add_promotional_ads.js"></script>
+        <script src="app/js/controllers/view-category.js"></script>
+        <script src="app/js/controllers/view-particular-ad.js"></script> 
+        <script src="app/js/controllers/promocode.js"></script> 
+        <script src="app/js/controllers/matrimony/matrimony-user.js"></script>
+        <script src="app/js/controllers/matrimony/matrimony-plan.js"></script>
+        <script src="app/js/controllers/matrimony/matrimony-notification.js"></script>
+        <script src="app/js/controllers/matrimony/matrimony-user-detail.js"></script>
+         <script src="app/js/controllers/matrimony/matrimony-promocode.js"></script>
+         <script src="app/js/controllers/matrimony/matrimony_badword.js"></script>
+    </body>
+
+</html>

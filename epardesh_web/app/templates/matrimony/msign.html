@@ -1,0 +1,803 @@
+<style>
+    .registration_form div {
+        padding: 0px 0px;
+    }
+    .registration {
+        margin-top: 6em;
+    }
+    .success{
+        margin-top: 5px;
+        text-align: center;
+        color: green;
+    }
+    .danger{
+        margin-top: 5px;
+        text-align: center;
+        color: red;
+    }
+    .panel-info ul {
+        margin: 0em 0em;
+        text-align: left;
+        font-size: 15px;
+    }
+    .panel-info h3{
+        font-size:20px;
+        margin-bottom: 10px;
+        text-align: center
+    }
+    /*    .plan-btn{
+            disab
+        }*/
+    .fa-times{
+        color: red;
+    }
+    .fa-check{
+        color: green;
+    }
+    .reg-alert {
+        background: white;
+        border: 2px solid #f3aa5e;
+        border-radius: 20px;
+        width:100%;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .help-block {
+        color: red !important;
+    }
+    .mnd-ast {
+        font-size: 1.5em;
+        color: red !important
+    }
+    .alert-danger {
+        color: red;
+    }
+    
+    
+    
+       .plan_month
+    {
+        text-align: center;
+        background: rgb(22,168,238);
+        padding: 7px;
+        font-size: 19px;
+        margin-left: 2px;
+        cursor:pointer;
+    }
+    .plan_month_6 {
+    text-align: center;
+    background: rgb(233,116,43);
+    padding: 7px;
+    font-size: 19px;
+    margin-left: 2px;
+    cursor:pointer;
+}
+    .plan_month_text{
+        color:#fff;
+        font-weight:bold;
+    }
+    .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #131212 !important;
+}
+.table-bordered {
+     margin-top: 6px;
+    border: 1px solid #151313 !important;
+}
+ .bg-image {
+    background-color: #eeeeee;
+    background-image: url(app/content/img/matrimony_login_bg_2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.ad_preview, .ad_payment, .ad_final, .ad_detail, .ad_type {
+    /* display: none; */
+    background: rgba(238, 238, 238, 0.45)!important;
+    padding: 5px 0px 10px 0px;
+    margin-left: 0px;
+}
+.payment_back h4
+{
+    font-size: 26px;
+          line-height: 39px;
+          margin-bottom: 15px;
+          text-align: center;
+    
+}
+
+
+@media (max-width:468px)
+{
+    
+        .pay_col_payment
+        {
+            font-size:10px;
+        }
+    
+}
+
+   
+    @media (max-width: 625px) {
+  
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table tr {
+    
+    display: block;
+    
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  
+  .tr_item
+  {
+      display: inline-flex;
+     /*position: absolute;*/ 
+    width: 100%;
+  }
+  .tr_item .td_title
+  {
+      width:45% !important;
+  }
+  .td_planType
+  {
+      width:15%;
+  }
+  .td_duration
+  {
+      width:20%;
+  }
+  .td_unit
+  {
+      width:19%;
+  }
+  .td_total
+  {
+      width:9%;
+  }
+  .sub_total
+  {
+          text-align: end!important;
+  }
+  .pay_btn_mob
+  {
+      width:100% !important;
+  }
+  
+  
+}
+
+.pac-container {
+    margin-top: -98px;
+}
+
+
+</style>
+<div class="bg-image">
+<div class="">
+    <div class="registration">
+        <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
+            <h2>new user? <span> create an account </span></h2>
+            <!-- [if IE] 
+                   < link rel='stylesheet' type='text/css' href='ie.css'/>  
+            [endif] -->  
+
+            <!-- [if lt IE 7]>  
+                   < link rel='stylesheet' type='text/css' href='ie6.css'/>  
+            <! [endif] -->  
+
+            <div   data-ng-controller='mSignCtrl as vm'>
+                <!-- Form -->
+                <div class="panel panel-white">
+                    <div class="panel-body">
+                        <div class="formbody">
+                            <div class="newad_menu"><!--Nav bar-->
+                                <ul class="nav nav-tabs" id="mytabs">
+                                    <li class="newad_menu register active_menu"><a><i class="fa fa-tags ad_icon_mar"></i>Info</a></li>
+                                    <li class="newad_menu plan"><a><i class="fa fa-plus-circle ad_icon_mar"></i>Plan</a></li>
+                                    <li class="newad_menu payment"><a><i class="fa fa-paypal ad_icon_mar"></i>Payment</a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                        <div class="row registration_form ad_detail" ng-show="vm.info">
+                            <form id="registration_form" method="post" name="registerForm">
+                                <div class="col-md-12">
+                                    <div class="col-md-1"></div>
+                                    <div class="form_row_pad col-md-10">
+                                        <div class="alert alert-danger fade in login_alert"></div>
+                                        <div class="alert alert-success login_alert" role="alert"></div>
+
+
+                                        <div ng-show='vm.isSign'>
+                                            <div class="alert alert-danger fade in"></div>
+                                            <div class="alert alert-success" role="alert"></div>
+                                        </div>
+
+                                        <div class="userform">
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.f_name.$invalid && !registerForm.f_name.$pristine }">
+                                                    <label for="f_name">First Name<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="First name" autocomplete="off" name="f_name"  type="text" ng-model="vm.signObj.first_name" required>
+                                                    <p ng-show="registerForm.f_name.$invalid && !registerForm.f_name.$pristine" class="help-block">First name is required.</p>
+                                                </div>   
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.l_name.$invalid && !registerForm.l_name.$pristine }">
+                                                    <label for="l_name">Last Name<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="Last name" autocomplete="off" name="l_name"  type="text" ng-model="vm.signObj.last_name" required>
+                                                    <p ng-show="registerForm.l_name.$invalid && !registerForm.l_name.$pristine" class="help-block">Last name is required.</p>
+                                                </div>   
+                                            </div>
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }">
+                                                    <label for="email">Email<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="Email" autocomplete="off" name="email"   type="email" ng-model="vm.signObj.email" ng-blur="vm.mChkEamilFun(vm.signObj.email)" required>
+                                                    <p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" class="help-block">Email is required.</p>
+                                                </div>   
+                                            </div>                   
+
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
+                                                    <label for="password">Password<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="Password" autocomplete="off"  name="password"  type="password" ng-model="vm.signObj.password" required>
+
+                                                    <p ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="help-block">Password is required.</p>
+                                                </div>   
+                                            </div>  						
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.c_password.$invalid && !registerForm.c_password.$pristine }">
+                                                    <label for="c_password">Confirm Password<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="Password" autocomplete="off" name="c_password"   type="password" ng-model="vm.c_password" required>
+                                                    <p ng-show="registerForm.c_password.$invalid && !registerForm.c_password.$pristine" class="help-block">Confirm password is required.</p>
+                                                    <p ng-show="vm.notMatch" class="help-block">Password do not match.</p>
+
+                                                </div>   
+                                            </div> 
+                                            <div class="form-group">
+                                                <div ng-class="{ 'has-error' : registerForm.mobile.$invalid && !registerForm.mobile.$pristine }">
+                                                    <label for="mobile">Mobile<span class="mnd-ast" style="">*</span></label>
+                                                    <input placeholder="" autocomplete="off" phone-input name="mobile" type="text" minlength="14" maxlength="14" ng-model="vm.signObj.mobile" required>
+                                                    <p ng-show="registerForm.mobile.$invalid && !registerForm.mobile.$pristine" class="help-block">Mobile is required.</p>
+                                                    <!--                                                      <p ng-show="registerForm.$error.minlength || !registerForm.$error.maxlength" class="help-block">length should be 10 digit.</p>-->
+                                                </div>   
+                                            </div> 
+
+                                            <div class="form-group">
+                                                <!--                                                <div ng-class="{ 'has-error' : registerForm.alternate_mobile.$invalid && !registerForm.alternate_mobile.$pristine }">-->
+                                                <label for="mobile">Alternate Contact Number<span  style=""></span></label>
+                                                <input placeholder="" autocomplete="off" phone-input name="alternate_mobile" minlength="14" maxlength="14"  type="text" ng-model="vm.signObj.alternate_mobile" >
+                                                <p ng-show="registerForm.alternate_mobile.$invalid && !registerForm.alternate_mobile.$pristine" class="help-block">Mobile is required.</p>
+                                                <!--                                                    <p ng-show="registerForm.alternate_mobile.$invalid && !registerForm.alternate_mobile.$pristine" class="help-block">Mobile is required.</p>-->
+                                                <!--                                                      <p ng-show="registerForm.$error.minlength || !registerForm.$error.maxlength" class="help-block">length should be 10 digit.</p>-->
+                                            </div>  
+                                            
+                                          <div class="form-group">
+                                                <!--                                                <div ng-class="{ 'has-error' : registerForm.alternate_mobile.$invalid && !registerForm.alternate_mobile.$pristine }">-->
+                                                <label for="mobile">Address<span  style=""></span></label>
+                                                  <input type="text" autocomplete="off" name="location" ng-blur="vm.addressFunc()" ng-autocomplete ng-model="vm.signObj.address" placeholder='' required>
+
+                                                <p ng-show="registerForm.location.$invalid && !registerForm.location.$pristine" class="help-block">Address is required.</p>
+                                                <!--                                                    <p ng-show="registerForm.alternate_mobile.$invalid && !registerForm.alternate_mobile.$pristine" class="help-block">Mobile is required.</p>-->
+                                                <!--                                                      <p ng-show="registerForm.$error.minlength || !registerForm.$error.maxlength" class="help-block">length should be 10 digit.</p>-->
+                                            </div>   
+                                            
+                                            
+                                            
+                                        </div> 
+                                        <!--<div class="form-group">-->
+<!--                                            <div ng-class="{ 'has-error' : registerForm.state.$invalid && !registerForm.state.$pristine }">-->
+                                                <!--<label for="state">State<span class="mnd-ast" style="">*</span></label>
+                                                <input placeholder=""  name="state"   type="text" ng-model="vm.signObj.state" required >
+                                                <p ng-show="registerForm.state.$invalid && !registerForm.state.$pristine" class="help-block">State is required.</p>-->
+<!--                                            </div>   -->
+                                       <!-- </div>-->
+                                        <div class="form-group">
+<!--                                            <div ng-class="{ 'has-error' : registerForm.city.$invalid && !registerForm.city.$pristine }">-->
+                                                <label for="city">City<span class="mnd-ast" style="">*</span></label>
+                                                <input placeholder="" autocomplete="off"  name="city"   type="text" ng-model="vm.signObj.city" required>
+
+<!--                                                <select class="form-control select_control" name="city" ng-model="vm.signObj.city" required>   
+                                                    <option value="">Select</option>
+                                                    <option ng-repeat="lng in vm.cities track by $index" value="{{lng.city_name}}">
+                                                        {{lng.city_name}}
+                                                    </option>
+                                                </select>-->
+                                                <p ng-show="registerForm.city.$invalid && !registerForm.city.$pristine" class="help-block">City is required.</p>
+<!--                                            </div>   -->
+                                        </div> 
+                                        
+                                            <div class="form-group">
+<!--                                            <div ng-class="{ 'has-error' : registerForm.country.$invalid && !registerForm.country.$pristine }">-->
+                                                <label for="country">Country<span class="mnd-ast" style="">*</span></label>
+                                                <input placeholder="" autocomplete="off"  name="country"   type="text" ng-model="vm.signObj.country" required>
+                                                <p ng-show="registerForm.country.$invalid && !registerForm.country.$pristine" class="help-block">Country is required.</p>
+<!--                                            </div>   -->
+                                        </div>
+                                        
+                                        <div class="form-group">
+
+                                            <div ng-class="{ 'has-error' : registerForm.gender.$invalid && !registerForm.gender.$pristine }">
+                                                <label for="gender">Gender<span  class="mnd-ast" style="">*</span></label>
+                                                <select class="form-control select_control" name="gender" ng-model="vm.signObj.gender" required> 
+                                                    <option value="">Select Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                                <p ng-show="registerForm.gender.$invalid && !registerForm.gender.$pristine" class="help-block">Gender is required.</p>
+                                            </div>   
+                                        </div> 
+                                        
+                                          <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" ng-model='vm.chkTermCondition'><span style="font-size: 14px;">By registering at EPARDESH , you agree to our <a ui-sref="term-condition" target="_blank"><u>Terms and Conditions</u></a></span>
+                                        </label>
+                                    </div>
+                                        
+                                        
+                                    </div>                       
+
+                                </div>
+                                <div class="col-md-1"></div>
+                                <ul class="pager wizard">
+                                    <li class="next"><a id="next-btn" class="btn btn-default addetail_next" ng-click="vm.planFun()"  ng-disabled="registerForm.$invalid">Next</a>
+
+                                    </li>
+                                </ul></form>
+                        </div>
+
+
+                    </div>
+                    <div class="row ad_type ad_payment" ng-show="vm.plan">
+                        <form  method="post" name="planForm">
+                            <div class="col-md-12">
+                                <div class="reg-alert" ng-if="vm.registered">
+                                    <div class="alert alert-danger fade in login_alert"></div>
+                                    <div class="alert alert-success login_alert" role="alert"></div>
+                                    <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+                                    <button style="width:100px; margin-top:15px;" ng-show="vm.registered" class="btn  btn-social btn-fb" ng-click="vm.goTologin();">OK</button>
+                                </div>
+                                <div class="userform">
+                                    <div class="form-group">
+                                          <div class="col-md-12">
+                    
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3 one plan_month" ng-if="vm.validity != '0'" ng-click="vm.getValidity(0)">
+                            <a href="#" class="plan_month_text">1 Month</a>
+
+                        </div>
+                       
+                        <div class="col-md-3 one plan_month_6" ng-if="vm.validity=='0'" ng-click="vm.getValidity(0)">
+                            <a href="#" class="plan_month_text">1 Month</a>
+
+                        </div>
+                        <div class="col-md-3 plan_month three" ng-if="vm.validity !='1'" ng-click="vm.getValidity(1)">
+                            <a href="#" class="plan_month_text">3 Months</a>
+                        </div>
+                        <div class="col-md-3 plan_month_6 three" ng-if="vm.validity == '1'" ng-click="vm.getValidity(1)">
+                            <a href="#" class="plan_month_text">3 Months</a>
+                        </div>
+                        <div class="col-md-4 plan_month_6 six" ng-if="vm.validity == '2'" ng-click="vm.getValidity(2)">
+                            <a href="#" class="plan_month_text">6 Months(BEST VALUE)</a>
+                        </div>
+                        <div class="col-md-4 plan_month six" ng-if="vm.validity != '2'" ng-click="vm.getValidity(2)">
+                            <a href="#" class="plan_month_text">6 Months(BEST VALUE)</a>
+                        </div>
+                        <div class="col-md-1"></div>
+
+
+
+
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="background: silver;">Features</th>
+                                <th style="background: silver;">
+                                    <label style="font-weight:bold">
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="0" ng-change="vm.planselect(0)">-->
+                                        Free (${{vm.freePlan}})
+                                    </label>
+                                    <input type="radio" ng-model="vm.rmPlan" ng-value="0" ng-change="vm.planselect(0)">
+                                </th>
+                                <th style="background: rgb(254,202,94);">
+                                    <label style="font-weight:bold" ng-if='vm.validity == "0"'>
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="1" ng-change="vm.planselect(1)">-->
+                                        Gold (${{vm.price_gold}})
+                                    </label>
+                                    
+                                    
+                                     <label style="font-weight:bold" ng-if='vm.validity == "1"'>
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="1" ng-change="vm.planselect(1)">-->
+                                        Gold (${{vm.price_gold}})
+                                    </label>
+                                    
+                                     <label style="font-weight:bold" ng-if='vm.validity == "2"'>
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="1" ng-change="vm.planselect(1)">-->
+                                        Gold (${{vm.price_gold}})
+                                    </label>
+                                    <input type="radio" ng-model="vm.rmPlan" ng-value="1" ng-change="vm.planselect(1)">
+                                </th>
+                                <th style="background: wheat">
+                                    <label style="font-weight:bold" ng-if="vm.validity == '0'">
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="2" ng-change="vm.planselect(2)">-->
+                                        Platinum (${{vm.price_platinum}})
+                                    </label>
+                                    
+                                     <label style="font-weight:bold" ng-if="vm.validity == '1'">
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="2" ng-change="vm.planselect(2)">-->
+                                        Platinum (${{vm.price_platinum}})
+                                    </label>
+                                     <label style="font-weight:bold" ng-if="vm.validity == '2'">
+                                        <!--<input type="radio" ng-model="vm.rmPlan" ng-value="2" ng-change="vm.planselect(2)">-->
+                                        Platinum (${{vm.price_platinum}})
+                                    </label>
+                                    <input type="radio" ng-model="vm.rmPlan" ng-value="2" ng-change="vm.planselect(2)">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Personalized Email</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;" >
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Access Verified Contact Details</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom"> Send SMS</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                               <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row"style="cursor:pointer;" >
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">View Horoscope Or Members</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Profile Highlighter</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;" >
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Priority In Search Results</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Profile Tagged As Paid Member For More Responses</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">SMS Alert</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Email Alert</span>
+                                </td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">Enhanced Privacy</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+
+                            <tr style="background: #fff;">
+                                <td scope="row" style="cursor:pointer;">
+                                    <span tooltip-html-unsafe="Price" tooltip-placement="bottom">View Social and Professional Profile Of Members</span>
+                                </td>
+                                <td><i class="fa fa-times" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                            </tr>
+                                                               
+                            <!--                            <tr>
+                                                            <td scope="row"></td>
+                                                            <td><a class="payment_select_btn common_footer" id="2" ng-click="vm.doPayment(0)">Upgrade</a></td>
+                                                            <td><a class="payment_select_btn common_footer" id="2" ng-click="vm.doPayment(1)">Upgrade</a></td>
+                                                            <td><a class="payment_select_btn common_footer" id="2" ng-click="vm.doPayment(2)">Upgrade</a></td>
+                                                        </tr>-->
+
+                        </tbody>
+                    </table>
+                    <!--                    <label for="gender">Select Validity<span  style="font-size: 1.5em">*</span></label>
+                                        <select style="margin-bottom:10px;" class="form-control select_control" ng-model="vm.validity" ng-change='vm.getValidity(vm.validity)'> 
+                                            <option value="0">1 Month </option>
+                                            <option value="1">3 Month </option>
+                                            <option value="2">6 Month </option>
+                                        </select>-->
+                </div>
+                                    </div>
+                                </div>                       
+                                <ul class="pager wizard">
+                                    <li class="previous"><a ng-click="vm.infoFun()" class="btn btn-default" ng-disabled="vm.registered">Previous</a></li>
+                                    <li class="next">
+                                        <a id="next-btn" class="btn btn-default addetail_next next-plan" ng-disabled='vm.showSelectedBtn' ng-click="vm.paymentFun()">Next</a>
+
+                                        <a  style="display:none;" id="next-btn"  class="btn btn-default addetail_next submit-btn" ng-disabled='vm.showSelectedBtn' ng-hide="vm.registered" ng-click="vm.payNow()" >{{vm.btnTitle}}</a>
+                                        <a  id="next-btn" ng-hide="vm.showLoader" ng-disabled="vm.registered"  class="btn btn-default">Processing..</a>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row ad_payment payment_back" ng-show="vm.payment">
+                        <form id="registration_form" method="post" name="planForm">
+                            <div class="col-md-12" style="background: white;">
+                                
+                               <div class="reg-alert" ng-if="vm.registered">
+                                    <div class="alert alert-danger fade in login_alert"></div>
+                                    <div class="alert alert-success login_alert" role="alert"></div>
+                                    <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+                                    <button style="width:100px; margin-top:15px;" ng-show="vm.registered" class="btn  btn-social btn-fb" ng-click="vm.goTologin();">OK</button>
+                                </div>
+                                  <!-- new payment -->
+                            <div class="alert alert-danger fade in login_alert"></div>
+                            <div class="alert alert-success login_alert" role="alert"></div>
+                            <div class='row' style="background:rgb(214,222,241);border: 1px solid;">
+                                <h4>Checkout</h4>
+                            </div>
+                            <div class='row' style="background:rgb(235,236,235);border: 1px solid;">
+                                <h4>Order Summary</h4>
+                            </div>
+
+                            <table class="table table-bordered pay_col_payment">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="8"  scope="row" class="desc bor_white" style="background:rgb(254,230,146);text-align: center;width: 41%;">Description</th>
+                                        <th rowspan="8"  scope="row" class="head" style="background:rgb(254,230,146);text-align: center;">
+                                            Plan Type
+                                        </th>
+                                        <th rowspan="8"  scope="row" class="head"style="background:rgb(254,230,146);text-align: center;">
+                                            Plan Duration
+                                        </th>
+                                        <th rowspan="8" scope="row" class="head" style="background:rgb(254,230,146);text-align: center;">
+                                            Unit Price
+                                        </th>
+
+                                        <th rowspan="8" scope="row" class="head" style="background:rgb(254,230,146);text-align: center;width: 1%;">
+                                            Total Price
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="tr_item">
+                                        <td  class="td_title" scope="row" style="text-align: center;">MATRIMONY PROFILE </td>
+                                        <td class="tick td_planType" >{{vm.plan_type_pay}}</td>
+                                        <td class="tick td_duration">{{vm.validity_show}}</td>
+                                        <td class="tick td_unit">${{vm.price}}</td>
+                                        <td class="tick td_total">${{vm.price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" style="height: 32px;"></td> 
+
+                                    </tr>
+                                    <tr style="font-weight: bold;">
+                                        <td colspan="4" style="text-align: right;">Sub Total:</td>
+                                        <td class="sub_total" style="text-align: center;">${{vm.price}}</td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" style="height: 90px;">
+
+                                            <div class="" ng-if="vm.promocheck" style='float:right;padding-top:45px;'>
+                                                <div class="alert alert-danger fade in login_alert"></div>
+                                                <div class="alert alert-success login_alert" role="alert"></div>
+                                                <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>                     
+                                            </div>  
+                                        </td> 
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="text-align: right;background: aliceblue;">Coupon Code</td>
+                                        <td>
+                                            <input placeholder="Apply here" name="apply" id="apply" type="text" ng-disabled="vm.couponApplied" ng-model="vm.couponText">
+
+                                        </td>
+                                        <td ng-disabled="vm.couponApplied" ng-click="vm.apply();" style="cursor: pointer;color: #fff;background: rgb(22,168,2387);
+                                            " >
+                                            <a style="float:initial;color: #fff;"class="txt-apply" >Apply</a> 
+
+                                        </td>
+
+
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td colspan="5" style="height: 90px;"></td> 
+
+                                    </tr>
+                                    <tr style="background: rgb(254,230,146);font-weight: bold;">
+                                        <td colspan="4" style="text-align: right;">Order Total:</td>
+                                        <td>${{vm.price}}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" style="height: 90px;"></td> 
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5" style="color: green;">&nbsp;&nbsp;Please review the order and click on <span style="color:#0e54f2;">Pay Now</span> button to proceed to the payment page</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" style="color: red;font-weight: bold;">                 
+                                            <input type="checkbox" ng-model='vm.chkTermCondition2'><span> &nbsp;&nbsp;By Checking this box ,you have read and accepted the &nbsp;<a ui-sref="term-condition" target="_blank"><u>Terms & Conditions</u></a> of EPARDESH LLC </span>                                                                                                     
+                                        </td> 
+
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="3"></td>
+                                        <td >
+
+                                            <button type="button" class="cancel_button" ng-click="vm.cancel();">PREVIOUS</button> 
+                                        </td>
+                                        <td class="pay_btn_mob" style="width:21%;">
+                                            <button type="button" class="pay_now_button add_new pay-now addetail_next pay" ng-click="vm.payNow()">PAY NOW</button>                                    
+                                        
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody></table>
+
+                            <!-- end payment -->
+
+                                
+                                
+                                <!--<div class="col-md-1"></div>-->
+<!--                                <div class="form_row_pad col-md-10">
+                                    <div class="reg-alert" ng-if="vm.registered">
+                                        <div class="alert alert-danger fade in login_alert"></div>
+                                        <div class="alert alert-success login_alert" role="alert"></div>
+                                        <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+                                        <button style="width:100px; margin-top:15px;" ng-show="vm.registered" class="btn  btn-social btn-fb" ng-click="vm.goTologin();">OK</button>
+                                    </div>
+                                    <div class="reg-alert" ng-if="vm.promocheck">
+                                        <div class="alert alert-danger fade in login_alert"></div>
+                                        <div class="alert alert-success login_alert" role="alert"></div>
+                                        <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+
+                                    </div>
+
+
+
+
+                                                                        <div class="alert alert-danger fade in login_alert"></div>
+                                                                        <div class="alert alert-success login_alert" role="alert"></div>
+                                                                        <div class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+                                    <div class="userform">
+                                        <ul class="pager wizard">
+                                            <li class="next">
+
+                                                <p class="promo_p" >HAVE ANY PROMOCODE?</p>
+
+                                                <input placeholder="Apply here" name="apply" id="apply" type="text" ng-disabled="vm.couponApplied" ng-model="vm.couponText">
+                                                <a style="float:initial"    class="btn btn-default txt-apply" ng-disabled="vm.couponApplied" ng-click="vm.apply();" >Apply</a><br>
+                                                <br><br>
+
+
+                                                <a style="float:initial"  id="next-btn"  class="btn btn-default addetail_next pay" ng-click="vm.payNow()" >{{vm.btnTitle}}</a>
+                                                <a style="float:initial" id="next-btn" ng-hide="vm.showLoader"  class="btn btn-default">Processing..</a>
+                                            </li>
+                                        </ul>
+                                    </div>   
+                                    <ul class="pager wizard">
+                                        <li class="previous"><a ng-click="vm.planFun()" class="btn btn-default" ng-disabled="vm.registered">Previous</a></li>
+
+                                    </ul>
+                                </div>-->
+                                <!--<div class="col-md-1"></div>-->
+                                <!--                                         <ul class="pager wizard">
+                                                                           <li class="previous"><a ng-click="vm.paymentFun()" class="btn btn-default">Previous</a></li>
+                                                                        
+                                                                    </ul>-->
+                            </div>                             
+                        </form>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--      <div class="col-md-4 col-sm-4 col-xs-12"  data-ng-controller='mLogin as vm'>
+                            <div class="alert alert-danger fade in" ng-show="vm.isLogin"></div>
+                            <div class="alert alert-success" ng-show="vm.isLogin" role="alert"></div>
+                <h2>existing user</h2>
+                <div class="registration_form">
+                     Form 
+                     <form method="post" name="loginForm">
+                    <div class="alert alert-danger fade in login_alert"></div>
+                    <div class="alert alert-success login_alert" role="alert"></div>
+                    <h5>Email</h5>	
+                    <div ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }">
+                        <input type="email" name="email"  ng-model="vm.loginObj.email"  placeholder="Email" required="">
+                        <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Email is required.</p>
+                    </div> 
+                    <h5>Password</h5>
+                    <div ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+                        <input type="password" ng-model="vm.loginObj.password"  name="password" id="password" placeholder="Password" required="">
+                        <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password is required.</p>
+                    </div> <br>
+                                            <a ui-sref="setting" style="text-decoration: none">
+                    <button style="width:100px" type="button" class="btn  btn-social btn-fb" ng-click="vm.login();" ng-disabled="loginForm.$invalid" >Login</button><br>
+                                                </a>
+                    <button type="button" class="btn  btn-social btn-fb" ng-click="authenticate('facebook1')"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp; Sign in with Facebook</button>
+                    <button type="button" class="btn btn-social btn-google" ng-click="authenticate('google1')" ><i class="fa fa-google-plus" aria-hidden="true"></i>&nbsp; Sign in with google</button><br>
+                    <a ui-sref="mforgot">Forgot Password ?</a>
+                </form>	
+                     /Form 
+                </div>
+            </div>-->
+    <div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div ng-include="'app/templates/footer.html'"></div>

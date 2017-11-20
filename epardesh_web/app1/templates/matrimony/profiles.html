@@ -1,0 +1,1012 @@
+<!---- settings content area ---->
+
+<style>
+    .single-right p{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .etalage_thumb_active img{
+        max-height: 100% !important;
+    }
+    .go-back{
+        background: rgba(119, 19, 28, 0.77);
+    }
+    .prod-desc{
+        white-space: pre-line;
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal1 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+    to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close11 {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        opacity: 1;
+    }
+
+    .close11:hover,
+    .close11:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+    .success{
+        color:green;
+    }
+    .danger{
+        color:red;
+    }
+
+</style>
+<div class="container setting-content m-setting-content" data-ng-controller="mParticularProfile as vm">
+
+    <!-----settings left panel start---->
+    <div class="col-md-3 col-sm-3 col-xs-12 setting_menu">
+        <!--<h4>View Profile</h4>-->
+        <ul>
+            <!--        <li class="setting_menu v_profile activep" id="uprf"><a>Home</a></li>
+                        <li class="setting_menu c_profile" id=""><a>Update Profile</a></li>
+                        <li class="setting_menu my_profile"><a>View Profile</a></li>
+                        <li class="setting_menu p_preferences"><a>Partner Preferences</a></li>
+                        <li class="setting_menu c_password"><a>Change Password</a></li>
+                        <li class="setting_menu c_int_profile"><a>Interested Profile</a></li>
+                        <li class="setting_menu c_inbox"><a>Inbox</a></li>
+                        <li class="setting_menu c_membership"><a>Membership</a></li>-->
+            <li class="setting_menu ">
+                <!--<a>-->
+                <div class="row people-sidebar people-sidebar-content mrg-8-btm">
+                    <div class="people-filter-title">
+                        <p> Search Profile</p>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="find-by-gender-title">
+                            <p> Gender</p>
+                        </div>
+                        <div class="filters-by">
+                            <div class="s-btn-group">
+                                <button type="button" ng-click="vm.getGenderFun('')"  class="btn s_btn byGender all s_btn_actiuve">All</button>
+                                <button type="button" ng-click="vm.getGenderFun('Female')" class="btn s_btn byGender female">Female</button>
+                                <button type="button" ng-click="vm.getGenderFun('Male')" class="btn s_btn byGender male">Male</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="filters-age">
+                            <p class="age_range">
+                                <label>Age</label>
+                                <select name="agefrom" ng-model="vm.searchObj.min_age" ng-change="vm.onInfoChagne()" id="agefrom" class="age_st_rng">
+                                    <option value="18" label="18" selected="selected">18</option>
+                                    <option value="19" label="19">19</option>
+                                    <option value="20" label="20">20</option>
+                                    <option value="21" label="21">21</option>
+                                    <option value="22" label="22">22</option>
+                                    <option value="23" label="23">23</option>
+                                    <option value="24" label="24">24</option>
+                                    <option value="25" label="25">25</option>
+                                    <option value="26" label="26">26</option>
+                                    <option value="27" label="27">27</option>
+                                    <option value="28" label="28">28</option>
+                                    <option value="29" label="29">29</option>
+                                    <option value="30" label="30">30</option>
+                                    <option value="31" label="31">31</option>
+                                    <option value="32" label="32">32</option>
+                                    <option value="33" label="33">33</option>
+                                    <option value="34" label="34">34</option>
+                                    <option value="35" label="35">35</option>
+                                    <option value="36" label="36">36</option>
+                                    <option value="37" label="37">37</option>
+                                    <option value="38" label="38">38</option>
+                                    <option value="39" label="39">39</option>
+                                    <option value="40" label="40">40</option>
+                                    <option value="41" label="41">41</option>
+                                    <option value="42" label="42">42</option>
+                                    <option value="43" label="43">43</option>
+                                    <option value="44" label="44">44</option>
+                                    <option value="45" label="45">45</option>
+                                    <option value="46" label="46">46</option>
+                                    <option value="47" label="47">47</option>
+                                    <option value="48" label="48">48</option>
+                                    <option value="49" label="49">49</option>
+                                    <option value="50" label="50">50</option>
+                                </select>			<span>to</span>
+
+                                <select name="ageto" ng-model="vm.searchObj.max_age" id="ageto" ng-change="vm.onInfoChagne()" class="age_end_rng">
+                                    <option value="21" label="21">21</option>
+                                    <option value="22" label="22">22</option>
+                                    <option value="23" label="23">23</option>
+                                    <option value="24" label="24">24</option>
+                                    <option value="25" label="25">25</option>
+                                    <option value="26" label="26">26</option>
+                                    <option value="27" label="27">27</option>
+                                    <option value="28" label="28">28</option>
+                                    <option value="29" label="29">29</option>
+                                    <option value="30" label="30">30</option>
+                                    <option value="31" label="31">31</option>
+                                    <option value="32" label="32">32</option>
+                                    <option value="33" label="33">33</option>
+                                    <option value="34" label="34">34</option>
+                                    <option value="35" label="35">35</option>
+                                    <option value="36" label="36">36</option>
+                                    <option value="37" label="37">37</option>
+                                    <option value="38" label="38">38</option>
+                                    <option value="39" label="39">39</option>
+                                    <option value="40" label="40">40</option>
+                                    <option value="41" label="41">41</option>
+                                    <option value="42" label="42">42</option>
+                                    <option value="43" label="43">43</option>
+                                    <option value="44" label="44">44</option>
+                                    <option value="45" label="45">45</option>
+                                    <option value="46" label="46">46</option>
+                                    <option value="47" label="47">47</option>
+                                    <option value="48" label="48">48</option>
+                                    <option value="49" label="49">49</option>
+                                    <option value="50" label="50" selected="selected">50</option>
+                                </select>		   
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="filters-age">
+                            <p class="age_range">
+                                <label>Religion</label>
+                                <select name="community" ng-model="vm.searchObj.religion" ng-change="vm.onInfoChagne()" id="community" class="c_selecthide1">
+                                    <option value="" label="Select">Select</option>
+                                    <option value="Hindu" label="Hindu" selected="selected">Hindu</option>
+                                    <option value="Muslim" label="Muslim">Muslim</option>
+                                    <option value="Christian" label="Christian">Christian</option>
+                                    <option value="Sikh" label="Sikh">Sikh</option>
+                                    <option value="Parsi" label="Parsi">Parsi</option>
+                                    <option value="Jain" label="Jain">Jain</option>
+                                    <option value="Buddhist" label="Buddhist">Buddhist</option>
+                                    <option value="Jewish" label="Jewish">Jewish</option>
+                                    <option value="No Religion" label="No Religion">No Religion</option>
+                                    <option value="Spiritual - not religious" label="Spiritual">Spiritual</option>
+                                    <option value="Other" label="Other">Other</option>
+                                </select>		
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="filters-age">
+                            <!--                            <div class="filter-age-title">
+                                                            <p> Age</p>
+                                                        </div>-->
+                            <p class="age_range">
+                                <label>Cast</label>
+                                <select name="caste" ng-model="vm.searchObj.caste" id="cast" ng-change="vm.onInfoChagne()" class="c_selecthide" style="display: block;">
+                                    <option value="">Select</option><optgroup label="Frequently Used"></optgroup><option value="Balija">Balija</option><option value="Baniya">Baniya</option><option value="Brahmin">Brahmin</option><option value="Brahmin - Kokanastha">Brahmin - Kokanastha</option><option value="Gujarati">Gujarati</option><option value="Gujjar">Gujjar</option><option value="Kayastha">Kayastha</option><option value="Kunbi">Kunbi</option><option value="Kushwaha">Kushwaha</option><option value="Lingayath">Lingayath</option><option value="Mali">Mali</option><option value="Mehra">Mehra</option><option value="Nai">Nai</option><option value="Nepali">Nepali</option><option value="Rajput">Rajput</option><option value="Reddy">Reddy</option><option value="Sonar">Sonar</option><option value="Teli">Teli</option><option value="Vaish">Vaish</option><option value="Yadav">Yadav</option><optgroup label="More"></optgroup><option value="96K Kokanastha">96K Kokanastha</option><option value="Adi Andhra">Adi Andhra</option><option value="Adi Dravida">Adi Dravida</option><option value="Adi Karnataka">Adi Karnataka</option><option value="Agarwal">Agarwal</option><option value="Agnikula Kshatriya">Agnikula Kshatriya</option><option value="Agri">Agri</option><option value="Ahom">Ahom</option><option value="Ambalavasi">Ambalavasi</option><option value="Arekatica">Arekatica</option><option value="Arora">Arora</option><option value="Arunthathiyar">Arunthathiyar</option><option value="Arya Vysya">Arya Vysya</option><option value="Aryasamaj">Aryasamaj</option><option value="Ayyaraka">Ayyaraka</option><option value="Badaga">Badaga</option><option value="Baghel/Pal/Gaderiya">Baghel/Pal/Gaderiya</option><option value="Bahi">Bahi</option><option value="Baidya">Baidya</option><option value="Baishnab">Baishnab</option><option value="Baishya">Baishya</option><option value="Bajantri">Bajantri</option><option value="Balija - Naidu">Balija - Naidu</option><option value="Banik">Banik</option><option value="Bari">Bari</option><option value="Barujibi">Barujibi</option><option value="Bengali">Bengali</option><option value="Besta">Besta</option><option value="Bhandari">Bhandari</option><option value="Bhatia">Bhatia</option><option value="Bhatraju">Bhatraju</option><option value="Bhavsar">Bhavsar</option><option value="Bhovi">Bhovi</option><option value="Billava">Billava</option><option value="Boya/Nayak/Naik">Boya/Nayak/Naik</option><option value="Boyer">Boyer</option><option value="Brahmbatt">Brahmbatt</option><option value="Brahmin - Anavil">Brahmin - Anavil</option><option value="Brahmin - Audichya">Brahmin - Audichya</option><option value="Brahmin - Barendra">Brahmin - Barendra</option><option value="Brahmin - Bengali">Brahmin - Bengali</option><option value="Brahmin - Bhatt">Brahmin - Bhatt</option><option value="Brahmin - Bhumihar">Brahmin - Bhumihar</option><option value="Brahmin - Brahmbhatt">Brahmin - Brahmbhatt</option><option value="Brahmin - Daivadnya">Brahmin - Daivadnya</option><option value="Brahmin - Danua">Brahmin - Danua</option><option value="Brahmin - Deshastha">Brahmin - Deshastha</option><option value="Brahmin - Dhiman">Brahmin - Dhiman</option><option value="Brahmin - Dravida">Brahmin - Dravida</option><option value="Brahmin - Embrandiri">Brahmin - Embrandiri</option><option value="Brahmin - Garhwali">Brahmin - Garhwali</option><option value="Brahmin - Goswami">Brahmin - Goswami</option><option value="Brahmin - Gour">Brahmin - Gour</option><option value="Brahmin - Gowd Saraswat">Brahmin - Gowd Saraswat</option><option value="Brahmin - Gurukkal">Brahmin - Gurukkal</option><option value="Brahmin - Halua">Brahmin - Halua</option><option value="Brahmin - Havyaka">Brahmin - Havyaka</option><option value="Brahmin - Himachali">Brahmin - Himachali</option><option value="Brahmin - Hoysala">Brahmin - Hoysala</option><option value="Brahmin - Iyengar">Brahmin - Iyengar</option><option value="Brahmin - Iyer">Brahmin - Iyer</option><option value="Brahmin - Jhadua">Brahmin - Jhadua</option><option value="Brahmin - Jhijhotiya">Brahmin - Jhijhotiya</option><option value="Brahmin - Kannada Madhva">Brahmin - Kannada Madhva</option><option value="Brahmin - Kanyakubja">Brahmin - Kanyakubja</option><option value="Brahmin - Karhade">Brahmin - Karhade</option><option value="Brahmin - Kashmiri Pandit">Brahmin - Kashmiri Pandit</option><option value="Brahmin - Kota">Brahmin - Kota</option><option value="Brahmin - Kulin">Brahmin - Kulin</option><option value="Brahmin - Kumaoni">Brahmin - Kumaoni</option><option value="Brahmin - Madhwa">Brahmin - Madhwa</option><option value="Brahmin - Maharashtrian">Brahmin - Maharashtrian</option><option value="Brahmin - Maithili">Brahmin - Maithili</option><option value="Brahmin - Modh">Brahmin - Modh</option><option value="Brahmin - Mohyal">Brahmin - Mohyal</option><option value="Brahmin - Nagar">Brahmin - Nagar</option><option value="Brahmin - Namboodiri">Brahmin - Namboodiri</option><option value="Brahmin - Niyogi">Brahmin - Niyogi</option><option value="Brahmin - Niyogi Nandavariki">Brahmin - Niyogi Nandavariki</option><option value="Brahmin - Other">Brahmin - Other</option><option value="Brahmin - Paliwal">Brahmin - Paliwal</option><option value="Brahmin - Panda">Brahmin - Panda</option><option value="Brahmin - Pareek">Brahmin - Pareek</option><option value="Brahmin - Punjabi">Brahmin - Punjabi</option><option value="Brahmin - Pushkarna">Brahmin - Pushkarna</option><option value="Brahmin - Rarhi">Brahmin - Rarhi</option><option value="Brahmin - Rudraj">Brahmin - Rudraj</option><option value="Brahmin - Sakaldwipi">Brahmin - Sakaldwipi</option><option value="Brahmin - Sanadya">Brahmin - Sanadya</option><option value="Brahmin - Sanketi">Brahmin - Sanketi</option><option value="Brahmin - Saraswat">Brahmin - Saraswat</option><option value="Brahmin - Saryuparin">Brahmin - Saryuparin</option><option value="Brahmin - Shivhalli">Brahmin - Shivhalli</option><option value="Brahmin - Shrimali">Brahmin - Shrimali</option><option value="Brahmin - Smartha">Brahmin - Smartha</option><option value="Brahmin - Sri Vaishnava">Brahmin - Sri Vaishnava</option><option value="Brahmin - Stanika">Brahmin - Stanika</option><option value="Brahmin - Tyagi">Brahmin - Tyagi</option><option value="Brahmin - Vaidiki">Brahmin - Vaidiki</option><option value="Brahmin - Vaikhanasa">Brahmin - Vaikhanasa</option><option value="Brahmin - Velanadu">Brahmin - Velanadu</option><option value="Brahmin - Viswabrahmin">Brahmin - Viswabrahmin</option><option value="Brahmin - Vyas">Brahmin - Vyas</option><option value="Brahmo">Brahmo</option><option value="Buddar">Buddar</option><option value="Bunt (Shetty)">Bunt (Shetty)</option><option value="CKP">CKP</option><option value="Chalawadi Holeya">Chalawadi Holeya</option><option value="Chambhar">Chambhar</option><option value="Chandravanshi Kahar">Chandravanshi Kahar</option><option value="Chasa">Chasa</option><option value="Chattada Sri Vaishnava">Chattada Sri Vaishnava</option><option value="Chaudary">Chaudary</option><option value="Chaurasia">Chaurasia</option><option value="Chekkala - Nair">Chekkala - Nair</option><option value="Chennadasar">Chennadasar</option><option value="Cheramar">Cheramar</option><option value="Chettiar">Chettiar</option><option value="Chhetri">Chhetri</option><option value="Chippolu/Mera">Chippolu/Mera</option><option value="Coorgi">Coorgi</option><option value="Devadiga">Devadiga</option><option value="Devanga">Devanga</option><option value="Devar/Thevar/Mukkulathor">Devar/Thevar/Mukkulathor</option><option value="Devendra Kula Vellalar">Devendra Kula Vellalar</option><option value="Dhangar">Dhangar</option><option value="Dheevara">Dheevara</option><option value="Dhiman">Dhiman</option><option value="Dhoba">Dhoba</option><option value="Dhobi">Dhobi</option><option value="Digambar">Digambar</option><option value="Dommala">Dommala</option><option value="Ediga">Ediga</option><option value="Ezhava">Ezhava</option><option value="Ezhuthachan">Ezhuthachan</option><option value="Gabit">Gabit</option><option value="Ganakar">Ganakar</option><option value="Gandla">Gandla</option><option value="Ganiga">Ganiga</option><option value="Garhwali">Garhwali</option><option value="Gatti">Gatti</option><option value="Gavali">Gavali</option><option value="Gavara">Gavara</option><option value="Ghumar">Ghumar</option><option value="Goala">Goala</option><option value="Goan">Goan</option><option value="Goswami">Goswami</option><option value="Goud">Goud</option><option value="Goud Saraswat Brahmin (GSB)">Goud Saraswat Brahmin (GSB)</option><option value="Gounder">Gounder</option><option value="Gowda">Gowda</option><option value="Gramani">Gramani</option><option value="Gudia">Gudia</option><option value="Gupta">Gupta</option><option value="Guptan">Guptan</option><option value="Gurjar">Gurjar</option><option value="Hegde">Hegde</option><option value="Helava">Helava</option><option value="Hugar (Jeer)">Hugar (Jeer)</option><option value="Intercaste">Intercaste</option><option value="Jaalari">Jaalari</option><option value="Jaiswal">Jaiswal</option><option value="Jandra">Jandra</option><option value="Jangam">Jangam</option><option value="Jat">Jat</option><option value="Jatav">Jatav</option><option value="Jetty Malla">Jetty Malla</option><option value="Kachara">Kachara</option><option value="Kaibarta">Kaibarta</option><option value="Kakkalan">Kakkalan</option><option value="Kalar">Kalar</option><option value="Kalinga">Kalinga</option><option value="Kalinga Vysya">Kalinga Vysya</option><option value="Kalita">Kalita</option><option value="Kalwar">Kalwar</option><option value="Kamboj">Kamboj</option><option value="Kamma">Kamma</option><option value="Kammala">Kammala</option><option value="Kaniyan">Kaniyan</option><option value="Kannada Mogaveera">Kannada Mogaveera</option><option value="Kansari">Kansari</option><option value="Kapu">Kapu</option><option value="Kapu Naidu">Kapu Naidu</option><option value="Karana">Karana</option><option value="Karmakar">Karmakar</option><option value="Kartha">Kartha</option><option value="Karuneegar">Karuneegar</option><option value="Kasar">Kasar</option><option value="Kashyap">Kashyap</option><option value="Kavuthiyya/Ezhavathy">Kavuthiyya/Ezhavathy</option><option value="Khandayat">Khandayat</option><option value="Khandelwal">Khandelwal</option><option value="Kharwar">Kharwar</option><option value="Khatik">Khatik</option><option value="Khatri">Khatri</option><option value="Koli">Koli</option><option value="Kongu Vellala Gounder">Kongu Vellala Gounder</option><option value="Konkani">Konkani</option><option value="Korama">Korama</option><option value="Kori">Kori</option><option value="Koshti">Koshti</option><option value="Krishnavaka">Krishnavaka</option><option value="Kshatriya">Kshatriya</option><option value="Kshatriya - Bhavasar">Kshatriya - Bhavasar</option><option value="Kshatriya/Raju/Varma">Kshatriya/Raju/Varma</option><option value="Kudumbi">Kudumbi</option><option value="Kulal">Kulal</option><option value="Kulalar">Kulalar</option><option value="Kulita">Kulita</option><option value="Kumawat">Kumawat</option><option value="Kumbara">Kumbara</option><option value="Kumbhakar/Kumbhar">Kumbhakar/Kumbhar</option><option value="Kumhar">Kumhar</option><option value="Kummari">Kummari</option><option value="Kurava">Kurava</option><option value="Kuravan">Kuravan</option><option value="Kurmi">Kurmi</option><option value="Kuruba">Kuruba</option><option value="Kuruhina Shetty">Kuruhina Shetty</option><option value="Kurumbar">Kurumbar</option><option value="Kurup">Kurup</option><option value="Kutchi">Kutchi</option><option value="Lambadi/Banjara">Lambadi/Banjara</option><option value="Lambani">Lambani</option><option value="Leva Patil">Leva Patil</option><option value="Lohana">Lohana</option><option value="Lohar">Lohar</option><option value="Lubana">Lubana</option><option value="Madiga">Madiga</option><option value="Mahajan">Mahajan</option><option value="Mahar">Mahar</option><option value="Maharashtrian">Maharashtrian</option><option value="Mahendra">Mahendra</option><option value="Maheshwari">Maheshwari</option><option value="Mahindra">Mahindra</option><option value="Mahishya">Mahishya</option><option value="Majabi">Majabi</option><option value="Mala">Mala</option><option value="Malayalee Variar">Malayalee Variar</option><option value="Mangalorean">Mangalorean</option><option value="Maniyani">Maniyani</option><option value="Mannadiar">Mannadiar</option><option value="Mannan">Mannan</option><option value="Mapila">Mapila</option><option value="Marar">Marar</option><option value="Maratha">Maratha</option><option value="Maratha - Gomantak">Maratha - Gomantak</option><option value="Maruthuvar">Maruthuvar</option><option value="Marvar">Marvar</option><option value="Marwari">Marwari</option><option value="Matang">Matang</option><option value="Maurya">Maurya</option><option value="Meda">Meda</option><option value="Medara">Medara</option><option value="Meena">Meena</option><option value="Meenavar">Meenavar</option><option value="Menon">Menon</option><option value="Meru Darji">Meru Darji</option><option value="Modak">Modak</option><option value="Mogaveera">Mogaveera</option><option value="Monchi">Monchi</option><option value="Mudaliar">Mudaliar</option><option value="Mudaliar - Arcot">Mudaliar - Arcot</option><option value="Mudaliar - Saiva">Mudaliar - Saiva</option><option value="Mudaliar - Senguntha">Mudaliar - Senguntha</option><option value="Mudiraj">Mudiraj</option><option value="Munnuru Kapu">Munnuru Kapu</option><option value="Muthuraja">Muthuraja</option><option value="Naagavamsam">Naagavamsam</option><option value="Nadar">Nadar</option><option value="Nagaralu">Nagaralu</option><option value="Naicken">Naicken</option><option value="Naicker">Naicker</option><option value="Naidu">Naidu</option><option value="Naik">Naik</option><option value="Nair">Nair</option><option value="Nair - Chekkala">Nair - Chekkala</option><option value="Nair - Vaniya">Nair - Vaniya</option><option value="Nair - Velethadathu">Nair - Velethadathu</option><option value="Nair - Veluthedathu">Nair - Veluthedathu</option><option value="Nair - Vilakkithala">Nair - Vilakkithala</option><option value="Namasudra">Namasudra</option><option value="Nambiar">Nambiar</option><option value="Nambisan">Nambisan</option><option value="Namboodiri - Brahmin">Namboodiri - Brahmin</option><option value="Namosudra">Namosudra</option><option value="Napit">Napit</option><option value="Nayak">Nayak</option><option value="Nayaka">Nayaka</option><option value="Neeli">Neeli</option><option value="Nhavi">Nhavi</option><option value="OBC - Barber/Naayee">OBC - Barber/Naayee</option><option value="Oswal">Oswal</option><option value="Otari">Otari</option><option value="Padmasali">Padmasali</option><option value="Panchal">Panchal</option><option value="Pandaram">Pandaram</option><option value="Panicker">Panicker</option><option value="Paravan">Paravan</option><option value="Parit">Parit</option><option value="Parkava Kulam">Parkava Kulam</option><option value="Partraj">Partraj</option><option value="Patel">Patel</option><option value="Patel - Desai">Patel - Desai</option><option value="Patel - Dodia">Patel - Dodia</option><option value="Patel - Kadva">Patel - Kadva</option><option value="Patel - Leva">Patel - Leva</option><option value="Patnaick">Patnaick</option><option value="Patra">Patra</option><option value="Perika">Perika</option><option value="Pillai">Pillai</option><option value="Pisharody">Pisharody</option><option value="Poduval">Poduval</option><option value="Poosala">Poosala</option><option value="Prajapati">Prajapati</option><option value="Pulaya">Pulaya</option><option value="Punjabi">Punjabi</option><option value="Rajaka">Rajaka</option><option value="Rajaka/Chakali/Dhobi">Rajaka/Chakali/Dhobi</option><option value="Rajbhar">Rajbhar</option><option value="Rajput - Garhwali">Rajput - Garhwali</option><option value="Rajput - Kumaoni">Rajput - Kumaoni</option><option value="Rajput - Lodhi">Rajput - Lodhi</option><option value="Ramdasia">Ramdasia</option><option value="Ramgharia">Ramgharia</option><option value="Ravidasia">Ravidasia</option><option value="Rawat">Rawat</option><option value="Reddiar">Reddiar</option><option value="Relli">Relli</option><option value="SSK">SSK</option><option value="Sadgop">Sadgop</option><option value="Sagara - Uppara">Sagara - Uppara</option><option value="Saha">Saha</option><option value="Sahu">Sahu</option><option value="Saini">Saini</option><option value="Saiva Vellala">Saiva Vellala</option><option value="Saliya">Saliya</option><option value="Sambava">Sambava</option><option value="Saraswat - Brahmin">Saraswat - Brahmin</option><option value="Savji">Savji</option><option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option><option value="Scheduled Tribe (ST)">Scheduled Tribe (ST)</option><option value="Senai Thalaivar">Senai Thalaivar</option><option value="Sepahia">Sepahia</option><option value="Setti Balija">Setti Balija</option><option value="Shah">Shah</option><option value="Shimpi">Shimpi</option><option value="Sindhi">Sindhi</option><option value="Sindhi - Bhanusali">Sindhi - Bhanusali</option><option value="Sindhi - Bhatia">Sindhi - Bhatia</option><option value="Sindhi - Chhapru">Sindhi - Chhapru</option><option value="Sindhi - Dadu">Sindhi - Dadu</option><option value="Sindhi - Hyderabadi">Sindhi - Hyderabadi</option><option value="Sindhi - Larai">Sindhi - Larai</option><option value="Sindhi - Lohana">Sindhi - Lohana</option><option value="Sindhi - Rohiri">Sindhi - Rohiri</option><option value="Sindhi - Sehwani">Sindhi - Sehwani</option><option value="Sindhi - Thatai">Sindhi - Thatai</option><option value="Sindhi-Amil">Sindhi-Amil</option><option value="Sindhi-Baibhand">Sindhi-Baibhand</option><option value="Sindhi-Larkana">Sindhi-Larkana</option><option value="Sindhi-Sahiti">Sindhi-Sahiti</option><option value="Sindhi-Sakkhar">Sindhi-Sakkhar</option><option value="Sindhi-Shikarpuri">Sindhi-Shikarpuri</option><option value="Somvanshi">Somvanshi</option><option value="Soni">Soni</option><option value="Sourashtra">Sourashtra</option><option value="Sowrashtra">Sowrashtra</option><option value="Sozhiya Vellalar">Sozhiya Vellalar</option><option value="Sri Vaishnava">Sri Vaishnava</option><option value="Srisayana">Srisayana</option><option value="Subarna Banik">Subarna Banik</option><option value="Sugali (Naika)">Sugali (Naika)</option><option value="Sundhi">Sundhi</option><option value="Surya Balija">Surya Balija</option><option value="Sutar">Sutar</option><option value="Swarnakar">Swarnakar</option><option value="Tamboli">Tamboli</option><option value="Tamil Yadava">Tamil Yadava</option><option value="Tanti">Tanti</option><option value="Tantuway">Tantuway</option><option value="Telaga">Telaga</option><option value="Telugu">Telugu</option><option value="Thachar">Thachar</option><option value="Thakkar">Thakkar</option><option value="Thakur">Thakur</option><option value="Thandan">Thandan</option><option value="Thigala">Thigala</option><option value="Thiyya">Thiyya</option><option value="Togata">Togata</option><option value="Turupu Kapu">Turupu Kapu</option><option value="Udayar">Udayar</option><option value="Urali Gounder">Urali Gounder</option><option value="Urs">Urs</option><option value="Vada Balija">Vada Balija</option><option value="Vadagalai">Vadagalai</option><option value="Vaddera">Vaddera</option><option value="Vaduka">Vaduka</option><option value="Vaish - Dhaneshawat">Vaish - Dhaneshawat</option><option value="Vaishnav">Vaishnav</option><option value="Vaishnav - Bhatia">Vaishnav - Bhatia</option><option value="Vaishnav - Vania">Vaishnav - Vania</option><option value="Vaishya">Vaishya</option><option value="Vallala">Vallala</option><option value="Valluvan">Valluvan</option><option value="Valmiki">Valmiki</option><option value="Vanika Vyshya">Vanika Vyshya</option><option value="Vaniya - Nair">Vaniya - Nair</option><option value="Vanjara">Vanjara</option><option value="Vankar">Vankar</option><option value="Vannan">Vannan</option><option value="Vannar">Vannar</option><option value="Vanniyakullak Kshatriya">Vanniyakullak Kshatriya</option><option value="Vanniyar">Vanniyar</option><option value="Variar">Variar</option><option value="Varshney">Varshney</option><option value="Veera Saivam">Veera Saivam</option><option value="Veerashaiva">Veerashaiva</option><option value="Velaan">Velaan</option><option value="Velama">Velama</option><option value="Velar">Velar</option><option value="Vellalar">Vellalar</option><option value="Veluthedathu - Nair">Veluthedathu - Nair</option><option value="Vettuva Gounder">Vettuva Gounder</option><option value="Vilakithala - Nair">Vilakithala - Nair</option><option value="Vishwakarma">Vishwakarma</option><option value="Viswabrahmin">Viswabrahmin</option><option value="Vokaliga">Vokaliga</option><option value="Vokkaliga">Vokkaliga</option><option value="Vysya">Vysya</option><option value="Waada Balija">Waada Balija</option>
+                                </select>		
+                            </p>
+
+                        </div>
+                    </div>
+                    <!--                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="filters-age">
+                                                                            <div class="filter-age-title">
+                                                                                <p> Age</p>
+                                                                            </div>
+                                                <p class="age_range">
+                                                    <label>Country</label>
+                                                    <select id="countryofresidence" class="c_selecthide1">
+                                                        <option value="" label="Select" selected="selected">Select</option>
+                                                        <optgroup id="" label="Frequently Used">Frequently Used</optgroup><option value="India" selected="">India</option><option value="USA">USA</option><option value="United Kingdom">United Kingdom</option><option value="United Arab Emirates">United Arab Emirates</option><option value="Canada">Canada</option><option value="Australia">Australia</option><option value="New Zealand">New Zealand</option><option value="Pakistan">Pakistan</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Kuwait">Kuwait</option><option value="South Africa">South Africa</option><optgroup id="countryofresidence-optgroup-All Countries" label="All Countries">All Countries</optgroup><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="American Samoa">American Samoa</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Anguilla">Anguilla</option><option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Bermuda">Bermuda</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Brazil">Brazil</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Cape Verde">Cape Verde</option><option value="Cayman Islands">Cayman Islands</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo (DRC)">Congo (DRC)</option><option value="Congo">Congo</option><option value="Cook Islands">Cook Islands</option><option value="Costa Rica">Costa Rica</option><option value="Cote d'Ivoire">Cote d'Ivoire</option><option value="Croatia (Hrvatska)">Croatia (Hrvatska)</option><option value="Cuba">Cuba</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="East Timor">East Timor</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands">Falkland Islands</option><option value="Faroe Islands">Faroe Islands</option><option value="Fiji Islands">Fiji Islands</option><option value="Finland">Finland</option><option value="France">France</option><option value="French Guiana">French Guiana</option><option value="French Polynesia">French Polynesia</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Greece">Greece</option><option value="Greenland">Greenland</option><option value="Grenada">Grenada</option><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Honduras">Honduras</option><option value="Hong Kong SAR">Hong Kong SAR</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="Korea">Korea</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Macao SAR">Macao SAR</option><option value="Macedonia">Macedonia</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mayotte">Mayotte</option><option value="Mexico">Mexico</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montserrat">Montserrat</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands Antilles">Netherlands Antilles</option><option value="Netherlands">Netherlands</option><option value="New Caledonia">New Caledonia</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option value="Norfolk Island">Norfolk Island</option><option value="North Korea">North Korea</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Pitcairn Islands">Pitcairn Islands</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Puerto Rico">Puerto Rico</option><option value="Qatar">Qatar</option><option value="Reunion">Reunion</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia and Montenegro">Serbia and Montenegro</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="St. Helena">St. Helena</option><option value="St. Kitts and Nevis">St. Kitts and Nevis</option><option value="St. Lucia">St. Lucia</option><option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option><option value="St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Swaziland">Swaziland</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom">United Kingdom</option><option value="Uruguay">Uruguay</option><option value="USA">USA</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Virgin Islands (British)">Virgin Islands (British)</option><option value="Virgin Islands">Virgin Islands</option><option value="Wallis and Futuna">Wallis and Futuna</option><option value="Yemen">Yemen</option><option value="Yugoslavia">Yugoslavia</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option>                     
+                                                    </select>		
+                                                </p>
+                    
+                                            </div>
+                                        </div>-->
+
+                    <button class="md-button md-ink-ripple" type="submit" ng-click="vm.searchFun();"><span class="ng-scope">Search</span><div class="md-ripple-container"></div></button>
+
+                </div>
+                <!--</a>-->
+            </li>
+        </ul>
+    </div>
+    <!-----/settings left panel start---->
+    <!-----settings right panel start---->
+    <div class="col-md-9 col-sm-9 col-xs-12">
+
+        <!-----manage ads panel---->
+        <div class="row manage_ads">
+            <div class='col-md-12'>
+                <h4>Profiles</h4>
+
+                <div class="text-center ng-hide" ng-show="vm.profileLoader"><img src="app/content/img/loadingdata.gif"></div>
+                <span ng-hide="vm.profileLoader">
+                    <!--                    <div class="col-md-12"> 
+                                            <div class='col-md-2'></div>
+                                            <div class='col-md-8'>
+                                                <div class="c100 p12 small orange">
+                                                    <span>{{vm.view_count}}</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">Profile Viewed</div>
+                                            </div>
+                                            <div class='col-md-2'></div>
+                                        </div>-->
+                    <div ng-if="vm.allProfile.length != 0" class="col-md-12 add_bx" ng-repeat='dt in vm.allProfile'>
+                        <div class="col-md-9">
+                            <img  src="app/content/img/featured.png" class="ad_feature_img" alt=""/>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="profile_title_wrap">
+                                        <span class="profile_title fl">
+                                            <a class="user_name" style="text-transform: capitalize">{{dt.first_name}} {{dt.last_name}}</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <span ng-if='dt.profile_picture == null'> <img class="user_img" style='cursor: pointer;' ng-click="vm.popUpImg('http://itspronouncedmetrosexual.com/wp-content/themes/ipmtheme/library/images/sam-killermann-headshot.jpg')"  src="http://itspronouncedmetrosexual.com/wp-content/themes/ipmtheme/library/images/sam-killermann-headshot.jpg" alt=""/></span>
+                                    <span ng-if='dt.profile_picture != null'> <img class="user_img" style="max-height:220px; cursor: pointer;"  src="{{dt.profile_picture}}" alt="" ng-click="vm.popUpImg(dt.profile_picture)"/></span>
+                                    <div class="profileId">Profile Id: {{dt.profile_id}}</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="profile_basic">
+                                        <label class="label">Age</label>
+                                        <div class="info">
+                                            <span ng-if="dt.age == null">Not Specified</span>
+                                            <span ng-if="dt.age != null">{{dt.age}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Height</label>
+                                        <div class="info">
+                                            <span ng-if="dt.height == null">Not Specified</span>
+                                            <span ng-if="dt.height != null">{{dt.height}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Religion</label>
+                                        <div class="info">
+                                            <span ng-if="dt.religion == null">Not Specified</span>
+                                            <span ng-if="dt.religion != null">{{dt.religion}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Mother Tongue</label>
+                                        <div class="info">
+                                            <span ng-if="dt.mother_tounge == null">Not Specified</span>
+                                            <span ng-if="dt.mother_tounge != null">{{dt.mother_tounge}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Community</label>
+                                        <div class="info">
+                                            <span ng-if="dt.community == null">Not Specified</span>
+                                            <span ng-if="dt.community != null">{{dt.community}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Location</label>
+                                        <div class="info">
+                                            <span ng-if="dt.city == null">Not Specified</span>
+                                            <span ng-if="dt.city != null">{{dt.city}}, {{dt.country}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Education</label>
+                                        <div class="info">
+                                            <span ng-if="dt.education == null">Not Specified</span>
+                                            <span ng-if="dt.education != null">{{dt.education}}</span>
+                                        </div>
+                                        <div class="clearfix"></div><div class="spacer_4"></div>
+                                        <label class="label">Profession</label>
+                                        <div class="info">
+                                            <span ng-if="dt.working_as == null">Not Specified</span>
+                                            <span ng-if="dt.working_as != null">{{dt.education}}, {{dt.education}}</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" ng-if="vm.imgArr[$index].length > 0">
+                                <img  ng-repeat="img in vm.imgArr[$index]" style='cursor: pointer;' class="thumbnail_img " height="60" width="60" src="{{img}}"  ng-click="vm.popUpImg(img)" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <a ng-if="dt.status == 0" ng-click="vm.connnectRequestFun(dt, 3)" class="profile_options" title="Add to favourite"><img src="http://www.cherada.net/images/favorites_add.png"></a>
+                            <a ng-if="dt.request_status == 0" ng-click="vm.connnectRequestFun(dt, 2)" class="profile_options" title="Send request"><img src="https://binder-ee-assets-prd.s3.amazonaws.com/img/home/rfq_ico.png"></a>
+                            <!--<a href="#" class="profile_options" title="Block"><img src="http://www.ipbrief.net/wp-content/uploads/2013/08/blocked.png"></a>-->
+                            <!--<a href="#" data-toggle="modal" data-target="#spamModal" class="profile_options" title="Report spam"><img src="http://www.bowlegsnomore.com/images/no-spam.gif"></a>-->
+                            <div class="profile_activity_b">
+                                <!-- Express interest button -->
+                                <button type="button" class="btn btn-xs req_accept" ng-click="vm.onBtnClickofSendEmail(dt)" >Send Email</button>
+                                <button type="button" class="btn btn-xs req_accept" ng-click="vm.onBtnClickofSendSMS(dt)" >Send SMS</button>
+                                <div class="user_request">
+                                </div>
+                                <span><a  class="gray_1" ng-click="vm.viewProfile(dt, 1);">
+                                        <span class="viewprofile_icon"></span>View full Profile</a></span>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="vm.allProfile.length == 0" class="col-md-12 add_bx">
+                        No matching profile
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="row  view_particualr_profile">
+            <div class='col-md-12'>
+                <div class="view_basic_info">
+                    <div> <h4 class="intrested_profiles">View Profile <button class="compose" type="submit" ng-click="vm.onClickOfBackBtn();">
+                                <i class="fa fa-left "></i>Back</button></h4>
+
+                    </div>
+                    <!--<h4 class="intrested_profiles">View Profile</h4>-->
+                    <div class="profile_type_border">
+                        <div class="profile_selected_tab">About Myself</div>
+                        <div id="sub_heading" style="clear:both;">
+                            Personality, Family Details, Career, Partner Expectations etc.  
+
+                        </div>
+                        <div class="single_data_cont" id="profile_basic">
+                            <ul class="data_cont">
+                                <li class="td_content_4" style="width:674px">
+                                    <ul>
+                                        <span class="content-size">{{vm.viewParticularProfileData.about_me}}  </span>           
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!--<br clear="all">-->
+                        </div>
+                        <!--<br clear="all">-->
+                    </div>
+                    <div id="sub_heading_n" style="clear:both">Album</div>
+                    <div class="single_data_cont" id="profile_photo">
+                        <ul>
+                            <ul style="clear:left;list-style-type: none;">
+                                <li><label class="content-size">Profile Picture</label></li>
+                                <div class="img-container">     
+                                    <img height="76" width="70"  ng-if="vm.viewParticularProfileData.profile_picture != null" ng-src="{{vm.viewParticularProfileData.profile_picture}}" alt="Close Up" title="Close Up" border="0">
+                                    <img ng-if="vm.viewParticularProfileData.profile_picture == null" src="https://img.shaadi.com/imgs/registration/closeup-v2.gif" alt="Close Up" title="Close Up" border="0"><br>
+                                    <div class="spacer_2"></div>
+                                </div>
+                            </ul>
+                            <ul style="clear:left;list-style-type: none;">
+                                <li><label class="content-size">Relevant Picture</label></li>
+                                <div class="img-container">
+                                    <img ng-repeat="img in vm.relImagePathArr" height="76" width="70" style="margin-right: 5px;" src="{{img}}"  border="0">                 
+                                    <div class="spacer_2"></div>
+                                </div>
+                            </ul>
+                            <ul ng-if="vm.viewParticularProfileData.horoscope_privacy == 0" style="clear:left;list-style-type: none;">
+                                <li><label class="content-size">Horoscope</label></li>
+                                <div class="img-container">     
+                                    <img height="76" width="70"  ng-if="vm.viewParticularProfileData.horoscope != null" ng-src="{{vm.viewParticularProfileData.horoscope}}" alt="Close Up" title="Close Up" border="0">
+                                    <img ng-if="vm.viewParticularProfileData.horoscope == null" src="https://img.shaadi.com/imgs/registration/closeup-v2.gif" alt="Close Up" title="Close Up" border="0"><br>
+                                    <div class="spacer_2"></div>
+                                </div>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div>
+                        <div id="sub_heading_n" style="clear:both"> Basics &amp; Lifestyle    </div>
+                        <div class="single_data_cont" id="profile_basic">
+                            <ul class="data_cont">
+                                <li class="td_content_1" style="width:320px">
+                                    <ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Age</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.age != null">{{vm.viewParticularProfileData.age}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.age == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Date of Birth</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.date_of_birth != null">{{vm.viewParticularProfileData.date_of_birth| date}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.date_of_birth == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Marital Status</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.martial_status != null">{{vm.viewParticularProfileData.martial_status}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.martial_status == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Height</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.height != null">{{vm.viewParticularProfileData.height}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.height == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Nationality</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.nationality != null">{{vm.viewParticularProfileData.nationality}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.nationality == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Citizenship</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.citizenship != null">{{vm.viewParticularProfileData.citizenship}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.citizenship == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Current Residence</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.current_residence != null">{{vm.viewParticularProfileData.current_residence}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.current_residence == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Skin Tone</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.skin_tone != null">{{vm.viewParticularProfileData.skin_tone}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.skin_tone == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+
+                                    </ul>
+                                </li>
+                                <li class="td_content_3" style="width:320px">
+                                    <ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Body Type</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.body_type != null">{{vm.viewParticularProfileData.body_type}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.body_type == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Diet</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.diet != null">{{vm.viewParticularProfileData.diet}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.diet == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Drink</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.drink != null">{{vm.viewParticularProfileData.drink}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.drink == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Smoke</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.smoke != null">{{vm.viewParticularProfileData.smoke}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.smoke == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+
+                                        <!--                                    <ul style="clear:left">
+                                                                                <li><label class="content-size">Sun Sign</label></li>
+                                                                                <li style="width:190px" class="content-size">Aquarius</li>
+                                                                            </ul>-->
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Blood Group</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.blood_group != null">{{vm.viewParticularProfileData.blood_group}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.blood_group == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size">Health Information</label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.health_information != null">{{vm.viewParticularProfileData.health_information}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.health_information == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul style="clear:left">
+                                            <li><label class="content-size"><span style="display:block;float:left"><em>Disability</em></span></label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.disability != null">{{vm.viewParticularProfileData.disability}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.disability == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul ng-if="vm.viewParticularProfileData.email_privacy == 0" style="clear:left">
+                                            <li><label class="content-size"><span style="display:block;float:left"><em>Email</em></span></label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.email != null">{{vm.viewParticularProfileData.email}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.email == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+                                        <ul ng-if="vm.viewParticularProfileData.mobile_privacy == 0" style="clear:left">
+                                            <li><label class="content-size"><span style="display:block;float:left"><em>Mobile</em></span></label></li>
+                                            <li style="width:190px" class="content-size">
+                                                <span ng-if="vm.viewParticularProfileData.mobile != null">{{vm.viewParticularProfileData.mobile}}</span>
+                                                <span ng-if="vm.viewParticularProfileData.mobile == null">Not Specified</span>
+                                            </li>
+                                        </ul>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <br clear="all">
+                            <div class="tc">
+                            </div>
+
+                            <!-- more info -->
+                            <!--<br clear="all" style="line-height:1px">-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--click edit button id==1 end-->
+
+
+                <!--Religious Background-->
+                <div class="religion_view_text">
+                    <div id="sub_heading_n" style="clear:both"> Religious Background
+
+
+                    </div>
+                    <div class="single_data_cont" id="profile_religious_social">
+                        <ul class="data_cont">
+                            <li class="td_content_1" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Religion</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.religion != null">{{vm.viewParticularProfileData.religion}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.religion == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Community</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.community != null">{{vm.viewParticularProfileData.community}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.community == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </li>
+                            <li class="td_content_3" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Mother Tongue</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.mother_tounge != null">{{vm.viewParticularProfileData.mother_tounge}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.mother_tounge == null">Not Specified</span></li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul><!--[if !IE]><!--><br clear="all"><!--<![endif]--><div style="padding:1px"></div>
+
+                        <!-- more info -->
+                        <!--<br clear="all" style="line-height:1px">-->
+                    </div>
+                </div>
+
+                <!--family Background & details-->
+
+                <!--------Social Links----->
+
+                <span ng-if="vm.viewParticularProfileData.connection_links_privacy == 0">
+                    <div class="p_social_view">
+                        <div id="sub_heading_n" style="clear:both"> Social Links
+
+                        </div>
+                        <div class="single_data_cont" id="profile_religious_social">
+                            <ul class="data_cont">
+                                <li class="td_content_1" style="width:320px">
+                                    <ul>
+                                        <ul style="clear:left">
+                                            <span ng-repeat='link in  vm.socailLinksArray track by $index'>
+                                                <li><label style="width:50px" class="content-size">Link</label></li>
+                                                <li style="width:230px" class="content-size">
+                                                    <span ng-if='link != ""'>{{link}}</span>
+                                                    <span ng-if='link == ""'>Not Specified</span>
+                                                </li>
+                                                <br>
+                                            </span>
+                                        </ul>
+
+                                    </ul>
+                                </li>
+
+                            </ul><br clear="all">
+                            <div class="tc">
+                            </div>
+
+                            <!-- more info -->
+                            <!--<br clear="all" style="line-height:1px">-->
+                        </div>
+                    </div>
+
+                    <!--------/Social Links----->
+                    <!--------Profesional Links----->
+
+
+                    <div class="p_professional_view">
+                        <div id="sub_heading_n" style="clear:both"> Professional Links
+
+                        </div>
+                        <div class="single_data_cont" id="profile_religious_social">
+                            <ul class="data_cont">
+                                <li class="td_content_1" style="width:320px">
+                                    <ul>
+                                        <ul style="clear:left">
+                                            <span ng-repeat='link in  vm.professionalLinksArray track by $index'>
+                                                <li><label style="width:50px" class="content-size">Link</label></li>
+                                                <li style="width:230px" class="content-size">
+                                                    <span ng-if='link != ""'>{{link}}</span>
+                                                    <span ng-if='link == ""'>Not Specified</span>
+                                                </li>
+                                                <br>
+                                            </span>
+
+                                        </ul>
+
+                                    </ul>
+                                </li>
+
+                            </ul><br clear="all">
+                            <div class="tc">
+                            </div>
+
+                            <!-- more info -->
+                            <!--<br clear="all" style="line-height:1px">-->
+                        </div>
+                    </div>
+                </span>
+                <!--------/profesional Links----->
+                <div class="family_view_text">
+                    <div id="sub_heading_n" style="clear:both"> Family
+
+                    </div>
+                    <div class="single_data_cont" id="">
+                        <ul class="data_cont">
+                            <li class="td_content_1" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Father's Status</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.father_status != null">{{vm.viewParticularProfileData.father_status}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.father_status == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Mother's Status</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.mother_status != null">{{vm.viewParticularProfileData.mother_status}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.mother_status == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Family Location</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.family_location != null">{{vm.viewParticularProfileData.family_location}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.family_location == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </li>
+                            <li class="td_content_3" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Family Type</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.family_type != null">{{vm.viewParticularProfileData.family_type}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.family_type == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Family Values</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.family_values != null">{{vm.viewParticularProfileData.family_values}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.family_values == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Affluence Level</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.affluence_level != null">{{vm.viewParticularProfileData.affluence_level}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.affluence_level == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul><br clear="all">
+                        <div class="tc">
+                        </div>
+                        <!-- more info -->
+                        <!--<br clear="all" style="line-height:1px">-->
+                    </div>
+                </div>
+
+
+
+                <!-- *********Education & Career**************-->
+                <div class="education_view_text">
+                    <div id="sub_heading_n" style="clear:both">Education & Career
+
+                    </div>
+                    <div class="single_data_cont" id="">
+                        <ul class="data_cont">
+                            <li class="td_content_1" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Education</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.education != null">{{vm.viewParticularProfileData.education}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.education == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size"><span style="display:block;float:left"><em>Annual Income</em></span></label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.annual_income != null">{{vm.viewParticularProfileData.annual_income}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.annual_income == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Employer Name</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.employer_name != null">{{vm.viewParticularProfileData.employer_name}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.employer_name == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </li>
+                            <li class="td_content_3" style="width:320px">
+                                <ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Working With</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.working_with != null">{{vm.viewParticularProfileData.working_with}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.working_with == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear:left">
+                                        <li><label class="content-size">Working As</label></li>
+                                        <li style="width:190px" class="content-size">
+                                            <span ng-if="vm.viewParticularProfileData.working_as != null">{{vm.viewParticularProfileData.working_as}}</span>
+                                            <span ng-if="vm.viewParticularProfileData.working_as == null">Not Specified</span>
+                                        </li>
+                                    </ul>
+
+                                </ul>
+                            </li>
+                        </ul><br clear="all">
+                        <div class="tc">
+                        </div>
+
+                        <!-- more info -->
+                        <!--<br clear="all" style="line-height:1px">-->
+                    </div>
+                </div>
+
+            </div>
+            <br clear="all">
+        </div>
+        <!--</div>-->
+
+    </div>
+    <div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Send Message</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">Message:</label>
+                            <textarea ng-model="vm.sendEmailMsgObj.message" class="form-control" id="message-text" style="height: 120px;;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" ng-click="vm.sendEmailMsgFun()">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!---- /Compose Message content Modal ---->
+    <!---- /send SMS Modal ---->
+    <div class="modal fade" id="SMSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Send Message</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">Message(Max 120 Character only)</label>
+                            <textarea ng-model="vm.sendSMSMsgObj.message" maxlength="120" class="form-control" id="message-text" style="height: 120px;;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" ng-click="vm.sendSMSMsgFun()">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <div class="modal fade" id="showMsgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body msg"></div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<!---- /send Reply content Modal ---->
+<div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">Send Message</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="message-text" class="form-control-label">Message:</label>
+                        <textarea class="form-control" id="message-text" style="height: 120px;;"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>  
+<!---- /send block report content Modal ---->
+<div class="modal fade" id="blockModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title block_action" id="">Are you sure you want to Block this Member?</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="pos_rel">
+                        <div class="message_layer_inner_fb">
+                            <div class="inner_content_layer">
+                                <p class="confirm_msg_body">Blocked Members will not be able to view your Profile or contact you.</p>
+
+                                <form name="block_report_misuse_form" action="" method="post">
+                                    <select name="category" id="block_reason_dd" class="reason_dd none">
+                                        <option value="" label="Select a reason for Reporting this Profile">Select a reason for Reporting this Profile</option>
+                                        <option value="" label="Fake / Misleading Profile Information">Fake / Misleading Profile Information</option>
+                                        <option value="" label="Multiple Profiles">Multiple Profiles</option>
+                                        <option value="" label="Phone number is incorrect">Phone number is incorrect</option>
+                                        <option value="" label="Photos are fake or obscene">Photos are fake or obscene</option>
+                                        <option value="" label="Has sent abusive Emails / Chats">Has sent abusive Emails / Chats</option>
+                                        <option value="" label="Is already married / engaged">Is already married / engaged</option>
+                                        <option value="" label="Asking for money/scammer">Asking for money/scammer</option>
+                                        <option value="" label="Other misuse reasons">Other misuse reasons</option>
+                                    </select> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'app/templates/footer.html'"></div>
+
+   <!-- The Modal -->
+    <div id="myModal" class="modal1" style="z-index:9999999">
+        <span class="close11" style="color:#fff">×</span>
+  <img class="modal-content" id="img01" style="width:auto">
+</div>
+
+
+<script>
+            $(document).ready(function() {
+    $('.gray_1, .secondary_link').on('click', function() {
+    $('.setting_menu').removeClass('active_setting');
+//                                                    $('.gray_1').addClass('active_setting');
+            $('.change_profile').hide();
+            $('.manage_ads').hide();
+            $('.add_new_ad').hide();
+            $('.edit_new_ad').hide();
+            $('.change_password').hide();
+            $('.edit_new_ad').hide();
+            $('.add_inbox').hide();
+            $('.partner_preferences').hide();
+            $('.view_profile').show();
+    });
+    });

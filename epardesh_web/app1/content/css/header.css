@@ -1,0 +1,62 @@
+header{
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    padding: 25px 40px;
+    background-color: #357F9C;
+    overflow: hidden;
+}
+
+
+header h1{
+    float: left;
+    font: normal 24px/1.5 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+header a{
+    color:#fff;
+    float: right;
+    text-decoration: none;
+    display: inline-block;
+    padding: 13px 50px;
+    border-radius: 3px;
+    font: bold 14px/1 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    background-color:#F05283;
+
+}
+
+
+@media (max-width: 1000px) {
+
+
+    header h1{
+        float: none;
+    }
+
+    header a{
+        margin-top: 25px;
+        float: none;
+    }
+
+}
+
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+    #bsaHolder{ display:none;}
+}
+
+/* -- Link to Tutorialzine -- */
+
+.tz-link{
+    text-decoration: none;
+    color: #fff !important;
+    font: bold 36px Arial,Helvetica,sans-serif !important;
+}
+
+.tz-link span{
+    color: #da431c;
+}

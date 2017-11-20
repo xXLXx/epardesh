@@ -1,0 +1,115 @@
+<div class="container setting-content" data-ng-controller="setting as vm">
+
+    <!-----settings left panel start---->
+    <div class="col-md-3 col-sm-3 col-xs-12 setting_menu">
+        <h4>Setting Menu</h4>
+        <ul>
+            <li class="setting_menu c_profile active_setting"><a>Change Profile</a></li>
+            <li class="setting_menu c_password"><a>Change Password</a></li>
+            <!--            <li class="setting_menu m_ads active_setting"><a>Manage Ads</a></li>
+                        <li class="setting_menu m_payment"><a>Manage Payment</a></li>-->
+        </ul>
+    </div>
+    <!-----/settings left panel start---->
+    <!-----settings right panel start---->
+    <div class="col-md-9 col-sm-9 col-xs-12 sidebar-ad">
+        <!-----change profile panel---->
+        <div class="row change_profile" style="display:block;">
+            <div class='col-md-12'>
+                <h4>Change Profile</h4>
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form role="form">
+                        <div class="alert alert-danger fade in login_alert"></div>
+                        <div class="alert alert-success login_alert" role="alert"></div>
+                        <div class="form-group">
+                            <label for="f_name">First Name*</label>
+                            <input type="text" class="form-control" id="f_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="l_name">Last Name*</label>
+                            <input type="text" class="form-control" id="l_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number*</label>
+                            <input type="text" phone-input ng-model="phoneVal" class="form-control" id="mobile">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select class="form-control select_control" id="state" ng-model="vm.selectState"  ng-change="vm.getState()">                                                 
+                                    <option ng-repeat="lng in vm.states track by $index" value="{{lng.location_name}},{{lng.country_id}},{{lng.id}}">
+                                        {{lng.location_name}}
+                                    </option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Region</label>
+                            <select class="form-control select_control" id="regionpro"  ng-model="vm.selectcity" ng-change="vm.getCity()">
+                                    <option ng-repeat="lng in vm.cities track by $index" value="{{lng.city_name}}">
+                                        {{lng.city_name}}
+                                    </option>
+                                </select>
+                        </div>
+                        <button type="button" class="btn" id="user_profile">Change Profile</button>
+                    </form>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-----/change profile panel---->
+
+        <!-----change password panel---->
+        <div class="row change_password">
+            <div class='col-md-12'>
+                <h4>Change Password</h4>
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form role="form">
+                        <div class="alert alert-danger fade in login_alert"></div>
+                        <div class="alert alert-success login_alert" role="alert"></div>
+                        <div class="form-group">
+                            <label for="p_old">Old Password*</label>
+                            <input type="password" class="form-control" id="p_old">
+                        </div>
+                        <div class="form-group">
+                            <label for="p_new">New Password*</label>
+                            <input type="password" class="form-control" id="p_new">
+                        </div>
+                        <div class="form-group">
+                            <label for="p_new">Confirm Password*</label>
+                            <input type="password" class="form-control" id="c_password">
+                        </div>
+                        <button type="button" class="btn" id="change_pass" ng-click="vm.changepassword()">Change Password:</button>
+                    </form>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-----/change password panel---->
+
+        <!-----/add new ads panel---->
+    </div>
+    <!-----/settings right panel start---->
+</div>
+<!---- /settings content area ---->
+
+<div ng-include="'app/templates/footer.html'"></div>
+<script>
+    $(document).ready(function() {
+        $('.c_profile').on('click', function() {
+            $('.setting_menu').removeClass('active_setting');
+            $('.c_profile').addClass('active_setting');
+            $('.change_password').hide();
+            $('.change_profile').show();
+        });
+        $('.c_password').on('click', function() {
+            $('.setting_menu').removeClass('active_setting');
+            $('.c_password').addClass('active_setting');
+            $('.change_profile').hide();
+            $('.change_password').show();
+        });
+        $("html, body").animate({scrollTop: 0});
+    });
+</script>

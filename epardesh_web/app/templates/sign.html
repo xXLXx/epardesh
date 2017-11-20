@@ -1,0 +1,234 @@
+<style>
+    .business-fields{
+        display: none;
+    }
+     .pac-container { margin-top:0px !important; z-index: 1051 !important; }
+    @media (max-width: 480px) {
+
+        .pac-container {
+            margin-top:0px !important;
+            z-index: 1051 !important;
+        }
+
+    }
+    @media (max-width: 767px) {
+
+        .pac-container {
+            margin-top:0px !important;
+            z-index: 1051 !important;
+        }
+
+    }
+    .login_sec, .registration {
+    margin-top: 8em;
+}
+</style>
+<div class="container">
+    <div class="registration">
+        <div class="col-md-6 col-sm-6 col-xs-12 registration_left">
+            <h2>new user? <span> create an account </span></h2>
+            <!-- [if IE] 
+                   < link rel='stylesheet' type='text/css' href='ie.css'/>  
+            [endif] -->  
+
+            <!-- [if lt IE 7]>  
+                   < link rel='stylesheet' type='text/css' href='ie6.css'/>  
+            <! [endif] -->  
+            <script>
+                (function() {
+
+                    // Create input element for testing
+                    var inputs = document.createElement('input');
+                    // Create the supports object
+                    var supports = {};
+                    supports.autofocus = 'autofocus' in inputs;
+                    supports.required = 'required' in inputs;
+                    supports.placeholder = 'placeholder' in inputs;
+                    // Fallback for autofocus attribute
+                    if (!supports.autofocus) {
+
+                    }
+
+                    // Fallback for required attribute
+                    if (!supports.required) {
+
+                    }
+
+                    // Fallback for placeholder attribute
+                    if (!supports.placeholder) {
+
+                    }
+
+                    // Change text inside send button on submit
+                    var send = document.getElementById('register-submit');
+                    if (send) {
+                        send.onclick = function() {
+                            this.innerHTML = '...Sending';
+                        }
+                    }
+
+                })();</script>
+            <!--            <script>
+                            $(document).ready(function() {
+                                $(".refresh").click(function() {
+                                    var select = $('.select_control');
+                                    select.empty().append('<option value="">---Select City---</option>');
+                                });
+                            });
+                        </script>-->
+            <!--select_control-->
+            <!--            <script>
+                        $(document).ready(function() {
+                $(".refresh").on("click", function(event) {
+                console.log("yesssss");
+                $('.userform').load(document.URL +  ' .userform');
+            //            $(".userform").load(".userform");
+            //            $(".businessform").load();
+                });
+                });
+            </script>-->
+
+            <div class="registration_form"  data-ng-controller='sign as vm'>
+                <!-- Form -->
+                <form id="registration_form" method="post">
+                    <p>All <i class="fa fa-star-o" aria-hidden="true"></i> fields are mandatory</p>
+                    <div class ="issign">
+                        <div class="alert alert-danger fade in"></div>
+                        <div class="alert alert-success" role="alert"></div>
+                    </div>
+                    <!--                    <div class="sky_form1">
+                                            <ul>
+                                                <li><label class="radio left"><input class="refresh" type="radio" name="radio1" id="reguser" checked=""><i></i>User</label></li>
+                                                <li><label class="radio"><input class="refresh" type="radio" name="radio1" id="regbusiness"><i></i>Business User</label></li>
+                                                <div class="clearfix"></div>
+                                            </ul>
+                                        </div>	-->
+                    <div class="userform">
+                        <div>
+                            <h5>First Name*</h5>	
+                            <label>
+                                <input placeholder="First name" id="exampleInputName"  type="text">
+                            </label>
+                        </div>
+                        <div>
+                            <h5>Last Name*</h5>
+                            <label>
+                                <input placeholder="Last name" id="exampleInputName2"  type="text">
+                            </label>
+                        </div>
+
+                        <div>
+                            <h5>Email*</h5>
+                            <label>
+                                <input placeholder="Email" id="exampleInputEmail"  type="email" ng-model="vm.u_email" ng-blur="vm.chkEamilFun(vm.u_email)">
+                            </label>
+                        </div>                    
+
+                        <div> <h5>Password*</h5>
+                            <label>
+                                <input placeholder="Password" id="exampleInputPassword1" type="password">
+                            </label>
+                        </div>						
+                        <div><h5>Confirm Password*</h5>
+                            <label>
+                                <input placeholder="Confirm Password" id="exampleInputPassword2" type="password">
+                            </label>
+                        </div>
+                        
+                                 <div><h5>Business Name</h5>
+                            <label>
+                                <input placeholder="Business name"  id="businessNamenew" ng-model="businessnameVal" type="text">
+                            </label>
+                        </div>
+                        <div ><h5>Website</h5>
+                            <label>
+                                <input placeholder="Website" id="websitenew"  ng-model="websiteVal" type="text">
+                            </label>
+                        </div>
+                        <div><h5>Address*</h5>
+                            <label>
+                                <input placeholder="Address" id="addressnew" ng-model="addressVal" type="text">
+                            </label>
+                        </div>
+
+                        <div><h5>Primary Phone#</h5>
+                            <label>
+                                <input placeholder="Mobile Number" phone-input ng-model="phoneVal" id="mobno" type="text">
+                            </label>
+                        </div>
+
+                        <div><h5>State*</h5>
+                            <label>
+                                <!--                                {{vm.states[0].location_name}}-->
+                                <select class="form-control select_control" id="state" ng-model="vm.selectState"  ng-change="vm.getState()">                                                 
+                                    <option value="" ng-selected>State</option>
+                                    <option ng-repeat="lng in vm.states track by $index" value="{{lng.location_name}},{{lng.country_id}},{{lng.id}}">
+                                        {{lng.location_name}}
+                                    </option>
+                                </select>
+                            </label>
+                        </div>	
+                        <div><h5>Region*</h5>
+                            <label>                              
+                                <select class="form-control select_control" id="region"  ng-model="vm.selectcity" ng-change="vm.getcity()">
+                                    <option value=""  ng-selected>Region</option>
+                                    <option ng-repeat="lng in vm.cities track by $index" value="{{lng.city_name}}">
+                                        {{lng.city_name}}
+                                    </option>
+                                </select>
+                            </label>
+                        </div>
+<!--                        <div>
+                            <input type="checkbox" ng-model="vm.ownBusiness" ng-click="vm.ownBusinessFun();">&nbsp;&nbsp;Do you own a business?
+                        </div>	-->
+                        <div>
+                                        <label>
+                                            <input type="checkbox" ng-model='vm.chkTermCondition'>&nbsp;<span style="font-size: 14px;">By registering at EPARDESH , you agree to our <a ui-sref="term-condition" target="_blank"><u>Terms and Conditions</u></a></span>
+                                        </label>
+                                    </div>
+                        <div>
+                            <input type="submit" value="create an account" id="register-user">
+                        </div>
+                    </div>
+             
+                </form>
+                <!-- /Form -->
+
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 registration_left"  data-ng-controller='login as vm'>
+            <!--            <div class="alert alert-danger fade in" ng-show="vm.isLogin"></div>
+                        <div class="alert alert-success" ng-show="vm.isLogin" role="alert"></div>-->
+            <h2>existing user</h2>
+            <div class="registration_form">
+                <!-- Form -->
+                <form id="registration_form" method="post">
+                    <div class="islogin">
+                        <div class="alert alert-danger fade in login_alert"></div>
+                        <div class="alert alert-success login_alert" role="alert"></div>
+                    </div>
+                    <div><h5>Email:</h5>
+                        <label>
+                            <input placeholder="Email:" type="email" id="email" >
+
+                        </label>
+                    </div>
+                    <div>
+                        <label><h5>Password:</h5>
+                            <input placeholder="Password:" type="password" id="password">
+                        </label>
+                    </div>						
+                    <div>
+                        <input type="submit" value="sign in" id="log">
+                    </div>
+                    <div class="forget">
+                        <a ui-sref="forgot">forgot your password</a>
+                    </div>
+                </form>
+                <!-- /Form -->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div ng-include="'app/templates/footer.html'"></div>

@@ -1,0 +1,115 @@
+<div id="preloader">
+   <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+   <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="plan as vm">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Plans
+                <small></small>
+            </h1><br>
+            <!--<button type="button" id="add_plans" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-plan">Add plans </button>-->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Plans</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin data-table">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa fa-sort"></i> Plan Type</th>
+                                    <th><i class="fa fa-sort"></i> Plan Name</th>
+                                    <th><i class="fa fa-sort"></i> Price</th>
+                                    <th>Action</th>                                
+                                </tr>
+                            </thead>
+                            <tbody id="view_allplan">
+                                <!--                            <tr>
+                                                                <td>plan 1</td>
+                                                                <td>premium</td>
+                                                                <td>Rs 20</td>
+                                                               <td><a href="#" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#modal-editplan" style="margin-right:15px;"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                                                                    <a href="#" class="btn btn-danger btn-sm">Delete</a></td><!--
+                                                            </tr>
+                                                             <tr>
+                                                                <td>plan 2</td>
+                                                                <td>premium 2</td>
+                                                                <td>Rs 50</td>
+                                                                <td><a href="#" class="btn btn-primary btn-sm" style="margin-right:15px;"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                                                                    <a href="#" class="btn btn-danger btn-sm">Delete</a></td>
+                                                            </tr>                          -->
+
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->        
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+    <!---------------modal------------->
+    <!--<div id="modal-plan" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+             Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add PLans</h4>
+                </div>
+                <div class="modal-body">
+                            <span class="alert alert-green"></span>
+             <span class="alert alert-red"></span>
+                      <input type="text" id="addplan_type" class="form-control" placeholder="Plan Type"><br>
+                   <input type="text" id="addplan_name" class="form-control" placeholder="Plan Name"><br>
+                    <input type="text" id="addplan_price" class="form-control" placeholder="Price">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="save-subcategory">Add</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <div class='loader pull-right'>
+                                <div class="loader-image">
+                                    <img src='images/loader.gif'>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- modal-->
+    <!-- edit modal -->
+    <div id="modal-editplan" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Plans</h4>
+                </div>
+                <div class="modal-body">                   
+                    <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span>
+                    <input type="hidden" name="plan_id" id="editplan_id">
+                    <input type="text" name="plan_type" id="editplan_type" class="form-control" placeholder="Plan Type"><br>
+                    <input type="text" name="plan_name" id="editplan_name" class="form-control" placeholder="Plan Name"><br>
+                    <input type="text" name="plan_price" id="editplan_price" class="form-control" placeholder="Price">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="vm.updateplans();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- modal-->
+</div>
+<script>
+    active("plans");
+</script>
+

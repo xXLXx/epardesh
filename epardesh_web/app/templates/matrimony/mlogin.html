@@ -1,0 +1,87 @@
+
+<style>
+    .bg-image {
+    background-color: #eeeeee;
+    background-image: url(app/content/img/matrimony_login_bg_2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+    
+    .main{
+    /* display: none; */
+    background: rgba(238, 238, 238, 0.45)!important;
+/*    padding: 5px 0px 10px 0px;
+    margin-left: 0px;*/
+}
+    
+</style>
+
+<div class="bg-image login_sec" data-ng-controller="mLogin as vm">
+    <div class="container main">
+        <h2>Login</h2>
+        <div class="col-md-6 log">			 
+            <p>Welcome, please enter the following to continue.</p>
+
+            <form method="post" name="loginForm" id="my_form">
+                <div class="alert alert-danger fade in login_alert"></div>
+                <div class="alert alert-success login_alert" role="alert"></div>
+                <h5>Email or Profile ID</h5>	
+                <div ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }">
+                    <input type="text" name="email"  ng-model="vm.loginObj.email"  placeholder="Email or Profile ID" required="">
+                    <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Email or Profile ID is required.</p>
+                </div> 
+                <h5>Password</h5>
+                <div ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+                    <input type="password" ng-model="vm.loginObj.password"  name="password" id="password" placeholder="Password" required="">
+                    <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Password is required.</p>
+                </div> 
+                <!--                        <a ui-sref="setting" style="text-decoration: none">-->
+                <button style="width:100px" type="submit" class="btn  btn-social btn-fb" ng-click="vm.login();" ng-disabled="loginForm.$invalid" >Login</button><br>
+                <!--                            </a>-->
+                <button type="button" class="btn  btn-social btn-fb" ng-click="authenticate('facebook1')"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp; Sign in with Facebook</button>
+                <button type="button" class="btn btn-social btn-google" ng-click="authenticate('google1')" ><i class="fa fa-google-plus" aria-hidden="true"></i>&nbsp; Sign in with google</button><br>
+                <a ui-sref="mforgot">Forgot Password ?</a>
+            </form>				 
+        </div>
+        <div class="col-md-6 login-right">
+            <h3>NEW REGISTRATION</h3>
+            <!--<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>-->
+		<p>Life is so precious & Marriage is a once in a life time adventure, find your dream partner and make it so much enjoyable and happiness though out your life. You can find your dream partner anywhere from USA and India.  Our website will remove all kinds of obstacles and it will help you to find your life partner across the USA and India. Register in this website to see your excellent life partner who will bring happiness to your entire life. Make sure to use a valid email id to register<p>
+            <a class="acount-btn" ui-sref="msign">Create an Account</a>
+        </div>
+        <div class="clearfix"></div>
+    </div> 
+</div>
+<!---->
+<div ng-include="'app/templates/footer.html'"></div>
+
+<script>
+    $("html, body").animate({scrollTop: 0});
+//     $('.m_profile').click(function(){
+//    console.log("yess");
+//    window.location.href = "app/templates/matrimony_profile.html";
+//});
+
+/*$(function() {
+    $('form').each(function() {
+        $(this).find('button[type=submit]').keypress(function(e) {
+            // Enter pressed?
+            if(e.which == 10 || e.which == 13) {
+                this.form.submit();
+            }
+        });
+
+        //$(this).find('button[type=submit]').hide();
+    });
+});*/
+</script>
+
+
+
+<!--epardesh facebook
+App ID: 243462839372770
+secret-key:-f9a4ff705dfe70c74d4a1878f9f0b83d;-->
+<!--google   366566631410-tkami36g07drp1kkdgimtn4dj1elpnje.apps.googleusercontent.com
+secret: M5afO2Fn-EsyPCdpwh1Iw2z9-->

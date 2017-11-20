@@ -1,0 +1,82 @@
+<div class="content-wrapper" data-ng-controller="matrimonypromocode as vm">
+    <section class="content-header">
+        <h1>
+             All Promocodes 
+            <small></small>
+           
+        </h1>   
+        <br>
+         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-addpromocode">Add Promocode </button>
+            
+    </section>
+  
+
+    <!-- Main content -->
+    <section class="content manage_content">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"> Promocode </h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin data-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fa fa-sort"></i> Name</th>
+                                <th><i class="fa fa-sort"></i> Discount</th>
+                             </tr>
+                        </thead>
+                          <tbody class="view_promocode">
+                            </tbody>
+
+
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->        
+    </section><!-- /.content -->
+    
+    <!--Promocode Add -->
+    <div id="modal-addpromocode" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Promocode</h4>
+                </div>
+                <div class="modal-body">                
+                    <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span>
+                    <br>
+                    <label for="add_promocode">Promocode Name</label>
+                    <input type="text" name="add_promocode" id="add_promocode" class="form-control" placeholder="Promocode Name">
+                    <br>
+                    <label for="add_discount_amnt">Discount:</label>
+                    <input type="text" name="discount_amnt" id="discount_amnt" class="form-control" placeholder="Discount Amount">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="save-promocode">Add</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!--        <div class='loader pull-right'>
+                                <div class="loader-image">
+                                    <img src='images/loader.gif'>
+                                </div>
+                            </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--end promocode-->
+    
+</div><!-- /.content-wrapper -->
+<!--<script>
+    active("matrimony-category");
+    $('.data-table').DataTable();
+</script>-->
+

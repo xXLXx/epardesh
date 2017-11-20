@@ -1,0 +1,228 @@
+<style>
+    .abc{
+        text-align: center;
+        font-size:30px;
+        font-family: 'MavenPro-Regular';
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #444;
+    }
+    .pad{
+        padding-top: 120px;
+    }
+    .icon1{
+        font-size: 27px;
+        padding:0px;
+    }
+    .md-button{
+        min-width: 42px;
+    }
+    .pagination>li:first-child>a, .pagination>li:first-child>span{
+        margin-bottom: 75px;
+    }
+    .alert{
+        display: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 13px;
+        margin: 10px 0px;
+    }
+    .alert-success{
+        color: #3c763d ;
+        background-color: #dff0d8 ;
+        border-color: #d6e9c6 ;
+    }
+    .alert-danger{
+        color: #a94442 ;
+        background-color: #f2dede ;
+        border-color: #ebccd1 ;
+    }
+</style>
+
+<div ng-controller="artist_table">
+    <div ng-include="'app/templates/header.html'"></div>
+    <div ng-include="'app/templates/sidebar.html'"></div>
+    <div class="container">
+
+        <div class="row">
+            <div class="abc pad">Artists</div>
+            <div class="alert alert-success">Aprrove</div>
+            <div class="alert alert-danger"></div>
+        </div>
+        <div class="table-responsive">
+            <div class="panel-body">
+                <!--                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Birth Name</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr nf-if="" ng-repeat="y in show1" layout-align="center center">
+                                            <td>{{ y.name}}</td>
+                                            <td> </td>
+                                            <td>{{y.stage_name}}</td>
+                                            <td>{{y.email}}</td>
+                                            <td>{{ y.mobile}}</td>
+                                            <td ng-if="y.status == 0 || y.status == '0'">
+                                            New
+                                            </td>
+                                            <td ng-if="y.status == 1 || y.status == '1'">
+                                           Approved
+                                            </td>
+                                            <td ng-if="y.status == 2 || y.status == '2'">
+                                            Rejected
+                                            </td>
+                                            <td><md-card-actions layout="row" layout-align="start center">
+                                        <md-button class="icon1" ng-click="approve(y.id)" data-toggle="modal" data-target="#myModaleditevent" ><i class="lnr lnr-checkmark-circle" aria-hidden="true"></i></md-button>
+                                        <md-button  class="icon1" ng-click="reject(y.id)" md-icon class="iconblock"> <i class="lnr lnr-cross-circle" aria-hidden="true"></i></md-button>
+                                        <md-button class="icon1" ng-click="view(y.id)"    md-icon class="iconblock"><i class="fa fa-eye" aria-hidden="true"></i></md-button>
+                                        <md-button class="icon1" ng-click="deleteModal(y.id)" data-toggle="modal" data-target="#myModaldeleteevent" ><i class="fa fa-trash-o" aria-hidden="true"></i></md-button>
+                
+                
+                                    </md-card-actions></td>
+                
+                                    </tr>
+                                    </tbody>
+                                </table>--> 
+                <!-- data table -->
+                <div class="table-responsive">
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example-artist">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+
+                                    <th>Birth Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="y in show1" layout-align="center center">
+                                    <td>{{ y.name}}</td>
+                                    <td>{{y.stage_name}}</td>
+                                    <td>{{y.email}}</td>
+                                    <td>{{ y.mobile}}</td>
+                                    <td ng-if="y.status == 0 || y.status == '0'">
+                                        New
+                                    </td>
+                                    <td ng-if="y.status == 1 || y.status == '1'">
+                                        Approved
+                                    </td>
+                                    <td ng-if="y.status == 2 || y.status == '2'">
+                                        Rejected
+                                    </td>
+                                    <td>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button class="icon1" ng-click="approve(y.id)" data-toggle="modal" data-target="#myModaleditevent" ><i class="lnr lnr-checkmark-circle" aria-hidden="true"></i></md-button>
+                                <md-button  class="icon1" ng-click="reject(y.id)" md-icon class="iconblock"> <i class="lnr lnr-cross-circle" aria-hidden="true"></i></md-button>
+                                <md-button class="icon1" ng-click="view(y.id)"    md-icon class="iconblock"><i class="fa fa-eye" aria-hidden="true"></i></md-button>
+                                <md-button class="icon1" ng-click="deleteModal(y.id)" data-toggle="modal" data-target="#myModaldeleteevent" ><i class="fa fa-trash-o" aria-hidden="true"></i></md-button>
+                            </md-card-actions>
+                            </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="myModaldeleteevent" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <md-content layout-padding>
+                            <h3>
+                                Are You Sure want to Delete  ?
+                            </h3>
+                        </md-content>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <md-button type="submit" class="btn btn-danger" data-dismiss="modal" ng-click="delete(id)">Delete</md-button>
+                        <md-button type="submit" class="btn btn-warning" data-dismiss="modal" >Close</md-button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ./model delete event -->
+
+        <!--// ............. ./delete event ..............\\-->
+
+
+
+        <!--  ./data table  -->
+
+        <!--// ............ ./data table ............... \\-->
+        <!-- <script type="text/javascript">
+                    $(document).ready(
+                            function() {
+                                $("#listArt").niceScroll();
+                            }
+                    );
+        </script> -->
+
+
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h4 class="modal-title "><b>Artist Info</b></h4>
+                        <table>
+                            <tr>
+                                <td class="bold">Name: </td>
+                                <td>anmol</td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Description: </td>
+                                <td>abcccc</td>
+                            </tr>
+                            <tr>
+                                <td class="bold"> Birth Name: </td>
+                                <td>anmol</td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Email: </td>
+                                <td>anmol@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Phone </td>
+                                <td>986789023</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <md-button type="submit" class="btn btn-warning" data-dismiss="modal" >Close</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+<!--footer section start-->
+<footer>
+    <p>&copy 2017 FAPS All Rights Reserved </p>
+</footer>
+
+
+</div>
+<script src="app/components/scripts/datatables/datatables.bootstrap.js"></script>
+        <script src="app/components/scripts/datatables/jquery.datatables.js"></script> 
+        <link href="app/content/css/dataTables.bootstrap.css" rel="stylesheet" />

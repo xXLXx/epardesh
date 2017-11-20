@@ -1,0 +1,547 @@
+<style>
+    .single-right p{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .etalage_thumb_active img{
+        max-height: 100% !important;
+    }
+    .go-back{
+        background: #0e54f2;
+    }
+    .prod-desc{
+        white-space: pre-line;
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal1 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        /*margin-top: 130px;*/
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+    to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        opacity: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+    .edit_new{
+        padding:0px 2px !important;
+    }
+    .success{
+        color:green;
+    }
+    .danger{
+        color:red;
+    }
+
+
+    .border
+    {
+        <!-- border: 1px solid; -->
+        text-transform: capitalize;
+        /* color: black; */
+        text-align: start; 
+    }
+    .margin
+    {
+        margin-top:20px;
+    }
+    .line
+    {
+        line-height: 40px;
+    }
+    h4 span
+    {
+        color:#0e54f2;
+    }
+    .border p
+    {
+        font-size: 18px;
+        color: #0e54f2;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .single-bottom1 p
+    {
+        color:#000;
+        font-size:12px;
+    }
+    .single-bottom1 span
+    {
+        font-weight:bold;
+    }
+    .det
+    {
+        margin-top:1em;
+    }
+    .fot
+    {
+        margin-bottom:10px;
+    }
+    .fot span
+    {
+        color:#0e54f2;
+        font-weight:bold;
+    }
+    .single-bottom1
+    {
+        margin-top:5px;
+        padding: 0;
+        word-wrap: break-word;
+    }
+    .main
+    {
+        background:#fff;
+    }
+    .hight
+    {
+        line-height:22px;
+    }
+    .category
+    {
+        line-height:40px;
+    }
+    .pac-container { margin-top:-110px !important; z-index: 1051 !important; }
+    @media (max-width: 480px) {
+
+        .pac-container {
+            margin-top:-100px !important;
+            z-index: 1051 !important;
+        }
+
+    }
+    @media (max-width: 767px) {
+
+        .pac-container {
+            margin-top:-100px !important;
+            z-index: 1051 !important;
+        }
+
+    }
+    .single-sec {
+        margin-top: 7.85em;
+    }
+    /*===============================================
+        See All Category popup CSS
+        =================================================*/
+    .align-a-right {
+        font-size: 12px;
+        clear: both;
+        text-align: right;
+    }
+    .align-a-right a {
+        color: #0e54f2;
+    }
+    .all-ser-res1 {
+        height: 110px;
+        margin-bottom: 5px;
+        border: 1px solid #f5e9e9;
+    }
+    .marleft{
+        margin-left: -15px;
+        font-size: 16px;
+    }
+    div#pp {
+        height: 200px;
+    }
+    .all-ser-res1 ul li {
+        font-size: 14px;
+        padding: 1px 4px;
+    }
+    .all-ser-res1 ul li:hover {
+        background-color: #0e54f2;
+        color: #fff;
+    }
+    /*===============================================
+    End of See All Category popup CSS
+    =================================================*/
+</style>
+<script>
+
+</script>
+<div class="single-sec" data-ng-controller="adDetailsCtrl as vm">
+    <div class="container">
+        <a  ng-click="vm.checktrack()" class="crsr-ptr"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Go Back</a>
+    </div>
+    <div class="container main">
+        <div class="row det">
+
+            <div class="col-md-5 border">
+
+                <p >{{vm.getData.ad_info.ad_tittle}}</p> 
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 border">              
+                <p class="loc_name"><i class="fa fa-map-marker"></i>&nbsp;{{vm.getData.ad_info.city}},{{vm.getData.ad_info.state}}</p>                          
+            </div>
+
+            <div class="col-md-1 border">
+                <p class="">$&nbsp;{{vm.getData.ad_info.ad_price}}</p>
+
+            </div>
+            <div class="clearfix"></div>
+
+
+
+        </div>
+        <!-- start content -->	
+        <div class="row margin">
+            <div class="col-md-6">
+
+                <div class="grid images_3_of_2" style="margin-left:-16px;">       
+                    <span ng-repeat="img in vm.getData.image_info | limitTo:1">             
+                        <img id="" style='height:254px; width: 100%; cursor: pointer' ng-if="img[0].image_type=='featured'" src="{{img[0].image_path}}" ng-click="vm.popUpImg(img[0].image_path)">
+                    </span>
+
+                    <span ng-if="vm.getData.image_info ==''">             
+                        <img id="" style='height:254px; max-width: 100%; cursor: pointer'  src="app/content/img/dummy.jpg" ng-click="vm.popUpImg(img[0].image_path)">
+                    </span>
+
+                    <span ng-repeat="img in vm.getData.image_info |limitTo:1" >
+                        <img style='height:254px; max-width: 100%; cursor: pointer' ng-if="img[0].image_type=='relevant'"  ng-click="vm.popUpImg(img[0].image_path)"  src="{{img[0].image_path}}" alt=""/>
+                    </span>
+                    <div class="clearfix"></div>		
+                </div>
+                <div class="row">
+                    <div class="city_links" style="margin-left: -24px;">
+                        <span ng-repeat="reImg in vm.getData.image_info" >
+                            <img ng-if="reImg[0].image_type=='relevant'" class="thumbnail_img " height="60" width="60" src="{{reImg[0].image_path}}" ng-click="vm.popUpImg(reImg[0].image_path)" alt=""/>
+                        </span>
+                    </div>
+                </div>
+                <!--                <div class="row city_links" style="margin-top: 15px;">
+                                   
+                                </div>-->
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="category">Ad ID :&nbsp;EPCA{{vm.getData.ad_info.id}}</h4>
+                        <h4 class="category">Category :&nbsp;{{vm.getData.ad_info.category_name}}</h4>
+                        <h4 class="category">Sub Category :&nbsp;{{vm.getData.ad_info.sub_category_name}}</h4>
+
+                    </div> 
+                    <div class="col-md-4">
+                        <!--<a   ng-if="dt.ad_info.favourite_status == '0'" ng-click="vm.addtofav(dt,$index)" class="addtofav" title="Add to favourite"><img src="app/content/img/like.png">save</a>-->
+
+                        <a   ng-if="vm.getData.ad_info.favourite_status =='0'" ng-click="vm.addtofav(vm.getData)" class="addtofav" title="Add to favourite"><img src="app/content/img/like.png"></a>
+
+                    </div>
+                </div>
+                <br><br>
+
+                <!--<p class="b-name"><i class="fa fa-building-o" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.getData.ad_info.business_name}}</p>-->
+                <!--                <p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.getData.ad_info.email}}</p>
+                                <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.getData.ad_info.phone}}</p>-->
+                <!--<p ng-if='vm.getData.ad_info.ad_price'>Price  ${{vm.getData.ad_info.ad_price}}</p>-->
+                <button type="button" class="btn edit_new"  ng-click='vm.viewContactFun(vm.getData)'>View Contact</button>  
+                <button type='button'class='btn edit_new req_btn' ng-click="vm.viewsendemail(vm.getData)" >Send Email</button>
+
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 single-bottom1">
+                <span style="text-decoration: underline;color: #0e54f2;">Ad Description</span>
+                <p class="hight" ng-bind-html="vm.getData.ad_info.ad_description"></p>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <h4 class="line">Company Name:<span></span></h4>
+            <h4 class="line">Website / Url:<span></span></h4>
+            <h4 class="line">Contact Name:<span>&nbsp;{{vm.business_name}}</span></h4>
+            <h4 class="line">Contact No:<span>&nbsp;{{vm.ad_phone}}</span></h4>   
+            <h4 class="line">Email id:<span>&nbsp;{{vm.ad_email}}</span></h4>  
+        </div>
+
+        <div class="container margin">
+            <div class="row fot">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+
+                    <a  ng-click="vm.checktrack()" class="crsr-ptr"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Go Back</a>
+                </div>
+                <div class="col-md-4">
+                    <span>Posted On: {{vm.getData.ad_info.updated_on | date:"dd-MMM-y"}}</span>
+                </div>
+                <div class="col-md-2"></div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>	 
+
+    <!--------header category start------------->
+
+    <!-- ====================================================================================================
+     See All Category popup CSS
+     ======================================================================================================= -->
+
+    <div id="boxes">
+        <div style="display: none;" id="dialog" class="window">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1 pull-right" ><span style="color:#000;"class="close">X</span></div>
+                </div>
+                <div id="pp" class="col-md-4 col-sm-12 col-xs-12" ng-repeat="group in vm.category track by $index">
+                    <div class=" row all-ser-fulltitle">
+                        <div class="col-md-12 col-sm-4 col-xs-4 marleft" style="text-align: left;"><a style="color: #0e54f2;" ng-click="vm.getCat(group.category_id)">{{group.category_name}}</a></div>
+                    </div>
+                    <div class=" col-md-4 col-sm-4 col-xs-4 all-ser-res1">
+                        <ul ng-if="group.subcategories != ''" ng-repeat="group1 in group.subcategories| limitTo: vm.cnt[$index]">
+                            <li class="crsr-ptr" value="{{group1.name}}" ng-click="vm.getSubCat(group1.id, group.category_id)">{{group1.name}}</li> 
+                        </ul>
+                        <div class="marleft1">
+                            <p ng-if="group.subcategories == ''">No Subcategories found!</p> 
+                        </div>
+                    </div> 
+                    <div ng-click="vm.showMoreItems($index)" ng-if="group.subcategories.length > 4 && vm.cnt[$index] < group.subcategories.length" class="align-a-right"><a>View More</a></div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================================================
+    End of See All Category popup CSS
+    ======================================================================================================= -->
+    <div style="width: 1478px; font-size: 32pt; color:white; height: 2527px; display: none; opacity: 0.8;" id="mask"></div>
+
+    <!-------------------------end header category----------------------->
+
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1" style="z-index:9999999">
+        <!--<span class="close" style="color:#fff">×</span>-->
+        <button type="button" class="close"  ng-click="vm.closeimg()" data-dismiss="myModal">×</button>
+        <img class="modal-content" id="img01" style='height:400px; width: 100%;'>
+    </div>
+
+    <modal visible="vm.viewContact" id="cMOdal" style="margin-top: 115px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(1);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">View Contact Info</h4>   
+        </div>
+        <h4 style="margin-bottom:5px"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.name}}</h4>
+        <h4 style="margin-bottom:5px"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.email}}</h4>  
+        <h4 style="margin-bottom:5px"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.phone}} </h4>
+        <hr>
+    </modal> 
+    <modal visible="vm.addContactInfoModal" style="margin-top: 115px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(2);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Message to Ad Owner</h4>   
+        </div>
+        <form novalidate name="addForm"  method="post">
+            <div class="{{vm.type}}">{{vm.msg}}</div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.name.$invalid && !addForm.name.$pristine }">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" ng-model="vm.viewContactObj.name" id="name" required>
+                    <p ng-show="addForm.name.$invalid && !addForm.name.$pristine" class="help-block">Name is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.email.$invalid && !addForm.email.$pristine }">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="vm.viewContactObj.email" id="email" required>
+                    <p ng-show="addForm.email.$invalid && !addForm.email.$pristine" class="help-block">Email is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.phone.$invalid && !addForm.phone.$pristine }">
+                    <label for="email">Phone</label>
+                    <input type="text" class="form-control" phone-input name="phone" ng-model="vm.viewContactObj.phone" id="phone" required>
+                    <p ng-show="addForm.phone.$invalid && !addForm.phone.$pristine" class="help-block">Phone is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.adContactView()" ng-show="vm.showSending" ng-disabled="addForm.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(2);" >Cancel</button>
+
+        </form>
+        <hr>
+    </modal>
+
+
+    <modal visible="vm.eventSendEmail" style='margin-top:130px;'>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(3);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Message To Ad Owner</h4>   
+        </div>
+        <div class ="issign">
+            <div class="alert alert-danger fade in"></div>
+            <div class="alert alert-success" role="alert_email"></div>
+        </div>
+        <form novalidate name="addFormEmail"  method="post">
+            <div class="{{vm.type_email}}">{{vm.msg_email}}</div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.name.$invalid && !addFormEmail.name.$pristine }">
+                    <label for="name">Name<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" name="name" ng-model="vm.sendEmailObj.sender_name" id="name" required>
+                    <p ng-show="addFormEmail.name.$invalid && !addFormEmail.name.$pristine" class="help-block">Name is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.email.$invalid && !addFormEmail.email.$pristine }">
+                    <label for="email">Email<span  style="color:red;">*</span></label>
+                    <input type="email" name="email" class="form-control" ng-model="vm.sendEmailObj.sender_email" id="email" required>
+                    <p ng-show="addFormEmail.email.$invalid && !addFormEmail.email.$pristine" class="help-block">Email is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine }">
+                    <label for="email">Phone<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" phone-input name="phone" ng-model="vm.sendEmailObj.sender_phone" id="phone" required>
+                    <p ng-show="addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine" class="help-block">Phone is required.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine }">
+                    <label for="email">Message<span  style="color:red;">*</span></label>
+                    <textarea class="form-control" name="msg" ng-model="vm.sendEmailObj.message" id="msg" required></textarea>
+                    <p ng-show="addFormEmail.msg.$invalid && !addFormEmail.msg.$pristine" class="help-block">message is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.eventSendEmailCon()" ng-show="vm.showSending" ng-disabled="addFormEmail.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(3);" >Cancel</button>
+
+        </form>
+        <hr>
+    </modal>
+
+    <!-- with login -->
+    <modal visible="vm.eventSendEmaillogin" style='margin-top:130px;'>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(4);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Message To Ad Owner</h4>   
+        </div>
+        <div class ="issign">
+            <div class="alert alert-danger fade in"></div>
+            <div class="alert alert-success" role="alert_email_login"></div>
+        </div>
+        <form novalidate name="addFormlogin"  method="post" class="semail">
+            <div class="{{vm.type_email_login}}">{{vm.msg_email_login}}</div>
+
+
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormlogin.phone.$invalid && !addFormlogin.phone.$pristine }">
+                    <label for="email">Message<span  style="color:red;">*</span></label>
+                    <textarea class="form-control"  name ="msg"ng-model="vm.sendEmailObj.message" id="msg" required></textarea>
+                    <p ng-show="addFormlogin.msg.$invalid && !addFormlogin.msg.$pristine" class="help-block">message is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.eventSendEmailConlogin()" ng-show="vm.showSending" ng-disabled="addFormlogin.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(4);" >Cancel</button>
+        </form>
+        <hr>
+    </modal>
+
+
+
+
+
+
+    <modal visible="vm.favpopup" id="favpop" style="margin-top: 130px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(5);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">This Ad added to your favourite  Successfully</h4>   
+        </div>
+
+
+        <hr>
+    </modal> 
+</div>

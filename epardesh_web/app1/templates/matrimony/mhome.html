@@ -1,0 +1,437 @@
+<style>
+    .slide img {
+        height: 150px;
+        width: 100%;
+    }
+    .each_profile_desc{
+        background: rgba(0,0,0,1);
+        color: #fff;
+        padding: 2px 8px;
+        font-size: 12px;
+        height: 50px;
+    }
+    .each_profile_desc .epm-name{
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+        line-height: 18px;
+        clear: both;
+        text-transform: capitalize;
+    }
+    p.epm-profile {
+        color: #d6ffd5;
+        font-size: 15px;
+        text-align: left;
+        padding: 0;
+    }
+    p.epm-location {
+        color: #d6ffd5;
+        font-size: 15px;
+        text-align: right;
+        padding: 0;
+    }
+    .rot-sli h1{
+        text-align: center;
+        margin: 35px 0px 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+    }
+    canvas {
+        display: inline-block;
+    }
+    .center-absolute {
+        margin-top: 55px;
+    }
+    .progress-display label {
+        display: block;
+        font-size: 30px !important;
+        font-weight: 400;
+    }
+    .progress-display {
+        font-family: 'Raleway', sans-serif;
+    }
+</style>
+<!---- slider ---->
+<div class="container" data-ng-controller="mhome as vm">
+    <!------------banner slider------------>
+    <div class="content">
+
+        <div class="container">
+            <div class="slider m-slider">
+                <ul class="rslides" id="slider1">
+                    <li><img class="slider_img" src="http://footage.framepool.com/shotimg/qf/856335739-matrimony-juice-touch-screen-married-couple.jpg" alt=""></li>
+                    <li><img class="slider_img" src="http://footage.framepool.com/shotimg/qf/311373575-honeymoon-trip-passion-matrimony-jeans.jpg" alt=""></li>
+                    <li><img  class="slider_img" src="http://www.newsx.com/sites/default/files/styles/home_image/public/field/image/couple_0.jpg?itok=IUocWgU9" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <!---->
+        <!------------Rotational slider------------>
+        <div class="content rot-sli">
+            <div class="container">
+                <h1>Recommended Profiles</h1>
+                <div class="slider2">
+
+                </div>
+            </div>
+        </div>
+        <!------------end of Rotational slider------------>
+        <!------------Categories------------>
+        <!--    <div class="container">
+                <div class="row cat_tophead">
+                    <div class="col-md-4 col-sm-4 col-xs-12 txt">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12  txt">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 txt">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="fa fa-caret-down down_arrow" aria-hidden="true"></i>
+                </div>
+                <div class="row cat_row_back">
+                    <div class="col-md-12">
+                        <h2 class="cat_txt"> Top Categories</h2>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 cat_name">
+                        <ul class="accordion">
+                            <li class="closed">Category 1
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 2
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 3
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 4
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 5
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 6
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 7
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 cat_name">
+                        <ul class="accordion">
+                            <li class="closed">Category 1
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 2
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 3
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 4
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 5
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 6
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 7
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 cat_name">
+                        <ul class="accordion">
+                            <li class="closed">Category 1
+                                <ul>
+                                    <li><a>sub thing</a></li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 2
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 3
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 4
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 5
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 6
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                            <li class="closed">Category 7
+                                <ul>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                    <li>sub thing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>-->
+        <!------------------------------classified Footer------------------>
+        <!--        <div class="container">
+                    <div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                        <div class="col-md-12">
+                            <img src="app/content/img/circle_lock.png">
+                        </div>
+                        <div class="col-md-12">
+                            <span class="foot_post_name">Post Your Need</span>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="foot_post_des">People who love what they do help you get everything done at an unbeatable value</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                        <div class="col-md-12">
+                            <img src="app/content/img/circle_lock.png">
+                        </div>
+                        <div class="col-md-12">
+                            <span class="foot_post_name">List your service</span>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="foot_post_des">What do you do best? Create your Gig and start selling. Its free and only takes 5 minutes </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                        <div class="col-md-12">
+                            <img src="app/content/img/circle_lock.png">
+                        </div>
+                        <div class="col-md-12">
+                            <span class="foot_post_name">Find What you Need</span>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="foot_post_des">Your safety is our top priority. Secure transactions and our safety team protect you at all time</p>
+                        </div>
+                    </div>
+                </div>-->
+        <!--------------------------End of classified Footer------------------>
+    </div>  
+
+    <!---->
+
+    <script type="text/javascript">
+        $(function() {
+        $("#slider1").responsiveSlides({
+        auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+        });
+        });
+                $(".slider_img").click(function(){
+        console.log("in click")
+                $state.go("home");
+        })
+
+    </script>
+    <!--------------------login  modal ----------------------------->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Login Here</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="alert alert-success m-t-sm m-b-lg" role="alert"></div>
+                        <div class="alert alert-danger fade in m-b-15"></div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary login_btn" id="log_btn">Login</button>
+                    <button type="button" class="btn-primary btn-social btn-fb">Sign in with Facebook</button>
+                    <button type="button" class="btn-primary btn-social btn-google">Sign in with google</button>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="for_pass" data-toggle="modal">Forgot your password?</a>
+                    <p class="create_ac">Don't have an  account? <a href="account.html" class="for_pass">Click here</a> to create one</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------Forget  modal ----------------------------->
+
+    <div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Forget Password</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary login_btn">Send</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'app/templates/footer.html'"></div>
+
+<div class="modal fade" id="SMSModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel" style="color:green">Profile Status</h4>
+            </div>
+            <div round-progress-bar id="getm1" current-value="40" size="170" thickness="10" style="text-align:center; margin-top: -20px;"></div>
+            <div round-progress-bar id="getm2" current-value="50" size="170" thickness="10" style="text-align:center; margin-top: -20px;"></div>
+            <div round-progress-bar id="getm3" current-value="60" size="170" thickness="10" style="text-align:center; margin-top: -20px;"></div>
+            <div style="padding:30px; margin-top: -70px;">Your profile is only <span class="p_com"></span> % completed, Please update your profile to make it more attractive. 
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="c_pro" class="btn">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+            $(function() {
+            // Click open the accordion childs
+            $('.accordion > li').click(function() {
+            if ($(this).hasClass('open')) {
+            $(this).removeClass('open');
+                    $(this).addClass('closed');
+            }
+            else {
+            $(this).removeClass('closed');
+                    $(this).addClass('open');
+            }
+            })
+            });
+</script>

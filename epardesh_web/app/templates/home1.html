@@ -1,0 +1,930 @@
+<style>
+    .footer-content
+    {
+        margin-top:0px!important;
+    }
+    .txt{
+        margin-bottom:5px
+    }
+
+    @media (min-width: 992px){
+        .col-md-col5{
+            width:20%;
+        }
+        .pad-3{
+            padding-left:3px !important;
+            padding-right: 3px!important;
+        }
+        .fixmarg
+        {
+            margin-left:55px
+        }
+        .no_result
+        {
+            margin: 12px 133px 1px 151px !important;
+        }
+    }
+    @media (max-width: 768px){
+        .viewcategory .panel-group .panel{
+            width: 100%;
+        }
+        .panel.panel-default.panel-open {
+            width: 100% !important;
+
+        }
+        .marleft
+        {
+            margin-left: -15px;
+        }
+
+        .fixmarg
+        {
+            margin-left:-60px
+        }
+        .callbacks_nav
+        {
+            top:19% !important;
+        }
+        .no_result
+        {
+            margin: 0px 0px 3px 35px !important;
+        }
+    }
+
+    .card {
+        position: relative;
+        display: block;
+        margin-bottom: .75rem;
+        background-color: #fff;
+        border-radius: .25rem;
+        border: 1px solid rgba(0,0,0,.125);
+    }
+    .card-img-top {
+        border-top-right-radius: .25rem;
+        border-top-left-radius: .25rem;
+    }
+    .card-block {
+        padding: 0.75rem;
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .card {
+        max-width: 20rem;
+    }
+    .marg-top-bottom-5{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .badge {
+        background-color: #f3aa5e;
+
+    }
+
+    .no_result {
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px 0 #e3e3e3;
+        background-color: #FFF;
+        padding: 9px;
+        border-radius: 4px;
+        margin: 15px 4px 3px 198px;
+    }
+    .catul
+    {
+        list-style:none;
+    }
+    /*    .all-ser-res {
+            width: 100%;
+            padding-top: 10px;
+            list-style:none;
+            left: 61px;
+        text-align: left;
+        font-size: 16px;
+        }
+        .all-ser-res ul li {
+    
+            display: inline-block;
+            width: 31%;
+        }
+        .all-ser-res1 ul li {
+    
+            display: inline-block;
+            width: 100%;
+        }
+        .all-ser-res1 {  
+        width: 100%;
+        list-style: none;
+        text-align: left;
+        overflow-y: auto;
+        font-size: 16px;
+        height: 100px;
+        }*/
+    .nofound
+    {
+        width: 100%;
+        list-style: none;
+        text-align: left;
+        font-size: 16px;
+        height: 131px;  
+    }
+
+    /*    .crsr-ptr:hover
+        {
+            background-color:#f58705;
+        }*/
+    /*    .all-ser-res1 ul li:hover
+        {
+            background-color:#f58705;
+        }
+         .all-ser-res ul li:hover
+        {
+            background-color:#f58705;
+        }*/
+    /*    .all-ser-res ul li
+        {
+            left:0px;
+        }*/
+    /*    .all-ser-fulltitle {
+            color: #f58705;
+            cursor: default;
+            display: block;
+    
+            font-size: 20px;
+            letter-spacing: .5px;
+            overflow: hidden;
+            padding-bottom: 6px;
+            padding-top: 18px;
+            position: relative;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            z-index: 1;
+                border-right: 1px solid #8c8b8b;
+        }*/
+    .slider_back
+    {
+        background: #efefef ;
+    }
+    .featured_ad_back
+    {
+        background: -webkit-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* Standard syntax */
+    }
+    .latest_cat_back
+    {
+
+        background: #efefef ;
+    }
+    .trending_back
+    {
+        background: -webkit-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* Standard syntax */
+    }
+    .Promocode
+    {
+        background: #efefef ;
+    }
+    .postur_back
+    {
+        /*background: #efefef ;*/
+
+        background: -webkit-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134)); /* Standard syntax */
+    }
+    .popular_back
+    {
+        background: #efefef ;
+        /*        background: -webkit-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134));  For Safari 5.1 to 6.0 
+                background: -o-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134));  For Opera 11.1 to 12.0 
+                background: -moz-linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134));  For Firefox 3.6 to 15 
+                background: linear-gradient(rgb(153,146,134), rgb(203,195,185), rgb(153,146,134));  Standard syntax */
+    }
+</style>
+<style>
+    .promocode
+    {
+        background:#efefef;
+    }
+    .promobox
+    {
+        background-color: #232f3e;
+        text-align: left;
+        border: 2px solid rgb(236,238,239);
+        border-radius: 8px;
+        display: block;
+        margin-bottom: 0.75rem;
+        height: 210px;
+
+
+    }
+    .promo_desc
+    {
+        padding: 12px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #fff;
+        height: 106px;
+        word-break: break-all;
+    }
+    .promo_price
+    {
+        font-size: 35px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .promo_coupon
+    {
+        font-size: 17px;
+        border: 1px solid #dfdfdf;
+        padding: 6px;
+        border-radius: 7px;
+
+        font-weight: bold;
+        color: #0e54f2;
+        text-align: -webkit-center;
+
+
+        color: #0033ff;
+        background: oldlace;
+
+
+
+    }
+    .promocode .promo_coupon p:hover
+    {
+        background: #efefef;
+    }
+    .promo_coupon:hover {
+        background: #000;
+        color:#fff;
+    }
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    #slide {
+        position: absolute;
+        left: 0px;
+        top:5px;
+        background: oldlace;
+        transition: 1s;
+        width:inherit;
+
+    }
+
+    .wrapper:hover #slide {
+        transition: 1s;
+        left: -400px;
+    }
+
+</style>
+
+<!---- slider ---->
+<div class=" margin-top" data-ng-controller="home as vm">
+    <!------------banner slider------------>
+    <div class="slider_back">
+        <div class="content">
+            <div class="container">
+                <div class="slider">
+                    <ul class="rslides" id="slider1">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------End of banner slider------------>
+    <!---->
+
+    <!------------top 15 features ad------------>
+    <div class="featured_ad_back">
+        <div class="container">
+            <br>
+            <p class="Popular_txt">Featured Ads</p>
+            <br><div class="col-md-3 col-sm-4 col-sm-6 col-md-col5 pad-3" ng-repeat="dt in vm.adData">
+                <div class="card">
+                    <a ui-sref="ad_details({'id': dt.ad_info.id})" ng-click="vm.track()"> 
+                        <span >
+                            <img ng-if="dt.image_info[0][0].image_type=='featured'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+                            <img ng-if="dt.image_info[0][0].image_type=='demo1'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+                            <img ng-if="dt.image_info[0][0].image_type=='demo'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+                            <img ng-if="dt.image_info[0][1].image_type=='demo2'"  class="card-img-top" src="{{dt.image_info[0][1].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+
+                        </span>
+                        <div class="card-block" >
+
+                            <div class="row">
+                                <p class="card-text" style="color:rgb(108,122,227);font-weight: bold;">{{dt.ad_info.ad_tittle| limitTo: 20}}{{dt.ad_info.ad_tittle.length > 20 ? ".." : ""}}</p>
+                            </div>
+                            <div class="row">
+                                <p ng-if="dt.ad_info.ad_tittle !='Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;">{{dt.ad_info.city | limitTo: 10}}{{dt.ad_info.city.length > 10 ? ".." : ""}},{{dt.ad_info.state | limitTo: 7}}{{dt.ad_info.state.length > 7 ? ".." : ""}}</p>
+                                <p ng-if="dt.ad_info.ad_tittle =='Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;">city,state</p>
+
+
+                            </div>
+                            <div class="row">
+                                <p   ng-if="dt.ad_info.ad_tittle !='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><span class="badge">Featured</span><span class="pull-right"style="font-size:15px;font-weight:bold;">Starting at&nbsp;<i class="fa fa-usd" aria-hidden="true"></i>{{dt.ad_info.ad_price}}</span> </p>
+                                <p   ng-if="dt.ad_info.ad_tittle =='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><span class="badge">Demo</span>&nbsp;Price</p>
+                            </div>
+
+
+                            <!--
+                                                        <p  ng-if="dt.ad_info.ad_tittle !='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><b>STARTING AT <i class="fa fa-usd" aria-hidden="true" style="font-size:21px;"></i> {{dt.ad_info.ad_price}}</b></p>
+                            
+                                                        <p  ng-if="dt.ad_info.ad_tittle =='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><b>Price</b></p>-->
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!------------End of top 15 features ad------------>
+
+    <!--------header category start------------->
+    <div class="latest_cat_back">
+        <div class="container">
+            <br>
+            <p class="Popular_txt" style="color:#000;">Latest Category</p><br>
+            <div class="col-md-12 text-center">
+                <div class="category_icon">
+                    <ul>
+                        <li ng-repeat='c in vm.allCat' class='cursor:pointer'><a title="{{c.category}}" ng-click='vm.getCat(c.id)'><img src="app/content/img/{{vm.allCategoryImgArr[$index]}}" alt="Events"><b>{{c.category}}</b></a></li>
+                        <li class="cursor:pointer ng-scope"><a title="Post Free Ad" id='open_pop'><img src="app/content/img/more-icon.png" alt="Events"><b class="ng-binding">More</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <br></div>
+    <div id="boxes">
+
+        <div style="display: none;" id="dialog" class="window">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1 pull-right" ><span style="color:#000;"class="close">X</span></div>
+                </div>
+                <div class="row">
+                    <div class="all-ser-fulltitle">
+                        <div class="col-md-1 col-sm-1 col-xs-1">Events</div>
+                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg"">
+                            <a href="#" class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+                    <!--                   <span style="border-top: 1px solid #8c8b8b;"></span>-->
+                    <div class="row all-ser-res">
+
+                        <div class="col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+
+                    </div> 
+
+
+                </div>
+
+                <div class="row">
+                    <div class="all-ser-fulltitle">
+                        <div class="col-md-1 col-sm-1 col-xs-1">IT Training</div>
+                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:97%; text-align:right;"></div>
+                        <!--<h3 >Events <hr style="height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:right; margin: 0 0 0 auto;"></h3>-->
+                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg ">
+                            <a href="#" class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+
+                    <div class=" row all-ser-res">
+
+                        <div class="col-xs-4">Demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">Demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">demo</div>
+
+                    </div> 
+                    <br>
+
+                </div>
+
+
+
+                <div id="pp" class="col-md-4 col-sm-12 col-xs-12" ng-repeat="group in vm.category track by $index ">
+                    <div class=" row all-ser-fulltitle">
+                        <div class="col-md-2 col-sm-4 col-xs-4 marleft"><a style="color: #0e54f2;" ng-click="vm.getCat(group.category_id)">{{group.category_name}}</a></div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <!--<hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;">-->
+                        </div>
+                        <div class="col-md-6 col-sm-5 col-xs-5">
+                            <div ng-if="group.subcategories !=''" style="margin-top:5px;">
+                                <!--<a ng-click="vm.count($index)" class="btn btn-default" style="color:#000000;" >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>-->
+                                <a ng-click="this[group.category_name]($index)" class="btn btn-default"  >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class=" col-md-4 col-sm-4 col-xs-4 all-ser-res1">
+                        <ul ng-if="group.subcategories !='' " ng-repeat="group1 in group.subcategories  | limitTo: vm.cnt ">
+                            <li class="crsr-ptr"  value="{{group1.name}}" ng-click="vm.getSubCat(group1.id,group.category_id)">{{group1.name}}</li> 
+                        </ul>
+                        <!--                        <div class="col-sm-12 col-md-12 col-xs-12" >
+                        -->
+                        <div class="marleft1">
+                            <p ng-if="group.subcategories =='' ">No Subcategories found!</p> 
+                        </div>
+
+
+                        <!--</div>-->
+                    </div> 
+
+                    <br>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="width: 1478px; font-size: 32pt; color:white; height: 2527px; display: none; opacity: 0.8;" id="mask"></div>
+
+    <!-------------------------end header category----------------------->
+
+
+    <!------------trending ad------------>
+    <div class="trending_back">
+        <div class="container">
+            <br><p class="Popular_txt">Trending Ads</p><br>
+            <div class="col-md-3 col-sm-4 col-sm-6 col-md-col5 pad-3" ng-if="vm.trend !=''" ng-repeat="dt in vm.trend">
+                <div class="card">
+                    <a ui-sref="ad_details({'id': dt.ad_info.id})" ng-click="vm.track()"> 
+                        <span ng-repeat="img in dt.image_info | limitTo:1">
+                            <img ng-if="img[0].image_type=='featured'"  class="card-img-top" src="{{img[0].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+                            <img ng-if="img[0].image_type=='demo'"  class="card-img-top" src="{{img[0].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+
+                            <img ng-if="dt.image_info[0][1].image_type=='demo2'"  class="card-img-top" src="{{dt.image_info[0][1].image_path}}" alt="Card image cap" style='width:100%;height: 180px;'>
+
+                        </span>
+                        <div class="card-block">
+                            <!--                            <p class="card-text">{{dt.ad_info.ad_tittle| limitTo: 20}}{{dt.ad_info.ad_tittle.length > 20 ? ".." : ""}}</p>
+                                                        <p  ng-if="dt.ad_info.ad_type=='0'"class="card-text marg-top-bottom-5"><span class="badge">Free</span>&nbsp;&nbsp;</p>
+                                                        <p  ng-if="dt.ad_info.ad_type=='1'"class="card-text marg-top-bottom-5"><span class="badge">Premium</span>&nbsp;&nbsp;</p>
+                                                        <p class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><b>STARTING AT <i class="fa fa-usd" aria-hidden="true" style="font-size:21px;"></i> {{dt.ad_info.ad_price}}</b></p>
+                            -->
+
+                            <div class="row">
+                                <p class="card-text" style="color:rgb(108,122,227);font-weight: bold;">{{dt.ad_info.ad_tittle| limitTo: 20}}{{dt.ad_info.ad_tittle.length > 20 ? ".." : ""}}</p>
+                            </div>
+                            <div class="row">
+                                <p ng-if="dt.ad_info.ad_tittle !='Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;">{{dt.ad_info.city | limitTo: 10}}{{dt.ad_info.city.length > 10 ? ".." : ""}},{{dt.ad_info.state | limitTo: 7}}{{dt.ad_info.state.length > 7 ? ".." : ""}}</p>
+                                <p ng-if="dt.ad_info.ad_tittle =='Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;">city,state</p>
+
+                            </div>
+                            <div class="row">
+                                <p   ng-if="dt.ad_info.ad_tittle !='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><span class="badge">Featured</span><span class="pull-right"style="font-size:15px;font-weight:bold;">Starting at&nbsp;<i class="fa fa-usd" aria-hidden="true"></i>{{dt.ad_info.ad_price}}</span> </p>
+                                <p   ng-if="dt.ad_info.ad_tittle =='Demo'" class="card-text marg-top-bottom-5" style="color:rgb(117,173,91)"><span class="badge">Demo</span>&nbsp;Price</p>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row" ng-if="vm.trend ==''" >
+
+                <div class="container">
+                    <div class="col-md-8 no_result">No Related Ads Found!</div>
+                </div>
+
+            </div>
+
+
+            <br>
+        </div>
+    </div>
+    <!------------End of top 15 features ad------------>
+
+
+    <div class="Promocode">
+        <div class="container">
+            <br><p class="Popular_txt" style="color: #000;">Coupon</p><br>
+            <div class="col-md-3 col-sm-6 col-xs-6  promobox" ng-repeat="dt in  vm.promoData">
+                <div class="col-md-12 col-sm-12 col-xs-12 promo_price">
+                    <p>{{dt.discount}}% &nbsp;OFF</p>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 promo_desc">
+                    <p>{{dt.description |limitTo:200}}{{dt.description.length > 200 ? "..":""}}</p>
+                </div>
+                <div class=" wrapper col-md-12 col-sm-12 col-xs-12 promo_coupon">
+                    <!--                    <p class="">{{dt.name}}</p>-->
+                    <p class="code">{{dt.name}}</p>
+                    <p id="slide">Get Promocode</p>
+                </div>               
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------Rotational slider------------>
+    <!--    <div class="content">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="st-column span12">
+                        <div class="carousel slide multi-item-carousel" id="theCarousel">
+                            <div class="carousel-inner">
+    
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="st-column span12">
+    
+    
+                </div>
+            </div>
+        </div>-->
+    <!------------end of Rotational slider------------>
+    <!------------Categories------------>
+    <!--    <div class="container">
+            <div class="row cat_tophead">
+                <div class="col-md-4 col-sm-4 col-xs-12 txt">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12  txt">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 txt">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>Always <strong>FREE</strong>
+                </div>
+            </div>
+            <div class="row">
+                <i class="fa fa-caret-down down_arrow" aria-hidden="true"></i>
+            </div>
+            <div class="row cat_row_back">
+                <div class="col-md-12">
+                    <h2 class="cat_txt"> Top Categories</h2>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 cat_name">
+                    <div class="text-center" ng-show='vm.DataLoader'><img src="app/content/img/loadingdata.gif"></div>
+                    <span ng-hide='vm.DataLoader'>
+                        <accordion close-others="true" class="viewcategory">
+                            <accordion-group ng-repeat="group in vm.category track by $index" is-open="group.open" value="{{group.category_name}}">
+                                <accordion-heading>
+                                    <i ng-class="{'fa fa-minus': vm.category[$index].open,'fa fa-plus':! vm.category[$index].open }"></i>
+                                    <span ng-click="vm.getCat(group.category_id);">
+                                        &nbsp;{{group.category_name}}
+                                    </span>
+                                </accordion-heading>
+                                <ul>
+                                    <li class="crsr-ptr" ng-repeat="group1 in group.subcategories track by $index" value="{{group1.name}}" ng-click="vm.getSubCat(group1.id);">{{group1.name}}</li>
+                                </ul>
+                            </accordion-group>
+                        </accordion>  
+                    </span>
+                </div>
+            </div>
+        </div>-->
+
+    <!------------End of Categories------------>
+
+    <!------------------------------classified Footer------------------>
+    <div class="postur_back">
+        <div class="container">
+            <br><div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                <div class="col-md-12">
+                    <img src="app/content/img/circle_lock.png">
+                </div>
+                <div class="col-md-12">
+                    <span class="foot_post_name">Post Your Need</span>
+                </div>
+                <div class="col-md-12">
+                    <p class="foot_post_des">People who love what they do help you get everything done at an unbeatable value</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                <div class="col-md-12">
+                    <img src="app/content/img/circle_lock.png">
+                </div>
+                <div class="col-md-12">
+                    <span class="foot_post_name">List your service</span>
+                </div>
+                <div class="col-md-12">
+                    <p class="foot_post_des">What do you do best? Create your Gig and start selling. Its free and only takes 5 minutes </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 foot_post_align">
+                <div class="col-md-12">
+                    <img src="app/content/img/circle_lock.png">
+                </div>
+                <div class="col-md-12">
+                    <span class="foot_post_name">Find What you Need</span>
+                </div>
+                <div class="col-md-12">
+                    <p class="foot_post_des">Your safety is our top priority. Secure transactions and our safety team protect you at all time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular_back">
+        <div class="row">
+            <br><p class="Popular_txt" style="color:#000;">Popular Cities</p><br>
+            <div class="row main_foot_col">
+                <div class="container" ng-show="vm.showPopularCityUSA">                            
+                    <div class="col-md-12" style="text-align:center;">                                      
+                        <button>Find Ads in Popular Cities</button>
+                    </div>               
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/los-angeles.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('New York','')">New York</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Illinois','Chicago')">Chicago</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Washington','')">Washington </a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Los Angeles','')">Los Angeles</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('California','San Francisco')">San Francisco </a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Georgia','Dallas')">Dallas</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/houston.png" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Alaska','Houston')">Houston</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Missouri','Philadelphia')">Philadelphia</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Georgia','Atlanta')">Atlanta</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Georgia','Boston')">Boston</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Alabama','Detroit')">Detroit</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Washington','Seattle')">Seattle</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/Chicago.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Arizona','Miami')">Miami</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Maryland','Baltimore')">Baltimore</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Maryland','Phoenix')">Phoenix</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Kansas','Minneapolis')">Minneapolis</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 city_links">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/orlando.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Florida','Orlando')">Orlando</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Kentucky','Sacramento')">Sacramento</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Connecticut','Hartford')">Hartford</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Washington','Seattle')">Seattle</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" ng-show="vm.showPopularCityIndia">                            
+                    <div class="col-md-12" style="text-align:center;">                                      
+                        <button>Find Ads in Popular Cities</button>
+                    </div>               
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/los-angeles.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA','Mumbai')">Mumbai</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Delhi','')">Delhi</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('KARNATAKA','Bangalore')">Bangalore </a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('ANDHRA PRADESH','Hyderabad')">Hyderabad</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('TAMIL NADU','Chennai')">Chennai </a></li>
+                                <li><a ng-click="vm.searchFromPopulor('WEST BENGAL','Kolkata')">Kolkata</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/houston.png" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('GUJRAT','Ahmedabad')">Ahmedabad</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('GUJRAT','Surat')">Surat</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA','Pune')">Pune</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('RAJASTHAN','Jaipur')">Jaipur</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('UTTAR PRADESH','Lucknow')">Lucknow</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA','Nagpur')">Nagpur</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/Chicago.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('ANDHRA PRADESH','Visakhapatnam')">Visakhapatnam</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('MADHYA PRADESH','Bhopal')">Bhopal</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('BIHAR','Patna')">Patna</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Chandigarh','Chandigarh')">Chandigarh</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 city_links">
+                        <div class="col-md-12 city_img_mar">
+                            <img src="app/content/img/orlando.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('PUNJAB','Ludhiana')">Ludhiana</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('ORISSA','Bhubaneswar')">Bhubaneswar</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                            <ul>
+                                <li><a ng-click="vm.searchFromPopulor('Assam','Guwahati')">Guwahati</a></li>
+                                <li><a ng-click="vm.searchFromPopulor('Kerala','Trivandrum')">Trivandrum</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<!--------------------------End of classified Footer------------------>
+<!---->
+
+<script type="text/javascript">
+    $(function() {
+
+    });
+</script>
+<!--------------------login  modal ----------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">Login Here</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="alert alert-success m-t-sm m-b-lg" role="alert"></div>
+                    <div class="alert alert-danger fade in m-b-15"></div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary login_btn" id="log_btn">Login</button>
+                <button type="button" class="btn-primary btn-social btn-fb">Sign in with Facebook</button>
+                <button type="button" class="btn-primary btn-social btn-google">Sign in with google</button>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="for_pass" data-toggle="modal">Forgot your password?</a>
+                <p class="create_ac">Don't have an  account? <a href="account.html" class="for_pass">Click here</a> to create one</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------------------------------Forget  modal ----------------------------->
+
+<div class="modal fade" id="forgetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">Forget Password</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary login_btn">Send</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div ng-include="'app/templates/footer.html'"></div>
+
+<script>
+    $(function() {
+        // Click open the accordion childs
+        $('.accordion > li').click(function() {
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open');
+                $(this).addClass('closed');
+            }
+            else {
+                $(this).removeClass('closed');
+                $(this).addClass('open');
+            }
+        })
+    });
+</script>

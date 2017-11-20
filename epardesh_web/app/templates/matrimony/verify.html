@@ -1,0 +1,21 @@
+<div class="login_sec" data-ng-controller="mverify as vm">   
+    <div class="container">
+        <h2 class="forgot_mar">Verify Email</h2>
+        <div class="col-md-6 forget">			 
+            <form>
+                <div class="alert alert-danger fade in login_alert"></div>
+                <div class="alert alert-success login_alert" role="alert"></div>
+                <div style="text-transform: capitalize;" class="{{vm.msgType}}" role="alert">{{vm.msg}}</div>
+<!--                <div class="form-group log">
+                    <h5>Email address:</h5>
+                    <input type="email" class="form-control" id="email1" placeholder="Email">
+                </div><br>
+                 <button type="submit" class="btn btn-primary" id="send" >Send</button>-->
+                <!--                            </a>-->
+                
+                <button style="width:100px" class="btn  btn-social btn-fb" ng-click="vm.goTologin();">Login</button>
+            </form>				 
+        </div>
+    </div>
+</div>
+<div ng-include="'app/templates/footer.html'"></div>

@@ -1,0 +1,198 @@
+<style type="text/css">
+    .art-list {
+        padding: 10px 0;
+        max-height: 300px;
+        overflow: auto;
+    }
+
+    .art-msg {
+        padding-left: 40px;
+    }
+    img.md-card-image {
+    margin-left: 123px;
+}
+
+    .ic1 {
+        color: #111111;
+    }
+
+    .ic2 {
+        color: #ea57a3;
+    }
+
+    .paddingleft1 {
+        padding-left: 20px;
+    }
+
+    .fullWidth {
+        width: 100%;
+        background: #45b39d;
+        color: black !important;
+    }
+
+    .fullWidth:hover {
+        width: 100%;
+        background: #45b39d;
+        color: black !important;
+    }
+
+    .md-button:not([disabled]):hover {
+        background-color: rgb(69, 179, 157);
+    }
+
+    #ascrail2001,
+    #ascrail2001-hr {
+        display: none !important;
+        opacity: 0;
+    }
+
+    #ascrail2002,
+    #ascrail2002-hr {
+        display: none !important;
+        opacity: 0;
+    }
+
+    .s10 {
+        padding: 0px 12px 0px 12px;
+    }
+         .icon-arrow-left:before {
+   content: "\e641";
+   border: 1px solid;
+   border-radius: 50%;
+    color:black ;
+}
+.md-button.md-icon-button1 {
+    margin: 0 6px;
+    height: 40px;
+    min-width: 0;
+    float:left;
+    line-height: 18px;
+    padding: 8px;
+   
+    width: 40px;
+    border-radius: 50%;
+    color: black;
+    background-color: #45b39d;
+}
+#artistbtn2{
+    margin-top: 165px;
+}
+.align{
+    margin-left:650px;
+}
+</style>
+
+<div ng-controller="view_artist_profile">
+    <section>
+        <!-- left side start-->
+        <div ng-include="'app/templates/sidebar.html'"></div>
+        <!-- /w3layouts-agile
+
+        <!-- main content start-->
+        <div class="main-content">
+            <!-- header-starts -->
+            <div ng-include="'app/templates/header.html'"></div>
+            <!-- //header-ends -->
+
+            <div id="page-wrapper" ng-repeat="artist in viewArtist">
+                <div class="inner-content">
+  <a class="goto-products-button md-icon-button1 md-button md-ink-ripple back-btn"  data-ui-sref="artist_table" ng-click="">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    <div class="tittle-head"> 
+                      
+                            <h3 class="tittle">  Artists </h3>
+                       
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--//............................ view artist profile ................................\\-->
+                    <div layout="row" layout-align="space-between start" layout-xs="column" flex=100">
+                       
+                         
+
+                                                      <div class="md-media-lg" >
+                                    <img ng-src="app/content/images/a11.jpg" class="md-card-image" style="width:150px;" alt="Washed Out">
+                                </div> 
+                        <div layout-align="start start"><span class="md-headline">{{artist.birth_name}}</span><br>
+                        <span class="md-headline">{{artist.stage_name}}</span></div>
+                        <div> {{artist.address}}<br>
+                                   {{artist.email}}<br>
+                                     {{artist.phone}} </div>
+                               
+                                <!-- <div layout="" layout-align="center">
+                                    <md-button ng-click="" data-ui-sref="availability" class="fullWidth s10">Availability</md-button>
+                                </div> -->
+                            </div>
+                      <div layout="row" class="align " layout-align="space-between start" layout-xs="column"  >
+                       
+                           <div >
+                          <p class="md-headline ">Biography</p><br>
+                          {{artist.biography}}</div>
+                           
+                </div>
+                       <div layout="row" class="align " layout-align="space-between start"  layout-xs="column"  >
+                           
+                            <div >
+                          <p class="md-headline ">Performance Type</p><br>
+                          {{artist.performance_type}}</div>
+                           
+                </div>
+              
+                    </div>
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><b>Email</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div layout="row">
+                                        <md-input-container flex="100">
+                                            <label>Subject</label>
+                                            <input required name="email" class="md-raised md-primary" ng-model="user_profileData.email">
+                                            <div ng-messages="user_profile.Subject.$error">
+                                                <span class="error" ng-message="required" ng-if="user_profile.Subject.$touched">This is required.</span>
+                                                <!--<span class="error" ng-message="pattern" ng-if="change_password.new_password.$touched" >At least one lowercase letter one uppercase letter and one digit.</span>-->
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+
+                                    <textarea name="editor1"></textarea>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <md-button type="submit" data-dismiss="modal" ng-disabled="editevent.$invalid" ng-click="availabilityadd1()">Submit</md-button>
+                                    <md-button type="submit" data-dismiss="modal">Close</md-button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                 
+                    <!--//music-right-->
+                    <div class="clearfix"></div>
+                    <!-- /w3l-agile-its -->
+
+                    <!--body wrapper start-->
+
+                </div>
+                <div class="clearfix"></div>
+                <!--body wrapper end-->
+                <!-- /w3l-agile -->
+            </div>
+            <!--body wrapper end-->
+            <!-- /w3l-agile -->
+            <!-- main content end-->
+        </div>
+    </section>
+
+
+
+</div>
+
+
+
+                 

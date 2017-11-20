@@ -1,0 +1,282 @@
+<style>
+
+    .looking
+    {
+        text-align: center;
+        padding: 68px;
+    }
+    .query
+    {
+        margin: 6px;
+        background: silver;
+        line-height: 27px;
+    }
+    .bold-text
+    {
+        font-weight:bold;
+    }
+    .middle-text
+    {
+        color: slategrey;
+    }
+    .view_send
+    {
+        border: 1px solid;
+        padding: 25px;
+    }
+    .view_send h4{
+        padding: 7px;
+        text-align: center;
+    }
+
+    /*        .high
+            {
+                height:415px;
+            }  */
+
+    @media (max-width:768px)
+    {
+        .looking
+        {
+            text-align: center;
+            padding: 0px;
+        }
+    }
+</style>
+
+<div class="contact" data-ng-controller='contactCtrl as vm'>     
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <nav class="navbar navbar-default mob">
+            <!---- top header----->
+            <div class="top_bg">
+                <div class="container">
+                    <div class="header_top-sec mob-header">
+                        <div class="col-sm-4 col-xs-4 pad-0">
+                            <div class="top_right">
+                                <ul>
+                                    <li><a ui-sref="main"> <img src="app/content/img/logoEpardesh.png"alt=""/></a></li>
+                                </ul>
+                            </div>
+                        </div>                  
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>        
+        </nav> 
+
+    </div>
+
+
+
+    <div class="container high">
+        <div class="contact-head">
+            <h2>Contact US</h2>
+        </div>
+        <div class="looking" >
+            <div class="row" ng-show="vm.show_type">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 query">
+
+                    <p class="bold-text">Did Not Find What You are Looking For?</p>
+                    <p class="middle-text">Contact with epardesh team directly by selecting from the option below.</p>
+
+                    <span>Query For:</span>
+                    <select ng-model="vm.selected_type"  >
+                        <option value="0" selected="selected">Classified</option>
+                        <option value="1">Matrimony</option>
+                        <option value="2">Others</option>
+                    </select>
+                    <button class="btn" ng-click="vm.go_type();">Go</button>
+                    <div class='row'>
+
+                        <div class="alert alert-danger fade in login_alert"></div>
+                        <div class="alert alert-success login_alert" role="alert"></div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+
+
+
+            </div>
+            <br>
+
+            <div ng-show="vm.show_classified">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 query">
+                        <p class="bold-text">Did Not Find What You are Looking For?</p>
+                        <p class="middle-text">Contact with epardesh team directly by selecting from the option below.</p>
+
+                        <span>Query For:</span>
+                        <select ng-model="vm.selected_classified">
+                            <option value="Registration" selected="selected">Registration</option>
+                            <option value="Ads">Ads</option>
+                            <option value="Events">Events</option>
+                            <option value="IT Training">IT Training</option>
+                            <option value="Technical Issue">Technical Issue</option>
+                            <option value="Payment">Payment</option>
+                            <option value="Others">Others</option>
+
+                        </select>
+                        <button class="btn" ng-click="vm.go('0');">Go</button>
+                        <!--                        <div class='row'>
+                                                    <div class="alert alert-danger fade in login_alert"></div>
+                                               <div class="alert alert-success login_alert" role="alert"></div>
+                                                </div>-->
+
+                    </div>
+                    <div class="col-md-2"></div>
+
+
+
+                </div>
+
+            </div>
+
+            <div ng-show="vm.show_matrimony">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 query">
+                        <p class="bold-text">Did Not Find What You are Looking For?</p>
+                        <p class="middle-text">Contact with epardesh team directly by selecting from the option below.</p>
+
+                        <span>Query For:</span>
+                        <select  ng-model="vm.selected_matrimony">
+                            <option value="Registration" selected="selected">Registration</option>
+                            <option value="Profile">Profile</option>
+                            <option value="Membership Plan">Membership Plan</option>
+                            <option value="email">Email/Messaging</option>
+                            <option value="Technical Issue">Technical Issue</option>
+                            <option value="Payment">Payment</option>
+                            <option value="Others">Others</option>
+
+                        </select>
+                        <button class="btn" ng-click="vm.go('1');">Go</button>
+                        <!--                        <div class="alert alert-danger fade in login_alert"></div>
+                                                <div class="alert alert-success login_alert" role="alert"></div>-->
+                    </div>
+                    <div class="col-md-2"></div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="high">
+            <div class="send" ng-show="vm.send">
+                <div class="col-md-12" style="padding: 15px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 view_send">
+                        <h4>Your Query For  {{vm.selected}} </h4>
+                        <form>
+                            <div class="alert alert-danger fade in "></div>
+                            <div class="alert alert-success" role="alert"></div>
+
+                            <input id="name1" ng-model="vm.name1" type="text" placeholder="Name"/>
+                            <input id="email1" ng-model="vm.email1" type="text" placeholder="E-mail"/>
+                            <input id="phone1" ng-model="vm.phone1" phone-input ng-model="phoneVal" type="text" placeholder="Phone"/>
+                            <input id="subject1" ng-model="vm.subject1" type="text" placeholder="Subject"/>
+                            <div class="contact-right">
+                                <textarea id="msg1" ng-model="vm.msg1" placeholder="Message"></textarea>
+                                <input style="float: right;" type="button" ng-click="vm.sendContactFun();" class="btn snd-btn" value="SEND"/>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="send" ng-show="vm.send_classified">
+                <div class="col-md-12" style="padding: 15px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 view_send">
+
+                        <h4>Your Query For  {{vm.selected_classified}} </h4>
+                        <form>
+                            <div class="alert alert-danger fade in "></div>
+                            <div class="alert alert-success" role="alert"></div>
+
+                            <input id="name" ng-model="vm.name" type="text" placeholder="Name"/>
+                            <input id="email" ng-model="vm.email" type="text" placeholder="E-mail"/>
+                            <input id="phone" ng-model="vm.phone" phone-input ng-model="phoneVal" type="text" placeholder="Phone"/>
+                            <input id="subject" ng-model="vm.subject" type="text" placeholder="Subject"/>
+                            <div class="contact-right">
+                                <textarea id="msg" ng-model="vm.msg" placeholder="Message"></textarea>
+                                <input style="float: right;" type="button" ng-click="vm.sendContactFun_class();" class="btn snd-btn" value="SEND"/>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="send" ng-show="vm.send_matrimony">
+                <div class="col-md-12" style="padding: 15px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 view_send">
+                        <h4>Your Query For  {{vm.selected_matrimony}} </h4>
+                        <form>
+                            <div class="alert alert-danger fade in "></div>
+                            <div class="alert alert-success" role="alert"></div>
+
+                            <input id="mname" ng-model="vm.mname" type="text" placeholder="Name"/>
+                            <input id="memail" ng-model="vm.memail" type="text" placeholder="E-mail"/>
+                            <input id="mphone" ng-model="vm.mphone" phone-input ng-model="phoneVal" type="text" placeholder="Phone"/>
+                            <input id="msubject" ng-model="vm.msubject" type="text" placeholder="Subject"/>
+                            <div class="contact-right">
+                                <textarea id="mmsg" ng-model="vm.mmsg" placeholder="Message"></textarea>
+                                <input style="float: right;" type="button" ng-click="vm.sendContactFun_matri();" class="btn snd-btn" value="SEND"/>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<div ng-include="'app/templates/footer.html'">
+</div>

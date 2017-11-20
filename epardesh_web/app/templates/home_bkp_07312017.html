@@ -1,0 +1,654 @@
+
+<style>
+    .main_foot_col ul li {
+        line-height: 1.8em;
+        font-size: 15px !important; 
+        color: #777;
+    }
+    .animated.ng-enter-stagger {
+        transition-delay: 0.3s;
+        animation-delay: 0.3s;
+    }
+
+    .phone-enter {
+        opacity:0;
+        -webkit-transition-property: all;
+        -webkit-transition-timing-function: ease-out-cubic;
+        -webkit-transition-duration: 400ms;
+    }
+
+    .pac-container { margin-top:-110px !important; z-index: 1051 !important; }
+    @media (max-width: 480px) {
+
+        .pac-container {
+            margin-top:-55px !important;
+            z-index: 1051 !important;
+        }
+
+    }
+    @media (max-width: 767px) {
+
+        .pac-container {
+            margin-top:-40px !important;
+            z-index: 1051 !important;
+        }
+        .callbacks_nav {
+            top: 26% !important;
+        }
+        .features-box .features-content {
+            padding-left: 0px;
+        }
+    }
+    .slider
+    {
+        margin-top:61px;
+    }
+    .align-a-right {
+        font-size: 12px;
+        clear: both;
+        text-align: right;
+    }
+    .align-a-right a {
+        color: #0e54f2;
+    }
+    .all-ser-res1 {
+        height: 110px;
+        margin-bottom: 5px;
+        border: 1px solid #f5e9e9;
+    }
+    .marleft{
+        margin-left: -15px;
+        font-size: 16px;
+    }
+    div#pp {
+        height: 200px;
+    }
+    .all-ser-res1 ul li {
+        font-size: 14px;
+        padding: 1px 4px;
+    }
+    .all-ser-res1 ul li:hover {
+        background-color: #0e54f2;
+        color: #fff;
+    }
+    /*===============================================
+    End of See All Category popup CSS
+    =================================================*/
+
+</style>
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-92092707-1', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+<!-- Header Section Start -->
+<div class="header" data-ng-controller="home as vm">    
+    <!--    <nav class="navbar navbar-default main-navigation" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                     Stat Toggle Nav Link For Mobiles 
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                     End Toggle Nav Link For Mobiles 
+                    <a class="navbar-brand logo" href="index.html"><img style="max-width:140px;" src="app/assets/img/logo_epardesh.png" alt=""></a>
+                </div>
+                 brand and toggle menu for mobile End 
+    
+                 Navbar Start 
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        <li><a href="#"><i class="fa fa-home"></i>&nbsp;Home</a></li> 
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Popular Categories<b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column columns-3">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="multi-column-dropdown">
+                                            <li><a href="#">IT Training</a></li>
+                                            <li><a href="#">Automobile</a></li>
+                                            <li><a href="#">Events</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Furniture</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">All Categories >></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form action="" class="search-form">
+                                <div class="form-group has-feedback">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                    <span class="fa-search-plus form-control-feedback"></span>
+                                </div>
+                            </form>
+                        </li>
+                        <li><a href="login.html"><i class="lnr lnr-enter"></i> Login</a></li>
+                        <li><a href="signup.html"><i class="lnr lnr-user"></i> Signup</a></li>
+                        <li class="postadd">
+                            <a class="btn btn-danger btn-post" href="post-ads.html"><span class="fa fa-plus-circle"></span> Post an Ad</a>
+                        </li>
+                    </ul>
+                </div>
+                 Navbar End 
+            </div>
+        </nav>-->
+
+
+    <!-- Main Slider Section -->
+    <div class="slider_back">
+        <div class="content">
+            <div class="">
+                <div class="slider">
+                    <ul class="rslides" id="slider1">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Slider Section End-->  
+    <!-- Start Services Section -->
+    <div class="wrapper">
+        <!--        <div class="container">-->
+        <div class="">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-title no-border">
+                        <div class="inner">
+                            <h3 class="section-title"><span>&nbsp;&nbsp;&nbsp;Featured </span> Ads</h3>   
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6" ng-repeat="dt in vm.adData">
+                    <div class="features-box wow fadeInDownQuick" data-wow-delay="0.3s">
+                        <a ui-sref="ad_details({'id': dt.ad_info.id})" ng-click="vm.track()"> 
+                            <div class="features-content">
+                                <!--<img src="app/content/home/img/product/img1.jpg"/>-->
+                                <img ng-if="dt.image_info[0][0].image_type == 'featured'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 220px;'>
+                                <img ng-if="dt.image_info[0][0].image_type == 'demo1'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 220px;'>
+                                <img ng-if="dt.image_info[0][0].image_type == 'demo'"  class="card-img-top" src="{{dt.image_info[0][0].image_path}}" alt="Card image cap" style='width:100%;height: 220px;'>
+                                <img ng-if="dt.image_info[0][1].image_type == 'demo2'"  class="card-img-top" src="{{dt.image_info[0][1].image_path}}" alt="Card image cap" style='width:100%;height: 220px;'>
+
+
+
+
+                                <p class="card-text" style="color:rgb(108,122,227);font-weight: bold;">{{dt.ad_info.ad_tittle| limitTo: 50}}{{dt.ad_info.ad_tittle.length > 50 ? ".." : ""}}</p>
+
+
+
+
+
+                                <p ng-if="dt.ad_info.ad_tittle != 'Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{dt.ad_info.city| limitTo: 10}}{{dt.ad_info.city.length > 10 ? ".." : ""}},{{dt.ad_info.state| limitTo: 7}}{{dt.ad_info.state.length > 7 ? ".." : ""}}</p>
+                                <p ng-if="dt.ad_info.ad_tittle == 'Demo'" class="card-text" style="color:rgb(108,122,227);font-size:13px;font-weight: bold;text-transform:capitalize;line-height: 32px;"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;city,state</p>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End Services Section -->
+    <div class="features">      
+        <section class="grid-category">
+            <!--            <div class="container">-->
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-title no-border">
+                            <div class="inner">
+                                <h3 class="section-title"><span>Browse by</span> Category</h3>   
+                                <!--                                <a href="category.html" class="sell-your-item"><i class="fa fa-th-large"></i> View more 
+                                                                </a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">              
+                        <div class="col-md-2 col-sm-3 col-xs-6 f-category wow fadeIn" data-wow-delay="{{$index}} *0.5 s" ng-repeat='c in vm.allCat'>
+                            <a href="">
+                                <div class="icon-img">
+                                    <img src="app/content/assets/img/category/{{vm.allCategoryImgArr[$index]}}" class="img-responsive" alt="img">
+                                </div>
+                                <h6>{{c.category}}</h6> 
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Featured Listings Start -->
+    <section class="featured-lis" >
+        <div class="">
+            <div class="row">
+                <div class="col-md-12 wow fadeIn" data-wow-delay="0.8s">
+                    <h3 class="section-title">Trending Ads</h3>
+                    <div id="new-products" class="owl-carousel">
+
+                        <!--                                    <div class="item" ng-repeat="dt in vm.trend">
+                                                                <div class="product-item">
+                                                                    <div class="carousel-thumb">
+                                                                        <img src="app/assets/img/product/img1.jpg" alt=""> 
+                                                                        <div class="overlay">
+                                                                            <a href="ads-details.html"><i class="fa fa-link"></i></a>
+                                                                        </div> 
+                                                                    </div>    
+                                                                    <a href="ads-details.html" class="item-name">Lorem ipsum dolor sit</a>  
+                                                                    <span class="price">$150</span>  
+                                                                </div>                                   
+                                                        </div>-->
+
+
+                    </div>
+
+                    <div class="row" ng-if="vm.trend == ''" >
+
+                        <div class="container">
+                            <div class="col-md-8 no_result">No Related Ads Found!</div>
+                        </div>
+
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <!-- Featured Listings End -->   
+
+
+    <!-- Counter Section End -->  
+
+    <!-- Pricing Table Section -->
+    <section id="pricing-table" class="section">
+        <div class="">
+            <div class="row">
+                <h2 class="section-title">Find a promo that’s fit your needs</h2>
+                <div class="col-sm-4 wow fadeInDownQuick" data-wow-delay="0.2s" ng-repeat="dtt in vm.promoData| limitTo:3">
+                    <div class="table wow" style="visibility: visible !important;">
+                        <div class="title">
+                            <h3>Launch Special</h3>
+                        </div>
+                        <div class="pricing-header">
+                            <p class="price-value"> {{dtt.discount}}</p>
+                            <p class="price-quality">% OFF</p>
+                        </div>
+                        <ul class="description">
+                            <li><i class="fa fa-check-square"></i>{{dtt.description|limitTo:200}}{{dtt.description.length > 200 ? "..":""}}</li>
+                        </ul>
+                        <button class="btn btn-common" type="submit">{{dtt.name}}</button>
+                    </div> 
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Table Section End -->   
+
+
+    <div class="wrapper">      
+        <section class="grid-category">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-title no-border">
+                            <div class="inner">
+                                <h3 class="section-title"><span>Browse Ads in </span> Top Cities</h3>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">              
+                        <div class="popular_back">
+                            <div class="row">
+                                <!--<br><p class="Popular_txt" style="color:#000;">Popular Cities</p><br>-->
+                                <div class="row main_foot_col">
+                                    <div class="" ng-show="vm.showPopularCityUSA">  
+                                        <!--                                    <div class="container" ng-show="vm.showPopularCityUSA">                            -->
+                                        <div class="col-md-12" style="text-align:center;">                                      
+                                            <!--<button>Find Ads in Popular Cities</button>-->
+                                        </div>               
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/los-angeles.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('New York', '')">New York</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Illinois', 'Chicago')">Chicago</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Washington', '')">Washington </a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Los Angeles', '')">Los Angeles</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('California', 'San Francisco')">San Francisco </a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Georgia', 'Dallas')">Dallas</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/houston.png" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Alaska', 'Houston')">Houston</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Missouri', 'Philadelphia')">Philadelphia</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Georgia', 'Atlanta')">Atlanta</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Georgia', 'Boston')">Boston</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Alabama', 'Detroit')">Detroit</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Washington', 'Seattle')">Seattle</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/Chicago.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Arizona', 'Miami')">Miami</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Maryland', 'Baltimore')">Baltimore</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Maryland', 'Phoenix')">Phoenix</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Kansas', 'Minneapolis')">Minneapolis</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12 city_links">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/orlando.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Florida', 'Orlando')">Orlando</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Kentucky', 'Sacramento')">Sacramento</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Connecticut', 'Hartford')">Hartford</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Washington', 'Seattle')">Seattle</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="" ng-show="vm.showPopularCityIndia"> 
+                                        <!--                                    <div class="container" ng-show="vm.showPopularCityIndia">                            -->
+                                        <div class="col-md-12" style="text-align:center;">                                      
+                                            <!--<button>Find Ads in Popular Cities</button>-->
+                                        </div>               
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/los-angeles.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA', 'Mumbai')">Mumbai</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Delhi', '')">Delhi</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('KARNATAKA', 'Bangalore')">Bangalore </a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('ANDHRA PRADESH', 'Hyderabad')">Hyderabad</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('TAMIL NADU', 'Chennai')">Chennai </a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('WEST BENGAL', 'Kolkata')">Kolkata</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/houston.png" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('GUJRAT', 'Ahmedabad')">Ahmedabad</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('GUJRAT', 'Surat')">Surat</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA', 'Pune')">Pune</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('RAJASTHAN', 'Jaipur')">Jaipur</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('UTTAR PRADESH', 'Lucknow')">Lucknow</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('MAHARASHTRA', 'Nagpur')">Nagpur</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/Chicago.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('ANDHRA PRADESH', 'Visakhapatnam')">Visakhapatnam</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('MADHYA PRADESH', 'Bhopal')">Bhopal</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('BIHAR', 'Patna')">Patna</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Chandigarh', 'Chandigarh')">Chandigarh</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12 city_links">
+                                            <div class="col-md-12 city_img_mar">
+                                                <img src="app/content/img/orlando.jpg" style="width:100%">
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('PUNJAB', 'Ludhiana')">Ludhiana</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('ORISSA', 'Bhubaneswar')">Bhubaneswar</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-sm-6 col-xs-12 city_links">
+                                                <ul>
+                                                    <li><a ng-click="vm.searchFromPopulor('Assam', 'Guwahati')">Guwahati</a></li>
+                                                    <li><a ng-click="vm.searchFromPopulor('Kerala', 'Trivandrum')">Trivandrum</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+
+
+
+    <!--------header category start------------->
+
+    <div id="boxes">
+
+        <div style="display: none;" id="dialog" class="window">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1 pull-right" ><span style="color:#000;"class="close">X</span></div>
+                </div>
+                <!--                <div class="row">
+                                    <div class="all-ser-fulltitle">
+                                        <div class="col-md-1 col-sm-1 col-xs-1">Events</div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;"></div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg"">
+                                            <a href="#" class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+                
+                                        </div>
+                                    </div>
+                                                       <span style="border-top: 1px solid #8c8b8b;"></span>
+                                    <div class="row all-ser-res">
+                
+                                        <div class="col-xs-4">Demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                                        <div class="crsr-ptr col-xs-4">Demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                                        <div class="crsr-ptr col-xs-4">Demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                                        <div class="crsr-ptr col-xs-4">demo</div>
+                
+                                    </div> 
+                
+                
+                                </div>-->
+
+                <!--                <div class="row">
+                                    <div class="all-ser-fulltitle">
+                                        <div class="col-md-1 col-sm-1 col-xs-1">IT Training</div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:97%; text-align:right;"></div>
+                                        <h3 >Events <hr style="height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:right; margin: 0 0 0 auto;"></h3>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg ">
+                                            <a href="#" class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+                
+                                        </div>
+                                    </div>
+                
+                                    <div class=" row all-ser-res">
+                
+                                        <div class="col-xs-4">Demo</div>
+                                        <div class="col-xs-4">demo</div>
+                                        <div class="col-xs-4">demo</div>
+                                        <div class="col-xs-4">Demo</div>
+                                        <div class="col-xs-4">demo</div>
+                                        <div class="col-xs-4">demo</div>
+                
+                                    </div> 
+                                    <br>
+                
+                                </div>-->
+
+
+
+                <div id="pp" class="col-md-4 col-sm-12 col-xs-12" ng-repeat="group in vm.category track by $index">
+                    <div class=" row all-ser-fulltitle">
+                        <div class="col-md-12 col-sm-4 col-xs-4 marleft" style="text-align: left;"><a style="color: #0e54f2;" ng-click="vm.getCat(group.category_id)">{{group.category_name}}</a></div>
+                        <!--<div class="col-md-3 col-sm-3 col-xs-3">-->
+                        <!--<hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;">-->
+                        <!--</div>-->
+
+                        <!--                        <div class="col-md-12 col-sm-5 col-xs-5">
+                                                    <div ng-if="group.subcategories !=''" style="margin-top:5px;">
+                                                        <a ng-click="vm.count($index)" class="btn btn-default" style="color:#000000;" >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+                                                        <a ng-click="this[group.category_name]($index)" class="btn btn-default" style="width: 90px;font-size: 11px;float: left;" >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+                        
+                                                    </div>
+                        
+                                                </div>-->
+
+                    </div>
+
+
+                    <div class=" col-md-4 col-sm-4 col-xs-4 all-ser-res1">
+                        <ul ng-if="group.subcategories != ''" ng-repeat="group1 in group.subcategories| limitTo: vm.cnt[$index]">
+                            <li class="crsr-ptr" value="{{group1.name}}" ng-click="vm.getSubCat(group1.id, group.category_id)">{{group1.name}}</li> 
+                        </ul>
+
+                        <!--                        <div class="col-sm-12 col-md-12 col-xs-12" >
+                        -->
+                        <div class="marleft1">
+                            <p ng-if="group.subcategories == ''">No Subcategories found!</p> 
+                        </div>
+
+
+                        <!--</div>-->
+                    </div> 
+                    <div ng-click="vm.showMoreItems($index)" ng-if="group.subcategories.length > 4 && vm.cnt[$index] < group.subcategories.length" class="align-a-right"><a>View More</a></div>
+                    <!--                    <div class="align-a-right"><a>View More</a></div>-->
+
+                    <br>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="width: 1478px; font-size: 32pt; color:white; height: 2527px; display: none; opacity: 0.8;" id="mask"></div>
+
+    <!-------------------------end header category----------------------->
+
+
+
+    <div ng-include="'app/templates/footer.html'"></div>
+</div>
+<!-- Start Loader -->
+<!--            <div id="loader">
+              <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+              </div>
+            </div>    -->
+
+<!-- Main JS  -->
+<!--<script type="text/javascript" src="app/assets/js/jquery-min.js"></script>-->      
+<!--<script type="text/javascript" src="app/assets/js/bootstrap.min.js"></script>-->
+
+
+
+</body>
+</html>

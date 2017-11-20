@@ -1,0 +1,683 @@
+<style>
+    .single-right p{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .etalage_thumb_active img{
+        max-height: 100% !important;
+    }
+    .go-back{
+        background: #0e54f2;
+    }
+    .prod-desc{
+        white-space: pre-line;
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal1 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        /*margin-top: 130px;*/
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+    to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        opacity: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+    .edit_new{
+        padding:0px 2px !important;
+    }
+    .success{
+        color:green;
+    }
+    .danger{
+        color:red;
+    }
+    .per {
+        background: #F3F3F3;
+        padding: 1px;
+        color: #333;
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    .success {
+        color: green;
+    }
+    .single-bottom1 h6 {
+        background: #F3F3F3;
+        padding: 4px;
+        color: #333; 
+        font-size: 1em;
+        margin-top: 1em;
+    }
+
+
+    .border
+    {
+        <!-- border: 1px solid; -->
+        text-transform: capitalize;
+        /* color: black; */
+        text-align: start; 
+    }
+    .margin
+    {
+        margin-top:20px;
+    }
+    .line
+    {
+        line-height: 40px;
+    }
+    h4 span
+    {
+        color:#0e54f2;
+    }
+    .border p
+    {
+        font-size: 18px;
+        color: #0e54f2;
+        font-weight: bold;
+        text-transform: uppercase;
+            margin-left: -16px;
+    }
+    .single-bottom1
+    {
+        margin-top:13px;
+    }
+    .single-bottom1 p
+    {
+        color:#000;
+        font-size:15px;
+        word-wrap: break-word;
+    }
+    .single-bottom1 span
+    {
+        font-weight:bold;
+    }
+    .det
+    {
+        margin-top:1em;
+    }
+    .fot
+    {
+        margin-bottom:10px;
+    }
+    .fot span
+    {
+        color:#0e54f2;
+        font-weight:bold;
+    }
+/*    .single-bottom1
+    {
+        margin-top:5px;
+        padding: 0;
+        word-wrap: break-word;
+    }*/
+    .main
+    {
+        background:#fff;
+    }
+    .hight
+    {
+        line-height:22px;
+    }
+    .single-sec
+    {
+
+        margin-top: 7.85em !important;
+
+
+    }
+    .buyticket
+    {
+            font-size: 16px;
+    /* background-color: #f1f1f1; */
+    /* border: 1px solid #dfdfdf; */
+    /* margin: 0px -7px; */
+    padding: 5px;
+    word-break: break-word;
+    border: 1px outset;
+    border-color: #0e54f2;
+    color: #0e54f2 !important;
+    font-weight: 600;
+    text-align: center;
+    background: yellow;
+
+    }
+</style>
+<script>
+
+</script>
+
+<div class="container text-center" ng-show="vm.hideLoader">
+    <div class="col-md-8 add_bx"><img src="app/content/img/loading.gif"></div>
+</div>
+<div ng-hide="vm.hideLoader" class="" data-ng-controller="eventDetailsCtrl as vm">
+    <div class="container single-sec">
+        <a  ng-click="vm.checktrack()" class="crsr-ptr"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Go Back</a>
+    </div>
+    <div class="container main">
+        <div class="row det">
+           
+            <div class="col-md-8 border">
+
+                <p >{{vm.getData.event_tittle}}</p> 
+            </div>
+            <!-- <div class="col-md-1"></div>           -->
+            <!--            <div class="col-md-2 border" ng-if='vm.getData.location_type=="1"'>           
+                                <p class="loc_name"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{vm.getData.event_address}}</p> 
+                            
+                          <span >Event ID :&nbsp;{{vm.getData.id}}</span>
+                             <a   ng-if="vm.getData.favourite_status =='0'" ng-click="vm.addtofav(vm.getData)" class="addtofav" title="Add to favourite"><img src="app/content/img/like.png"></a>
+            
+                        
+                        </div>-->
+
+            <div class="col-md-4 border">           
+
+                <span >Event ID :&nbsp;{{vm.getData.id}}</span>&nbsp;
+                <a   ng-if="vm.getData.favourite_status =='0'" ng-click="vm.addtofav(vm.getData)" class="addtofav" title="Add to favourite"><img src="app/content/img/like.png"></a>
+
+
+            </div></div>
+            
+            
+                <div class="row single-bottom1" ng-if='vm.getData.location_type=="1"'>           
+                <p class="loc_name"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{vm.getData.event_address}}</p> 
+
+            </div>
+                 <div class="row single-bottom1" ng-if='vm.getData.location_type=="0"'>           
+                <p class="loc_name">&nbsp;&nbsp;{{vm.getData.event_url}}</p> 
+
+            </div>
+            
+       
+            <div class="row single-bottom1" style="margin-left: -17px;">
+                <div class="col-md-8">
+                <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{vm.getData.start_date| date :  "dd-MMM-y"}},{{vm.getData.start_time}} &nbsp;-&nbsp;{{vm.getData.end_date| date :  "dd-MMM-y"}},{{vm.getData.end_time}}</p>
+                </div>
+                <div class="col-md-2" >
+                    
+                    <!--<span  >Buy Ticket</span>-->
+                    <p ng-if="vm.getData.event_ticket_status=='1'" class="buyticket"><a ng-href="http://{{vm.getData.buy_url}}" target="_blank">Buy Ticket</a></p>
+                    <!--<p  ng-if="vm.getData.event_ticket_status=='2'" class="buyticket">Buy Ticket</p>-->
+               
+                
+                </div>
+                
+            </div>
+       
+           
+
+
+            <div class="clearfix"></div>
+            <div class="row" style="margin-top: 8px;border: 2px solid #0e54f2;"></div>
+        
+        <!-- start content -->	
+        <div class="row det" >
+            <div class="col-md-12" style="margin-left:-13px;">
+                <div class="grid images_3_of_2">       
+                    <span >             
+                        <img id="" style='height:100%; width: 100%; cursor: pointer' src="{{vm.getData.event_image}}" ng-click="vm.popUpImg(dt.event_image)">
+                    </span>
+                    <div class="clearfix"></div>		
+                </div>
+
+            </div>
+            <!--<div class="col-md-6">-->
+<!--                <div class="row mar_top">
+                    <div class="col-md-8 col-sm-6  col-xs-6" style="margin-left:-12px;">
+                        <h3 style="margin-left:-16px;">{{dt.event_tittle}}</h3>
+                        <span >Event ID :&nbsp;{{vm.getData.id}}</span>
+                    </div> 
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <span class="pull-right" style="font-size:12px;">{{dt.updated_on | date :  "dd-MMM-y"}}</span>
+
+
+
+                    </div>
+
+                </div>-->
+                <!--<div class="row single-bottom1">-->
+                <!--<h6>Event Date &nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {{dt.start_date | date :  "dd-MMM-y"}} &nbsp; - &nbsp; {{dt.end_date | date :  "dd-MMM-y"}}</h6>-->
+                <!--                    <div class="prod-desc col-md-6">
+                                        <span class="">Start Date:<br></span>
+                                    </div>
+                                    <div class=" prod-desc col-md-6">
+                                        <span class="">End Date:<br></span>
+                                    </div>-->
+
+                <!--</div>-->
+                <!--<div class="row single-bottom1">-->
+                <!--<h6>Event Time &nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{dt.start_time }} &nbsp; - &nbsp;{{dt.end_time}}</h6>-->
+                <!--                    <div class="prod-desc col-md-6">
+                                        <span class="">From:<br>{{dt.start_time }}</span>
+                                    </div>
+                                    <div class=" prod-desc col-md-6">
+                                        <span class="">To:<br>{{dt.end_time}}</span>
+                                    </div>-->
+
+                <!--</div>-->
+                <!--                <div class="row single-bottom1">
+                                    <h6>Organisor &nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;{{dt.organisor}} </h6>
+                                <p class="b-name">&nbsp;&nbsp;{{dt.organisor}}</p>
+                                </div>
+                                <div class="row single-bottom1 " ng-if='dt.location_type=="0"'>
+                                    <h6>Event Website Url :  &nbsp; &nbsp; &nbsp; &nbsp;{{dt.event_url}}</h6>
+                                    
+                                </div>
+                                 <div class="row single-bottom1" ng-if='dt.location_type=="1"'>
+                                    <h6>Event Address :  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{dt.event_address}}</h6>
+                                    
+                                </div>
+                                 <div class="row single-bottom1" ng-if='dt.event_ticket_status=="1"'>
+                                     <h6>Event Type :  &nbsp; &nbsp; &nbsp; &nbsp;Paid</h6>
+                                    <p class="prod-desc">You can Buy ticket your here :  &nbsp; &nbsp; &nbsp; &nbsp;{{dt.buy_url}}</p>
+                                    
+                                </div>
+                                 <div class="row single-bottom1" ng-if='dt.event_ticket_status=="2"'>
+                                     <h6>Event Type : &nbsp; &nbsp; &nbsp; &nbsp;Free</h6>
+                                    
+                                    
+                                </div>
+                                <div class="row single-bottom1">
+                                     <h6>Performers Details</h6>
+                                   
+                                    <div class="col-sm-8 col-md-8 col-xs-8" >
+                                        <p class="per">Performer Name</p>
+                                        <p ng-repeat=" pname in vm.getpername track by $index"> {{pname}} </p>
+                                        
+                                    </div>
+                                     <div class="col-sm-4 col-md-4 col-xs-4" >
+                                         <p class="per">Performer Type</p>
+                                         <p ng-repeat=" ptype in vm.getpertype track by $index"> {{ptype}}</p>
+                                        
+                                    </div>
+                                    
+                                </div>                -->
+<!--                <div class="row">
+                    <br><button type="button" class="btn btn-xs edit_new"  ng-click='vm.viewContactFun(vm.getData)'>View Contact</button>  
+                    <button type='button'class='btn btn-xs edit_new req_btn' ng-click="vm.viewsendemail(vm.getData)" >Send Email</button>
+
+                </div>-->
+
+
+
+<!--            </div></div>-->
+        </div>
+        <div class="clearfix"></div>
+
+
+
+  
+
+        <div class="row margin">
+            <div class="col-md-11 single-bottom1">
+                <span style="text-decoration: underline;color: #0e54f2;">Event Description</span>
+                <p  class="hight" ng-bind-html ="vm.getData.description"></p>
+            </div>
+
+
+        </div>
+        <div class="row" style="margin-top: 8px;border: 1px solid #000;"></div>
+        <div class="row">
+            <h4 class="line">Company Name:<span></span></h4>
+            <h4 class="line">Website / Url:<span>&nbsp;<a ng-href="http://{{vm.getData.event_url}}" target="_blank">&nbsp;{{vm.getData.event_url}}</a></span></h4>
+            <h4 class="line">Contact Name:<span>&nbsp;{{vm.organisor}}</span></h4>
+            <h4 class="line">Contact No:<span>&nbsp;{{vm.event_phone}}</span></h4>  
+             <div class="row ">
+                 <div class='col-md-7'></div>
+                 <div class='col-md-4'>
+                      <button type="button" class="btn btn-xs edit_new"  ng-click='vm.viewContactFun(vm.getData)'>View Contact</button>  
+                    <button type='button'class='btn btn-xs edit_new req_btn' ng-click="vm.viewsendemail(vm.getData)" >Send Email</button>
+
+                     
+                 </div>
+                    
+               
+                   
+                </div>
+            <h4 class="line">Email id:<span>&nbsp;</span></h4>  
+            
+        </div>
+        <div class="container margin">
+            <div class="row fot">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+
+                    <a  ng-click="vm.checktrack()" class="crsr-ptr"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Go Back</a>
+                </div>
+                <div class="col-md-4">
+                    <span>Posted On: {{vm.getData.updated_on | date:"dd-MMM-y"}}</span>
+                </div>
+                <div class="col-md-2"></div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>	
+
+    <div id="boxes">
+        <div style="display: none;" id="dialog" class="window">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1 pull-right" ><span style="color:#000;"class="close">X</span></div>
+                </div>
+                <div class="row">
+                    <div class="all-ser-fulltitle">
+                        <div class="col-md-1 col-sm-1 col-xs-1">Events</div>
+                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg"">
+                            <a href="#"  class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+                    <!--                   <span style="border-top: 1px solid #8c8b8b;"></span>-->
+                    <div class="row all-ser-res">
+
+                        <div class="col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">Demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+                        <div class="crsr-ptr col-xs-4">demo</div>
+
+                    </div>                                     
+                </div>
+
+                <div class="row">
+                    <div class="all-ser-fulltitle">
+                        <div class="col-md-1 col-sm-1 col-xs-1">IT Training</div>
+                        <div class="col-md-8 col-sm-8 col-xs-8"><hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:97%; text-align:right;"></div>
+                        <!--<h3 >Events <hr style="height:1px; border:none; color:#000; background-color:#000; width:60%; text-align:right; margin: 0 0 0 auto;"></h3>-->
+                        <div class="col-md-2 col-sm-2 col-xs-2 fixmarg ">
+                            <a href="#"  class="btn btn-default">View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+
+                    <div class=" row all-ser-res">
+
+                        <div class="col-xs-4">Demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">Demo</div>
+                        <div class="col-xs-4">demo</div>
+                        <div class="col-xs-4">demo</div>
+
+                    </div> 
+                    <br>
+
+                </div>
+
+
+
+                <div id="pp" class="col-md-4 col-sm-12 col-xs-12" ng-repeat="group in vm.category track by $index ">
+                    <div class=" row all-ser-fulltitle">
+                        <div class="col-md-2 col-sm-4 col-xs-4 marleft"><a style="color: #0e54f2;" ng-click="vm.getCat(group.category_id)">{{group.category_name}}</a></div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <!--<hr style="height:1px; border:none;margin-top: 17px; background-color:#c3c1c1; width:100%; text-align:right;">-->
+                        </div>
+                        <div class="col-md-6 col-sm-5 col-xs-5">
+                            <div ng-if="group.subcategories !=''" style="margin-top:5px;">
+                                <!--<a ng-click="vm.count($index)" class="btn btn-default" style="color:#000000;" >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>-->
+                                <a ng-click="this[group.category_name]($index)" class="btn btn-default"  >View more&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class=" col-md-4 col-sm-4 col-xs-4 all-ser-res1">
+                        <ul ng-if="group.subcategories !='' " ng-repeat="group1 in group.subcategories  | limitTo: vm.cnt ">
+                            <li class="crsr-ptr"  value="{{group1.name}}" ng-click="vm.getSubCat(group1.id,group.category_id)">{{group1.name}}</li> 
+                        </ul>
+                        <!--                        <div class="col-sm-12 col-md-12 col-xs-12" >
+                        -->
+                        <div class="marleft1">
+                            <p ng-if="group.subcategories =='' ">No Subcategories found!</p> 
+                        </div>
+
+
+                        <!--</div>-->
+                    </div>                 
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 1478px; font-size: 32pt; color:white; height: 2527px; display: none; opacity: 0.8;" id="mask"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal1" style="z-index:9999999">
+        <!--<span class="close" style="color:#fff">×</span>-->
+        <button type="button" class="close"  ng-click="vm.closeimg()" data-dismiss="myModal">×</button>
+        <img class="modal-content" id="img01" style="width:auto">
+    </div>
+
+    <modal visible="vm.viewContact" id="cMOdal" style="margin-top: 115px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(1);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">View Contact Info</h4>   
+        </div>
+        <h4 style="margin-bottom:5px"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.name}}</h4>
+        <!--<h4 style="margin-bottom:5px"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;{{vm.email}}</h4>-->  
+        <h4 style="margin-bottom:5px"><i class="fa fa-phone" aria-hidden="true"></i><span ng-bind="vm.phone | tel"></span></h4>
+        <hr>
+    </modal> 
+    <modal visible="vm.addContactInfoModal" style="margin-top: 115px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(2);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Contact Detail to Event Owner</h4>   
+        </div>
+        <form novalidate name="addForm"  method="post">
+            <div class="{{vm.type}}">{{vm.msg}}</div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.name.$invalid && !addForm.name.$pristine }">
+                    <label for="name">Name<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" name="name" ng-model="vm.viewContactObj.name" id="name" required>
+                    <p ng-show="addForm.name.$invalid && !addForm.name.$pristine" class="help-block">Name is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.email.$invalid && !addForm.email.$pristine }">
+                    <label for="email">Email<span  style="color:red;">*</span></label>
+                    <input type="email" name="email" class="form-control" ng-model="vm.viewContactObj.email" id="email" required>
+                    <p ng-show="addForm.email.$invalid && !addForm.email.$pristine" class="help-block">Email is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addForm.phone.$invalid && !addForm.phone.$pristine }">
+                    <label for="email">Phone<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" phone-input name="phone" ng-model="vm.viewContactObj.phone" id="phone" required>
+                    <p ng-show="addForm.phone.$invalid && !addForm.phone.$pristine" class="help-block">Phone is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.adContactView()" ng-show="vm.showSending" ng-disabled="addForm.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+
+            <button  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(2);" >Cancel</button>
+
+        </form>
+        <hr>
+    </modal>
+    <modal visible="vm.favpopup" id="favpop" style="margin-top: 130px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(5);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">This Events added to your favourite  Successfully</h4>   
+        </div>
+
+
+        <hr>
+    </modal> 
+
+
+    <modal visible="vm.eventSendEmail" style='margin-top:130px;'>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(3);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Email to Event Owner</h4>   
+        </div>
+        <div class ="issign">
+            <div class="alert alert-danger fade in"></div>
+            <div class="alert alert-success" role="alert_email"></div>
+        </div>
+        <form novalidate name="addFormEmail"  method="post">
+            <div class="{{vm.type_email}}">{{vm.msg_email}}</div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.name.$invalid && !addFormEmail.name.$pristine }">
+                    <label for="name">Name<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" name="name" ng-model="vm.sendEmailObj.sender_name" id="name" required>
+                    <p ng-show="addFormEmail.name.$invalid && !addFormEmail.name.$pristine" class="help-block">Name is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.email.$invalid && !addFormEmail.email.$pristine }">
+                    <label for="email">Email<span  style="color:red;">*</span></label>
+                    <input type="email" name="email" class="form-control" ng-model="vm.sendEmailObj.sender_email" id="email" required>
+                    <p ng-show="addFormEmail.email.$invalid && !addFormEmail.email.$pristine" class="help-block">Email is required.</p>
+                </div>   
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine }">
+                    <label for="email">Phone<span  style="color:red;">*</span></label>
+                    <input type="text" class="form-control" phone-input name="phone" ng-model="vm.sendEmailObj.sender_phone" id="phone" required>
+                    <p ng-show="addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine" class="help-block">Phone is required.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormEmail.phone.$invalid && !addFormEmail.phone.$pristine }">
+                    <label for="email">Message<span  style="color:red;">*</span></label>
+                    <textarea class="form-control" name="msg" ng-model="vm.sendEmailObj.message" id="msg" required></textarea>
+                    <p ng-show="addFormEmail.msg.$invalid && !addFormEmail.msg.$pristine" class="help-block">message is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.eventSendEmailCon()" ng-show="vm.showSending" ng-disabled="addFormEmail.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+            <button  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(3);" >Cancel</button>
+
+
+        </form>
+        <hr>
+    </modal>
+
+    <!-- with login -->
+    <modal visible="vm.eventSendEmaillogin" style='margin-top:130px;'>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ng-click="vm.closeModal(4);" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Send Email to Event Owner</h4>   
+        </div>
+        <div class ="issign">
+            <div class="alert alert-danger fade in"></div>
+            <div class="alert alert-success" role="alert_email_login"></div>
+        </div>
+        <form novalidate name="addFormlogin"  method="post" class="semail">
+            <div class="{{vm.type_email_login}}">{{vm.msg_email_login}}</div>
+
+
+            <div class="form-group">
+                <div ng-class="{ 'has-error' : addFormlogin.phone.$invalid && !addFormlogin.phone.$pristine }">
+                    <label for="email">Message<span  style="color:red;">*</span></label>
+                    <textarea class="form-control"  name ="msg"ng-model="vm.sendEmailObj.message" id="msg" required></textarea>
+                    <p ng-show="addFormlogin.msg.$invalid && !addFormlogin.msg.$pristine" class="help-block">message is required.</p>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-click="vm.eventSendEmailConlogin()" ng-show="vm.showSending" ng-disabled="addFormlogin.$invalid">Send</button>
+            <button type="submit"  class="btn btn-success ng-binding article-save-btn" ng-hide="vm.showSending">Sending..</button>
+            <button  class="btn btn-success ng-binding article-save-btn" ng-click="vm.closeModal(4);" >Cancel</button>
+
+
+
+        </form>
+        <hr>
+    </modal>
+
+
+
+
+</div>

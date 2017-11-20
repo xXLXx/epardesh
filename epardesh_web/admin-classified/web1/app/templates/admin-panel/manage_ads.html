@@ -1,0 +1,112 @@
+<div id="preloader">
+    <p style="color:#ed4224;font-size:26px;text-align:center">Page Loading...</p>
+    <img src="../web/app/content/img/loading.gif" alt="my loader" width="60" style="margin-top:20px"/>
+</div>
+<div data-ng-controller="manageads as vm">
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+          Manage Ads
+            <small></small>
+        </h1>
+    </section>
+<!--     <section class="content-header">      
+        <span class="alert alert-green"></span>
+        <span class="alert alert-red"></span>
+        </section>-->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"> Manage Ads</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin data-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fa fa-sort"> </i> Ad ID</th>
+                                <th><i class="fa fa-sort"> </i> User Name</th>
+                                 <th><i class="fa fa-sort"> </i> Email ID</th>
+                                <th><i class="fa fa-sort"> </i> Ad Title</th>
+<!--                                <th><i class="fa fa-sort"> </i> Add Description</th>
+                                <th><i class="fa fa-sort"> </i> Add Feature</th>-->
+                                <th><i class="fa fa-sort"> </i> Status</th>
+                                <th><i class="fa fa-sort"> </i> Ad Type</th>
+                                <th><i class="fa fa-sort"> </i>Post Date</th>
+                                <th><i class="fa fa-sort"> </i> Expiration </th>
+                                <th>Action </th>
+<!--                                <th>Status</th>-->
+                            </tr>
+                        </thead>
+                        <tbody id="view_manageads">
+<!--                            <tr>
+                                <td>Business 1</td>
+                                <td>flat</td>
+                                <td>2BHK</td>
+                                <td>good</td>
+                                <td>Free</td>
+                                <td>2-7-2016</td>
+                                <td><button class="btn btn-primary btn-sm">Accept</button></td>
+                            </tr>
+                            <tr>
+                                <td>Business 2</td>
+                                <td>cooler</td>
+                                <td>whirlpool</td>
+                                <td>good</td>
+                                <td>premium</td>
+                                <td>2-8-2016</td>
+                                <td><button class="btn btn-primary btn-sm">Reject</button></td>
+                            </tr>-->
+                            
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+            
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->        
+    </section><!-- /.content -->
+</div>
+    
+    
+        <!----------------------modal--------------------------->
+    <div id="modal-reason" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reject Ad</h4>
+                </div>
+                <div class="modal-body">                
+                    <span class="alert alert-green"></span>
+                    <span class="alert alert-red"></span>
+                    <br>
+                    <label for="note">Note</label>
+                    <textarea  name="note" id="note" class="form-control" ng-model='vm.rejectObj.message' placeholder="Reason.."></textarea>
+                    <br>
+             
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click='rejectAndNote();'>Reject</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal-->
+    
+    
+    
+    
+    
+</div><!-- /.content-wrapper -->
+ <script>
+        active("manage-ads");
+      
+</script>

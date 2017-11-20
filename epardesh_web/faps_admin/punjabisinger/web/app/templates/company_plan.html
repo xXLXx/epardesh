@@ -1,0 +1,271 @@
+<div ng-controller="company_plan">
+    <div ng-include="'app/templates/header.html'"></div>
+    <div ng-include="'app/templates/sidebar.html'"></div>
+
+    <style type="text/css">
+        .art-list {
+            padding: 10px 0;
+            max-height: 300px;
+            overflow: auto;
+        }
+        
+        .art-msg {
+            padding-left: 40px;
+        }
+        
+        .ic1 {
+            color: #111111;
+        }
+        
+        .ic2 {
+            color: #ea57a3;
+        }
+        
+        .text {
+            text-align: center;
+        }
+    </style>
+
+
+    <section>
+        <!-- left side start-->
+        <div ng-include="'app/templates/sidebar.html'"></div>
+        <!-- /w3layouts-agile
+
+                <!-- main content start-->
+        <div class="main-content">
+            <!-- header-starts -->
+            <div ng-include="'app/templates/header.html'"></div>
+            <!-- //header-ends -->
+
+            <div id="page-wrapper">
+                <div class="inner-content">
+
+                    <div class="tittle-head">
+
+                        <h3 class="tittle text">Company Plan </h3>
+                        <div class="clearfix"> </div>
+                    </div>
+                     <div class="alert alert-success"></div>
+                            <div class="alert alert-danger"></div>
+                    
+                    <!--// ............ data table  ............... \\-->
+                    <!--// .............add new event ..............\\-->
+                    <!--                    <div class="col md sm md">
+                                <button type="button"  data-toggle="modal" data-target="#myModalnewevent"><i class="material-icons">add_box</i></button>
+                            </div>-->
+<!--                    <md-card-actions layout="row" layout-align="start center">
+                        <md-button class="btn btn-warning" ng-click="" data-ui-sref="add_plan"><i class="material-icons dp48">add_box</i></md-button>
+                    </md-card-actions>-->
+
+
+                    <!-- ./model new event -->
+
+                    <!--// ............. ./add new event ..............\\-->
+
+
+
+                    <!-- data table -->
+                    <div class="table-responsive">
+                        <div class="panel-body">
+                            <table class="table table-bordered bordered table-striped table-condensed datatable " ui-jq="dataTable" ui-options="dataTableOpt">
+                                <thead>
+                                    <tr>
+                                        <th>Plan Id</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Validity</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="x in show" layout-align="center center">
+                                        <td>{{x.plan_id}}</td>
+                                        <td>{{x.name}}</td>
+                                        <td>{{x.description}}</td>
+                                        <td>{{x.amount}}</td>
+                                        <td>{{x.validity}}</td>
+                                        <td>
+                                            <md-card-actions layout="row" layout-align="start center">
+                                                <md-button ng-click="updateArtistPlan(x)" data-toggle="modal" data-target="#myModaleditevent"><i class="material-icons dp48">mode_edit</i></md-button>
+                                                <md-button ng-click="deleteModal(x.plan_id)" data-toggle="modal" data-target="#myModaldeleteevent"><i class="material-icons dp48">delete_forever</i></md-button>
+                                            </md-card-actions>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--// .............edit event ..............\\-->
+                    <!-- model edit event -->
+                    <!-- Modal -->
+                    <div id="myModaleditevent" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text">Edit Plans</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <md-content layout-padding>
+                                        <form name="editevent">
+                                            <div layout="row">
+                                                <md-input-container class="md-accent" flex="100">
+                                                    <label>Plan Name</label>
+                                                    <input required name="event" type="text" ng-model="update1.name">
+                                                    <div ng-messages="editevent.event.$error.$invalid">
+                                                        <div ng-message="editevent.event.required">This is required.</div>
+                                                    </div>
+                                                </md-input-container>
+                                                <md-input-container class="md-accent" flex="100">
+                                                    <!--<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>-->
+                                                    <label>Description</label>
+                                                    <textarea rows="5" md-select-on-focus ng-model="update1.description"></textarea>
+                                                    <div ng-messages="newevent.date.$error.$invalid">
+                                                        <div ng-message="required">This is required.</div>
+                                                    </div>
+
+                                                </md-input-container>
+
+                                            </div>
+                                            <md-content layout-padding>
+                                                <div layout="row">
+                                                    <md-input-container class="md-accent" flex="100">
+                                                        <label>Amount</label>
+                                                        <input aria-label="amount" ng-model="update1.amount" ng-pattern="positive" />                                                        <br>
+                                                        <div ng-messages="artist_plan.amount.$error.$invalid">
+                                                            <div ng-message="pattern">Enter positive number</div>
+                                                        </div>
+
+
+                                                        <span id="currency-default">{{amount | currency}}</span><br>
+                                                        <div ng-messages="editevent.amount.$error.$invalid">
+                                                            <div ng-message="currency-default">invalid.</div>
+                                                        </div>
+                                                    </md-input-container>
+                                                    <md-input-container class="md-accent" flex="100">
+                                                        <label>validity</label>
+                                                        <input required name="end_time" ng-model="update1.validity">
+                                                        <div ng-messages="editevent.end_time.$error.$invalid">
+                                                            <div ng-message="required">This is required.</div>
+                                                        </div>
+                                                    </md-input-container>
+                                                </div>
+                                            </md-content>
+                                        </form>
+                                    </md-content>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <md-button type="submit" class="btn btn-info" data-dismiss="modal" ng-disabled="editevent.$invalid" ng-click="editPlan()">Submit</md-button>
+                                    <md-button type="submit" class="btn btn-danger" data-dismiss="modal">Close</md-button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ./model new event -->
+
+                    <!--// ............. ./edit event ..............\\-->
+
+                    <!--// .............delete event ..............\\-->
+                    <!-- model delete event -->
+                    <!-- Modal -->
+                    <div id="myModaldeleteevent" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <!--                                <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Edit Event</h4>
+                                        </div>-->
+                                <div class="modal-body">
+                                    <md-content layout-padding>
+                                        <h3>
+                                            Are You Sure want Delete Event ?
+                                        </h3>
+                                    </md-content>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <md-button type="submit" class="btn btn-info" data-dismiss="modal" ng-click="deletePlan()">Delete</md-button>
+                                    <md-button type="submit" class="btn btn-danger" data-dismiss="modal">Close</md-button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ./model delete event -->
+
+                    <!--// ............. ./delete event ..............\\-->
+
+
+
+                    <!--  ./data table  -->
+
+                    <!--// ............ ./data table ............... \\-->
+
+
+                    <!--//music-right-->
+                    <div class="clearfix"></div>
+                    <!-- /w3l-agile-its -->
+                </div>
+                <!--body wrapper start-->
+
+
+            </div>
+            <div class="clearfix"></div>
+            <!--body wrapper end-->
+            <!-- /w3l-agile -->
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade" id="addArtModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            <p>&copy 2017 FAPS All Rights Reserved</p>
+        </footer>
+        <!--footer section end-->
+        <!-- /w3l-agile -->
+        <!-- main content end-->
+    </section>
+
+
+
+</div>
+
+
