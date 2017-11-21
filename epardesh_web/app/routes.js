@@ -18,6 +18,14 @@
                 },
             }
         })
+            .state("not_found", {
+            url: '/not-found',
+            views: {
+                "content@": {
+                    templateUrl: 'app/templates/not_found.html',
+                },
+            }
+        })
             .state("home", {
             url: '/classified',
             views: {
@@ -402,7 +410,12 @@
                 meta: config.metaData.matrimony
             }
         })
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise(function($injector, $location){
+            var $state = $injector.get('$state');
+            $state.transitionTo('not_found', {}, {
+                location: false
+            });
+        });
          $authProvider.google({
             clientId: '841106851746-6nh00q5viur572idoqb7jeg6m3r1kkp5.apps.googleusercontent.com'
         });
