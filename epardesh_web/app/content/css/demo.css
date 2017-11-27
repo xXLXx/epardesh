@@ -420,3 +420,27 @@ footer form i{
 }*/
 
 
+/*Free Classified Ads*/
+
+.free-classified-ads{
+    padding: 0px 150px 150px;
+    background-color: #fff;
+    min-height: 120vh;
+    text-align: center;
+    color: #25373C;
+    font-size: 18px;
+}
+
+.free-classified-ads h2{
+    font-size: 42px;
+    font-weight: normal;
+}
+
+@media (max-width: 800px) {
+    .free-classified-ads {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 250px;
+        padding-bottom: 250px;
+    }
+}
